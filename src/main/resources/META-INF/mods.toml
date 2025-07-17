@@ -2,35 +2,35 @@
 modLoader="javafml"
 loaderVersion="[36.2.0,)"
 license="GNU GPLv3"
-issueTrackerURL="https://github.com/HelloCrossy/EcoRegions/issues"
+issueTrackerURL="https://github.com/HelloCrossy/BiologicalWonders/issues"
 
 [[mods]]
-modId="ecoregions"
+modId="biologicalwonders"
 version="${file.jarVersion}"
-displayName="Eco Regions ZAWA Addon"
+displayName="BiologicalWonders ZAWA Addon"
 #updateJSONURL=""
-displayURL="https://www.curseforge.com/minecraft/mc-mods/eco-regions"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/biological-wonders"
 logoFile="logo.png"
-credits=" Arty, Lleo, Arzher, SpiggitySpag, HelloCrossy67, Shoresy"
+credits=" Chilotic, HelloCrossy67, Arty, SpiggitySpag, heavy808s"
 authors="HelloCrossy67"
 description='''
-Addon for ZAWA Evolved, showcasing the beautiful wildlife of 6 of the continents!'''
+Addon for ZAWA Evolved, showcasing the vast and illustrious wildlife of the oceans, coasts & waters of the planet.'''
 
-[[dependencies.ecoregions]]
+[[dependencies.biologicalwonders]]
 modId="forge"
 mandatory=true
 versionRange="[36.2.20,)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.ecoregions]]
+[[dependencies.biologicalwonders]]
 modId="minecraft"
 mandatory=true
 versionRange="[1.16.5,1.17)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.ecoregions]]
+[[dependencies.biologicalwonders]]
 modId="zawa"
 mandatory=true
 versionRange="[1.16.5-1.0.2-BeefBeta-TropicalExpedition3,)"
