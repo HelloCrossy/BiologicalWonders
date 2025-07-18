@@ -22,18 +22,6 @@
 		max = 1
 		enabled = true
 
-	[hot_desert.oryx]
-		chance = 10
-		min = 1
-		max = 4
-		enabled = true
-
-	[hot_desert.fennec_fox]
-		chance = 5
-		min = 1
-		max = 4
-		enabled = true
-
 	[hot_desert.chilean_rosehair_tarantula]
 		chance = 4
 		min = 1

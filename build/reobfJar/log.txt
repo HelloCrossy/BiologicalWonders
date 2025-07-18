@@ -1,5 +1,5 @@
 Java Launcher: /Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/bin/java
-Arguments: '--in-jar, /Users/callumross/Documents/GitHub/WondersOfTheWorld/Wonders-Of-The-World-A-ZAWA-Evolved-Addon/build/libs/wondersoftheworld-1.16.5-1.0.0-beta1.jar, --out-jar, /Users/callumross/Documents/GitHub/WondersOfTheWorld/Wonders-Of-The-World-A-ZAWA-Evolved-Addon/build/reobfJar/output.jar, --srg-in, /Users/callumross/Documents/GitHub/WondersOfTheWorld/Wonders-Of-The-World-A-ZAWA-Evolved-Addon/build/createMcpToSrg/output.tsrg, --live'
+Arguments: '--in-jar, /Users/callumross/Documents/GitHub/The ZAWA Addons/BiologicalWonders/build/libs/biologicalwonders-1.16.5-1.0.0-beta1.jar, --out-jar, /Users/callumross/Documents/GitHub/The ZAWA Addons/BiologicalWonders/build/reobfJar/output.jar, --srg-in, /Users/callumross/Documents/GitHub/The ZAWA Addons/BiologicalWonders/build/createMcpToSrg/output.tsrg, --live'
 Classpath:
  - /Users/callumross/.gradle/caches/forge_gradle/maven_downloader/net/md-5/SpecialSource/1.11.0/SpecialSource-1.11.0-shaded.jar
  - /Users/callumross/.gradle/caches/forge_gradle/deobf_dependencies/curse/maven/zawa-evolved-581942/4752624_mapped_official_1.16.5/zawa-evolved-581942-4752624_mapped_official_1.16.5.jar
@@ -68,7 +68,7 @@ Classpath:
  - /Users/callumross/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.8.0-beta4/83b0359d847ee053d745be7ec0d8e9e8a44304b4/slf4j-api-1.8.0-beta4.jar
  - /Users/callumross/.gradle/caches/modules-2/files-2.1/org.jline/jline-reader/3.12.1/4382ab1382c7b6f379377ed5f665dc2f6e1218bc/jline-reader-3.12.1.jar
  - /Users/callumross/.gradle/caches/modules-2/files-2.1/org.jline/jline-terminal/3.12.1/c777448314e050d980a6b697c140f3bfe9eb7416/jline-terminal-3.12.1.jar
-Working directory: /Users/callumross/Documents/GitHub/WondersOfTheWorld/Wonders-Of-The-World-A-ZAWA-Evolved-Addon/build/reobfJar
+Working directory: /Users/callumross/Documents/GitHub/The ZAWA Addons/BiologicalWonders/build/reobfJar
 Main class: net.md_5.specialsource.SpecialSource
 ====================================
 Loading mappings

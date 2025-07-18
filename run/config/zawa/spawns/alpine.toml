@@ -10,12 +10,6 @@
 [temperate_alpine]
 	biomes = ["minecraft:wooded_mountains", "minecraft:taiga_mountains"]
 
-	[temperate_alpine.takin]
-		chance = 5
-		min = 1
-		max = 4
-		enabled = true
-
 	[temperate_alpine.butterfly]
 		chance = 10
 		min = 1
@@ -31,20 +25,8 @@
 [dry_alpine]
 	biomes = ["minecraft:savanna_plateau", "minecraft:wooded_badlands_plateau", "minecraft:badlands_plateau", "minecraft:shattered_savanna_plateau", "minecraft:modified_wooded_badlands_plateau", "minecraft:modified_badlands_plateau"]
 
-	[dry_alpine.tibetan_antelope]
-		chance = 5
-		min = 1
-		max = 4
-		enabled = true
-
 [tropical_alpine]
 	biomes = ["minecraft:modified_jungle", "minecraft:modified_jungle_edge", "minecraft:bamboo_jungle", "minecraft:bamboo_jungle_hills"]
-
-	[tropical_alpine.turaco]
-		chance = 10
-		min = 2
-		max = 4
-		enabled = true
 
 	[tropical_alpine.mandrill]
 		chance = 10
@@ -66,18 +48,6 @@
 
 [tundra_alpine]
 	biomes = ["minecraft:mountains", "minecraft:snowy_mountains", "minecraft:mountain_edge", "minecraft:gravelly_mountains", "minecraft:modified_gravelly_mountains"]
-
-	[tundra_alpine.tibetan_antelope]
-		chance = 5
-		min = 1
-		max = 4
-		enabled = true
-
-	[tundra_alpine.takin]
-		chance = 5
-		min = 1
-		max = 4
-		enabled = true
 
 	[tundra_alpine.snow_leopard]
 		chance = 5

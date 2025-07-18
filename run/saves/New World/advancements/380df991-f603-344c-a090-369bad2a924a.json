@@ -1,58 +1,63 @@
 {
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2025-07-18 11:57:55 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2025-07-18 11:57:55 +0100"
+    },
+    "done": true
+  },
   "zawa:evolved": {
     "criteria": {
-      "koala": "2023-05-31 14:19:34 +0100",
-      "african_wild_dog": "2023-05-31 14:19:34 +0100",
-      "macaw": "2023-05-31 14:19:34 +0100",
-      "mandrill": "2023-05-31 14:19:34 +0100",
-      "bald_eagle": "2023-05-31 14:19:34 +0100",
-      "grevys_zebra": "2023-05-31 14:19:34 +0100",
-      "polar_bear": "2023-05-31 14:19:34 +0100",
-      "kakapo": "2023-05-31 14:19:34 +0100",
-      "orca": "2023-05-31 14:19:34 +0100",
-      "emperor_penguin": "2023-05-31 14:19:34 +0100",
-      "hornbill": "2023-05-31 14:19:34 +0100",
-      "sumatran_orangutan": "2023-05-31 14:19:34 +0100",
-      "red_kangaroo": "2023-05-31 14:19:34 +0100",
-      "spider_monkey": "2023-05-31 14:19:34 +0100"
+      "koala": "2025-07-18 11:57:17 +0100",
+      "african_wild_dog": "2025-07-18 11:57:17 +0100",
+      "macaw": "2025-07-18 11:57:17 +0100",
+      "mandrill": "2025-07-18 11:57:17 +0100",
+      "bald_eagle": "2025-07-18 11:57:17 +0100",
+      "grevys_zebra": "2025-07-18 11:57:17 +0100",
+      "polar_bear": "2025-07-18 11:57:17 +0100",
+      "kakapo": "2025-07-18 11:57:17 +0100",
+      "orca": "2025-07-18 11:57:17 +0100",
+      "emperor_penguin": "2025-07-18 11:57:17 +0100",
+      "hornbill": "2025-07-18 11:57:17 +0100",
+      "sumatran_orangutan": "2025-07-18 11:57:17 +0100",
+      "red_kangaroo": "2025-07-18 11:57:17 +0100",
+      "spider_monkey": "2025-07-18 11:57:17 +0100"
     },
     "done": true
   },
-  "zawa:capture/surprise_surprise": {
+  "minecraft:recipes/transportation/dark_oak_boat": {
     "criteria": {
-      "capture_cage": "2023-05-31 14:31:19 +0100"
+      "in_water": "2025-07-18 11:57:55 +0100"
     },
     "done": true
   },
-  "zawa:capture/ready_for_anything": {
+  "minecraft:recipes/transportation/birch_boat": {
     "criteria": {
-      "capture_cage": "2023-05-31 14:31:19 +0100",
-      "capture_net": "2023-05-31 14:31:16 +0100"
-    },
-    "done": false
-  },
-  "minecraft:recipes/decorations/chest": {
-    "criteria": {
-      "has_lots_of_items": "2023-05-31 14:32:04 +0100"
+      "in_water": "2025-07-18 11:57:55 +0100"
     },
     "done": true
   },
-  "zawa:capture/not_for_volleyball": {
+  "minecraft:recipes/transportation/jungle_boat": {
     "criteria": {
-      "capture_net": "2023-05-31 14:31:16 +0100"
+      "in_water": "2025-07-18 11:57:55 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2025-07-18 11:57:55 +0100"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:forest": "2023-05-31 14:19:31 +0100",
-      "minecraft:desert": "2023-06-01 11:35:00 +0100",
-      "minecraft:birch_forest": "2023-06-01 11:36:00 +0100",
-      "minecraft:dark_forest": "2023-06-01 11:41:09 +0100",
-      "minecraft:river": "2023-06-01 11:33:09 +0100",
-      "minecraft:birch_forest_hills": "2023-06-01 11:35:54 +0100",
-      "minecraft:savanna": "2023-05-31 14:31:38 +0100",
-      "minecraft:plains": "2023-06-01 11:41:10 +0100"
+      "minecraft:forest": "2025-07-18 11:57:53 +0100",
+      "minecraft:wooded_hills": "2025-07-18 11:57:14 +0100"
     },
     "done": false
   },

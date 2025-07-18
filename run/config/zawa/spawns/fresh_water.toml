@@ -10,15 +10,51 @@
 [fast_fresh_water]
 	biomes = ["minecraft:river", "minecraft:frozen_river"]
 
-	[fast_fresh_water.caiman]
-		chance = 10
-		min = 1
-		max = 1
+	[fast_fresh_water.triggerfish]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.moorish_idol]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.spotted_drum]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.tulip_snail]
+		chance = 8
+		min = 5
+		max = 6
 		enabled = true
 
 	[fast_fresh_water.salmon]
 		chance = 10
 		min = 6
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.squirrelfish]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.butterflyfish]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.cowfish]
+		chance = 8
+		min = 5
 		max = 6
 		enabled = true
 
@@ -28,14 +64,20 @@
 		max = 1
 		enabled = true
 
+	[fast_fresh_water.horseshoe_crab]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.sea_bunny]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
 [slow_fresh_water]
 	biomes = ["minecraft:swamp", "minecraft:swamp_hills"]
-
-	[slow_fresh_water.caiman]
-		chance = 10
-		min = 1
-		max = 1
-		enabled = true
 
 	[slow_fresh_water.flamingo]
 		chance = 15

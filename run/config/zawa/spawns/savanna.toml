@@ -10,24 +10,6 @@
 [dry_savanna]
 	biomes = ["minecraft:savanna", "minecraft:savanna_plateau", "minecraft:shattered_savanna", "minecraft:shattered_savanna_plateau", "minecraft:desert", "minecraft:desert_hills", "minecraft:desert_lakes"]
 
-	[dry_savanna.lowland_nyala]
-		chance = 5
-		min = 1
-		max = 4
-		enabled = true
-
-	[dry_savanna.serval]
-		chance = 15
-		min = 1
-		max = 1
-		enabled = true
-
-	[dry_savanna.saiga_antelope]
-		chance = 3
-		min = 1
-		max = 3
-		enabled = true
-
 	[dry_savanna.northern_giraffe]
 		chance = 10
 		min = 3
@@ -40,21 +22,9 @@
 		max = 4
 		enabled = true
 
-	[dry_savanna.oryx]
-		chance = 10
-		min = 1
-		max = 4
-		enabled = true
-
 	[dry_savanna.yellow_billed_hornbill]
 		chance = 10
 		min = 2
-		max = 3
-		enabled = true
-
-	[dry_savanna.emu]
-		chance = 10
-		min = 1
 		max = 3
 		enabled = true
 
@@ -73,10 +43,22 @@
 [wet_savanna]
 	biomes = ["minecraft:savanna", "minecraft:savanna_plateau"]
 
-	[wet_savanna.serval]
-		chance = 15
-		min = 1
-		max = 1
+	[wet_savanna.masai_giraffe]
+		chance = 10
+		min = 3
+		max = 5
+		enabled = true
+
+	[wet_savanna.african_lake_cichlid]
+		chance = 10
+		min = 5
+		max = 6
+		enabled = true
+
+	[wet_savanna.southern_giraffe]
+		chance = 10
+		min = 3
+		max = 5
 		enabled = true
 
 	[wet_savanna.african_wild_dog]
@@ -103,46 +85,10 @@
 		max = 3
 		enabled = true
 
-	[wet_savanna.emu]
-		chance = 10
-		min = 1
-		max = 3
-		enabled = true
-
 	[wet_savanna.red_billed_hornbill]
 		chance = 10
 		min = 2
 		max = 3
-		enabled = true
-
-	[wet_savanna.kookaburra]
-		chance = 10
-		min = 2
-		max = 4
-		enabled = true
-
-	[wet_savanna.masai_giraffe]
-		chance = 10
-		min = 3
-		max = 5
-		enabled = true
-
-	[wet_savanna.african_lake_cichlid]
-		chance = 10
-		min = 5
-		max = 6
-		enabled = true
-
-	[wet_savanna.southern_giraffe]
-		chance = 10
-		min = 3
-		max = 5
-		enabled = true
-
-	[wet_savanna.hoopoe]
-		chance = 10
-		min = 2
-		max = 4
 		enabled = true
 
 	[wet_savanna.king_baboon_tarantula]

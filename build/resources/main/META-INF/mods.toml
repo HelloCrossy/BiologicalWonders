@@ -2,35 +2,35 @@
 modLoader="javafml"
 loaderVersion="[36.2.0,)"
 license="GNU GPLv3"
-issueTrackerURL="https://github.com/HelloCrossy/WondersOfTheWorld/issues"
+issueTrackerURL="https://github.com/HelloCrossy/BiologicalWonders/issues"
 
 [[mods]]
-modId="wondersoftheworld"
+modId="biologicalwonders"
 version="${file.jarVersion}"
-displayName="Wonders Of The World ZAWA Addon"
+displayName="BiologicalWonders ZAWA Addon"
 #updateJSONURL=""
-displayURL="https://www.curseforge.com/minecraft/mc-mods/wonders-of-the-world"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/biological-wonders"
 logoFile="logo.png"
-credits="Devs: HelloCrossy67, chilotic, 808s, SpiggitySpag, Arty, Kelvillar, Sophia     Other: Shoresy, Fisk, Mnesikos, Platinum, ClimbableChunky"
+credits=" Chilotic, HelloCrossy67, Arty, SpiggitySpag, heavy808s"
 authors="HelloCrossy67"
 description='''
-Addon for ZAWA Evolved, with the aim to bring animals from all across the world to YOUR screen!'''
+Addon for ZAWA Evolved, showcasing the vast and illustrious wildlife of the oceans, coasts & waters of the planet.'''
 
-[[dependencies.wondersoftheworld]]
+[[dependencies.biologicalwonders]]
 modId="forge"
 mandatory=true
 versionRange="[36.2.20,)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.wondersoftheworld]]
+[[dependencies.biologicalwonders]]
 modId="minecraft"
 mandatory=true
 versionRange="[1.16.5,1.17)"
 ordering="NONE"
 side="BOTH"
 
-[[dependencies.wondersoftheworld]]
+[[dependencies.biologicalwonders]]
 modId="zawa"
 mandatory=true
 versionRange="[1.16.5-1.0.2-BeefBeta-TropicalExpedition3,)"
