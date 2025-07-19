@@ -7,7 +7,7 @@ issueTrackerURL="https://github.com/HelloCrossy/BiologicalWonders/issues"
 [[mods]]
 modId="biologicalwonders"
 version="${file.jarVersion}"
-displayName="BiologicalWonders ZAWA Addon"
+displayName="Biological Wonders ZAWA Addon"
 #updateJSONURL=""
 displayURL="https://www.curseforge.com/minecraft/mc-mods/biological-wonders"
 logoFile="logo.png"
