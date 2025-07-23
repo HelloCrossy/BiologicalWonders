@@ -79,6 +79,12 @@
 [slow_fresh_water]
 	biomes = ["minecraft:swamp", "minecraft:swamp_hills"]
 
+	[slow_fresh_water.cuban_crocodile]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
 	[slow_fresh_water.flamingo]
 		chance = 15
 		min = 4

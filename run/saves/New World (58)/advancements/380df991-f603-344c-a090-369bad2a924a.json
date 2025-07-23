@@ -1,0 +1,74 @@
+{
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2025-07-20 14:13:24 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2025-07-20 14:13:24 +0100"
+    },
+    "done": true
+  },
+  "zawa:evolved": {
+    "criteria": {
+      "koala": "2025-07-20 14:12:53 +0100",
+      "african_wild_dog": "2025-07-20 14:12:53 +0100",
+      "macaw": "2025-07-20 14:12:53 +0100",
+      "mandrill": "2025-07-20 14:12:53 +0100",
+      "bald_eagle": "2025-07-20 14:12:53 +0100",
+      "grevys_zebra": "2025-07-20 14:12:53 +0100",
+      "polar_bear": "2025-07-20 14:12:53 +0100",
+      "kakapo": "2025-07-20 14:12:53 +0100",
+      "orca": "2025-07-20 14:12:53 +0100",
+      "emperor_penguin": "2025-07-20 14:12:53 +0100",
+      "hornbill": "2025-07-20 14:12:53 +0100",
+      "sumatran_orangutan": "2025-07-20 14:12:53 +0100",
+      "red_kangaroo": "2025-07-20 14:12:53 +0100",
+      "spider_monkey": "2025-07-20 14:12:53 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2025-07-20 14:13:24 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2025-07-20 14:13:24 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2025-07-20 14:13:24 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2025-07-20 14:13:24 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2025-07-21 13:35:39 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2025-07-20 14:12:51 +0100",
+      "minecraft:birch_forest": "2025-07-20 15:12:11 +0100",
+      "minecraft:river": "2025-07-20 14:13:25 +0100",
+      "minecraft:birch_forest_hills": "2025-07-20 14:16:35 +0100",
+      "minecraft:wooded_hills": "2025-07-20 14:15:42 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 2586
+}
