@@ -11,10 +11,20 @@ import org.zawamod.zawa.Zawa;
 import org.zawamod.zawa.config.ZawaSpawnCategory;
 import org.zawamod.zawa.world.entity.ZawaEntityRegistry;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
+import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 public class BioEntities {
     public static final ZawaEntityRegistry REGISTRY = new ZawaEntityRegistry(BiologicalWonders.MOD_ID, Zawa.ENTITIES_GROUP);
 
+    public static final RegistryObject<EntityType<CubanCrocodileEntity>> CUBAN_CROCODILE =
+            REGISTRY.builder(CubanCrocodileEntity::new, EntityClassification.CREATURE)
+                    .attributes(CubanCrocodileEntity::registerAttributes)
+                    .renderer(() -> CubanCrocodileRenderer::new)
+                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
+                    .build("cuban_crocodile");
+
+    //AMBIENT ENTITIES
     public static final RegistryObject<EntityType<ButterflyfishEntity>> BUTTERFLYFISH =
             REGISTRY.builder(ButterflyfishEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(ButterflyfishEntity::registerAttributes)
@@ -80,6 +90,9 @@ public class BioEntities {
                     .build("tulip_snail");
     
     public static void registerSpawnPlacements() {
+        EntitySpawnPlacementRegistry.register(CUBAN_CROCODILE.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaSemiAquaticEntity::checkSemiAquaticSpawnRules);
+
+
         EntitySpawnPlacementRegistry.register(BUTTERFLYFISH.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(COWFISH.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(HORSESHOE_CRAB.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);

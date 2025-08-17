@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.zawamod.zawa.Zawa;
 import org.zawamod.zawa.world.item.PlushBlockItem;
+import org.zawamod.zawa.world.item.ZawaEggItem;
 import org.zawamod.zawa.world.item.ZawaFishBucketItem;
 
 import java.util.ArrayList;
@@ -20,6 +21,9 @@ import java.util.List;
 
 public class BioItems {
     public static final DeferredRegister<Item> REGISTRAR = DeferredRegister.create(ForgeRegistries.ITEMS, BiologicalWonders.MOD_ID);
+
+    public static final RegistryObject<Item> CUBAN_CROCODILE_EGG = REGISTRAR.register("cuban_crocodile_egg", () -> new ZawaEggItem(BioEntities.CUBAN_CROCODILE, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
+
     public static final RegistryObject<Item>
             BUTTERFLYFISH = REGISTRAR.register("butterflyfish", () -> new Item(new Item.Properties().tab(Zawa.ITEMS_GROUP)));
 
