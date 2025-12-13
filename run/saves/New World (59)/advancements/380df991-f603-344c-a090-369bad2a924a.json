@@ -1,0 +1,34 @@
+{
+  "zawa:evolved": {
+    "criteria": {
+      "koala": "2025-12-13 17:29:15 +0000",
+      "african_wild_dog": "2025-12-13 17:29:15 +0000",
+      "macaw": "2025-12-13 17:29:15 +0000",
+      "mandrill": "2025-12-13 17:29:15 +0000",
+      "bald_eagle": "2025-12-13 17:29:15 +0000",
+      "grevys_zebra": "2025-12-13 17:29:15 +0000",
+      "polar_bear": "2025-12-13 17:29:15 +0000",
+      "kakapo": "2025-12-13 17:29:15 +0000",
+      "orca": "2025-12-13 17:29:15 +0000",
+      "emperor_penguin": "2025-12-13 17:29:15 +0000",
+      "hornbill": "2025-12-13 17:29:15 +0000",
+      "sumatran_orangutan": "2025-12-13 17:29:15 +0000",
+      "red_kangaroo": "2025-12-13 17:29:15 +0000",
+      "spider_monkey": "2025-12-13 17:29:15 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2025-12-13 17:42:26 +0000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2025-12-13 17:29:15 +0000"
+    },
+    "done": false
+  },
+  "DataVersion": 2586
+}

@@ -1,6 +1,17 @@
 {
   "replace": false,
   "values": [
-    "biologicalwonders:cuban_crocodile"
+    "biologicalwonders:cuban_crocodile",
+    "biologicalwonders:alligator_gar",
+    "biologicalwonders:blacktip_shark",
+    "biologicalwonders:cownose_ray",
+    "biologicalwonders:elephant_seal",
+    "biologicalwonders:grey_seal",
+    "biologicalwonders:ribbon_seal",
+    "biologicalwonders:harbor_seal",
+    "biologicalwonders:napoleon_wrasse",
+    "biologicalwonders:nurse_shark",
+    "biologicalwonders:lionfish",
+    "biologicalwonders:ws_dolphin"
   ]
 }

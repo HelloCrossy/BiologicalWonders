@@ -79,7 +79,43 @@
 [slow_fresh_water]
 	biomes = ["minecraft:swamp", "minecraft:swamp_hills"]
 
+	[slow_fresh_water.lionfish]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.elephant_seal]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.harbor_seal]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
 	[slow_fresh_water.cuban_crocodile]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.ws_dolphin]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.cownose_ray]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.nurse_shark]
 		chance = 8
 		min = 1
 		max = 2
@@ -89,5 +125,35 @@
 		chance = 15
 		min = 4
 		max = 6
+		enabled = true
+
+	[slow_fresh_water.alligator_gar]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.grey_seal]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.ribbon_seal]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.napoleon_wrasse]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[slow_fresh_water.blacktip_shark]
+		chance = 8
+		min = 1
+		max = 2
 		enabled = true
 

@@ -1,6 +1,17 @@
 {
   "__comment": "Entity Names",
   "entity.biologicalwonders.cuban_crocodile": "Cuban Crocodile",
+  "entity.biologicalwonders.alligator_gar": "Alligator Gar",
+  "entity.biologicalwonders.blacktip_shark": "Blacktip Reef Shark",
+  "entity.biologicalwonders.cownose_ray": "Cownose Ray",
+  "entity.biologicalwonders.elephant_seal": "Elephant Seal",
+  "entity.biologicalwonders.grey_seal": "Grey Seal",
+  "entity.biologicalwonders.harbor_seal": "Harbor Seal",
+  "entity.biologicalwonders.lionfish": "Lionfish",
+  "entity.biologicalwonders.napoleon_wrasse": "Napoleon Wrasse",
+  "entity.biologicalwonders.nurse_shark": "Nurse Shark",
+  "entity.biologicalwonders.ribbon_seal": "Ribbon Seal",
+  "entity.biologicalwonders.ws_dolphin": "Pacific White-Sided Dolphin",
 
   "entity.biologicalwonders.butterflyfish": "Butterflyfish",
   "entity.biologicalwonders.cowfish": "Cowfish",
@@ -36,6 +47,17 @@
   "item.biologicalwonders.bucket_of_tulip_snail": "Bucket Of Tulip Snail",
 
   "item.biologicalwonders.cuban_crocodile_spawn_egg": "Cuban Crocodile Spawn Egg",
+  "item.biologicalwonders.alligator_gar_spawn_egg": "Alligator Gar Spawn Egg",
+  "item.biologicalwonders.blacktip_shark_spawn_egg": "Blacktip Reef Shark Spawn Egg",
+  "item.biologicalwonders.cownose_ray_spawn_egg": "Cownose Ray Spawn Egg",
+  "item.biologicalwonders.elephant_seal_spawn_egg": "Elephant Seal Spawn Egg",
+  "item.biologicalwonders.grey_seal_spawn_egg": "Grey Seal Spawn Egg",
+  "item.biologicalwonders.harbor_seal_spawn_egg": "Harbor Seal Spawn Egg",
+  "item.biologicalwonders.lionfish_spawn_egg": "Lionfish Spawn Egg",
+  "item.biologicalwonders.napoleon_wrasse_spawn_egg": "Napoleon Wrasse Spawn Egg",
+  "item.biologicalwonders.nurse_shark_spawn_egg": "Nurse Shark Spawn Egg",
+  "item.biologicalwonders.ribbon_seal_spawn_egg": "Ribbon Seal Spawn Egg",
+  "item.biologicalwonders.ws_dolphin_spawn_egg": "Pacific White-Sided Dolphin Spawn Egg",
   "item.biologicalwonders.butterflyfish_spawn_egg": "Longnose Butterflyfish Spawn Egg",
   "item.biologicalwonders.cowfish_spawn_egg": "Cowfish Spawn Egg",
   "item.biologicalwonders.horseshoe_crab_spawn_egg": "Horseshoe Crab Spawn Egg",
@@ -47,6 +69,12 @@
   "item.biologicalwonders.tulip_snail_spawn_egg": "Tulip Snail",
 
   "item.biologicalwonders.cuban_crocodile_egg": "Cuban Crocodile Egg",
+  "item.biologicalwonders.alligator_gar_egg": "Alligator Gar Egg",
+  "item.biologicalwonders.lionfish_egg": "Lionfish Egg",
+  "item.biologicalwonders.napoleon_wrasse_egg": "Napoleon Wrasse Egg",
+  "item.biologicalwonders.nurse_shark_egg": "Nurse Shark Egg",
+  "item.biologicalwonders.blacktip_shark_egg": "Blacktip Reef Shark Egg",
+  "item.biologicalwonders.cownose_ray_egg": "Cownose Ray Egg",
 
   "__comment": "Entity Variant and Scientific Names, and Informational Blurbs",
 

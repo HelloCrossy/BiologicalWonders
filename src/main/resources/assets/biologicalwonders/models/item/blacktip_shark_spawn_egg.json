@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "biologicalwonders:item/blacktip_shark_spawn_egg"
+  }
+}
