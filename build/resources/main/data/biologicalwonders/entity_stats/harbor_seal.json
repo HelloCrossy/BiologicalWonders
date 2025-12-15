@@ -1,23 +1,21 @@
 {
-  "temperament": "territorial",
-  "kibble": "zawa:carnivore_kibble",
+  "temperament": "defensive",
+  "kibble": "zawa:piscivore_kibble",
   "size": "medium",
   "fertility": "medium",
-  "breeding_item": "minecraft:chicken",
+  "breeding_item": "minecraft:cod",
   "litter_size": {
-    "min": 4,
-    "max": 5
+    "min": 1,
+    "max": 1
   },
-  "diet": "zawa:small_carnivore",
+  "diet": "zawa:large_carnivore",
   "speed": "slow",
   "enrichment": {
     "zawa:blocks": [
-      "zawa:heat_lamp",
-      "zawa:heat_rock",
       "zawa:sprinkler"
     ]
   },
-  "variant_count": 5,
+  "variant_count": 6,
   "captive_variants": [
     "albino"
   ]

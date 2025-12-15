@@ -25,12 +25,42 @@
 		max = 6
 		enabled = true
 
+	[pelagic_ocean.ws_dolphin]
+		chance = 8
+		min = 1
+		max = 2
+		enabled = true
+
+	[pelagic_ocean.cownose_ray]
+		chance = 10
+		min = 1
+		max = 1
+		enabled = true
+
 [tropical_ocean]
 	biomes = ["minecraft:warm_ocean", "minecraft:deep_warm_ocean"]
+
+	[tropical_ocean.lionfish]
+		chance = 15
+		min = 1
+		max = 2
+		enabled = true
 
 	[tropical_ocean.angelfish]
 		chance = 10
 		min = 4
+		max = 4
+		enabled = true
+
+	[tropical_ocean.napoleon_wrasse]
+		chance = 8
+		min = 1
+		max = 1
+		enabled = true
+
+	[tropical_ocean.blacktip_shark]
+		chance = 10
+		min = 1
 		max = 4
 		enabled = true
 
@@ -44,5 +74,17 @@
 		chance = 10
 		min = 2
 		max = 3
+		enabled = true
+
+	[tropical_ocean.cownose_ray]
+		chance = 10
+		min = 1
+		max = 1
+		enabled = true
+
+	[tropical_ocean.nurse_shark]
+		chance = 10
+		min = 1
+		max = 2
 		enabled = true
 

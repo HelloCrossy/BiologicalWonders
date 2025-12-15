@@ -21,84 +21,84 @@ public class BioEntities {
             REGISTRY.builder(CubanCrocodileEntity::new, EntityClassification.CREATURE)
                     .attributes(CubanCrocodileEntity::registerAttributes)
                     .renderer(() -> CubanCrocodileRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(2, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("cuban_crocodile");
     public static final RegistryObject<EntityType<AlligatorGarEntity>> ALLIGATOR_GAR =
             REGISTRY.builder(AlligatorGarEntity::new, EntityClassification.WATER_CREATURE)
                     .attributes(AlligatorGarEntity::registerAttributes)
                     .renderer(() -> AlligatorGarRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(10, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER,ZawaSpawnCategory.FAST_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("alligator_gar");
     public static final RegistryObject<EntityType<BlacktipSharkEntity>> BLACKTIP_SHARK =
             REGISTRY.builder(BlacktipSharkEntity::new, EntityClassification.WATER_CREATURE)
                     .attributes(BlacktipSharkEntity::registerAttributes)
                     .renderer(() -> BlacktipSharkRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(10, 1, 4, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("blacktip_shark");
     public static final RegistryObject<EntityType<CownoseRayEntity>> COWNOSE_RAY =
             REGISTRY.builder(CownoseRayEntity::new, EntityClassification.WATER_CREATURE)
                     .attributes(CownoseRayEntity::registerAttributes)
                     .renderer(() -> CownoseRayRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(10, 1, 1, ZawaSpawnCategory.PELAGIC_OCEAN, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("cownose_ray");
     public static final RegistryObject<EntityType<ElephantSealEntity>> ELEPHANT_SEAL =
             REGISTRY.builder(ElephantSealEntity::new, EntityClassification.CREATURE)
                     .attributes(ElephantSealEntity::registerAttributes)
                     .renderer(() -> ElephantSealRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(10, 2, 5, ZawaSpawnCategory.COASTAL_DESERT)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("elephant_seal");
     public static final RegistryObject<EntityType<GreySealEntity>> GREY_SEAL =
             REGISTRY.builder(GreySealEntity::new, EntityClassification.CREATURE)
                     .attributes(GreySealEntity::registerAttributes)
                     .renderer(() -> GreySealRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("grey_seal");
     public static final RegistryObject<EntityType<RibbonSealEntity>> RIBBON_SEAL =
             REGISTRY.builder(RibbonSealEntity::new, EntityClassification.CREATURE)
                     .attributes(RibbonSealEntity::registerAttributes)
                     .renderer(() -> RibbonSealRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("ribbon_seal");
     public static final RegistryObject<EntityType<HarborSealEntity>> HARBOR_SEAL =
             REGISTRY.builder(HarborSealEntity::new, EntityClassification.CREATURE)
                     .attributes(HarborSealEntity::registerAttributes)
                     .renderer(() -> HarborSealRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(10, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("harbor_seal");
     public static final RegistryObject<EntityType<LionfishEntity>> LIONFISH =
             REGISTRY.builder(LionfishEntity::new, EntityClassification.WATER_CREATURE)
                     .attributes(LionfishEntity::registerAttributes)
                     .renderer(() -> LionfishRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(15, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("lionfish");
     public static final RegistryObject<EntityType<NapoleonWrasseEntity>> NAPOLEON_WRASSE =
             REGISTRY.builder(NapoleonWrasseEntity::new, EntityClassification.WATER_CREATURE)
                     .attributes(NapoleonWrasseEntity::registerAttributes)
                     .renderer(() -> NapoleonWrasseRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(8, 1, 1, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("napoleon_wrasse");
     public static final RegistryObject<EntityType<NurseSharkEntity>> NURSE_SHARK =
             REGISTRY.builder(NurseSharkEntity::new, EntityClassification.WATER_CREATURE)
                     .attributes(NurseSharkEntity::registerAttributes)
                     .renderer(() -> NurseSharkRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(10, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("nurse_shark");
     public static final RegistryObject<EntityType< WSDolphinEntity>> WS_DOLPHIN =
             REGISTRY.builder( WSDolphinEntity::new, EntityClassification.WATER_CREATURE)
                     .attributes( WSDolphinEntity::registerAttributes)
                     .renderer(() ->  WSDolphinRenderer::new)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
+                    .spawns(8, 1, 2, ZawaSpawnCategory.PELAGIC_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("ws_dolphin");
 

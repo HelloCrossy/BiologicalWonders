@@ -14,7 +14,7 @@ public class CownoseRayRenderer extends ZawaMobRenderer<CownoseRayEntity, Cownos
 
     @Override
     protected void scale(CownoseRayEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.455F : 1.1F;
+        float scale = entity.isBaby() ? 0.6F : 0.95F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

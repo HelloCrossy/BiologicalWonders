@@ -26,7 +26,7 @@ public class BlacktipSharkEntity extends ZawaAquaticEntity implements OviparousE
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.15F).add(Attributes.MAX_HEALTH, 22.0).add(Attributes.ATTACK_DAMAGE, 6.0);
+        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.225F).add(Attributes.MAX_HEALTH, 16.0).add(Attributes.ATTACK_DAMAGE, 5.0);
     }
 
     @Nullable
@@ -52,11 +52,4 @@ public class BlacktipSharkEntity extends ZawaAquaticEntity implements OviparousE
         return size.height * 0.85F;
     }
 
-    protected void customServerAiStep() {
-        if (this.getMoveControl().hasWanted()) {
-            this.setSprinting(this.getMoveControl().getSpeedModifier() >= 1.33);
-        }
-
-        super.customServerAiStep();
-    }
 }

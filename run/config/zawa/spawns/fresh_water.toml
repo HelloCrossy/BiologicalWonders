@@ -16,6 +16,36 @@
 		max = 6
 		enabled = true
 
+	[fast_fresh_water.salmon]
+		chance = 10
+		min = 6
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.butterflyfish]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.cowfish]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.horseshoe_crab]
+		chance = 8
+		min = 5
+		max = 6
+		enabled = true
+
+	[fast_fresh_water.alligator_gar]
+		chance = 10
+		min = 1
+		max = 2
+		enabled = true
+
 	[fast_fresh_water.moorish_idol]
 		chance = 8
 		min = 5
@@ -34,25 +64,7 @@
 		max = 6
 		enabled = true
 
-	[fast_fresh_water.salmon]
-		chance = 10
-		min = 6
-		max = 6
-		enabled = true
-
 	[fast_fresh_water.squirrelfish]
-		chance = 8
-		min = 5
-		max = 6
-		enabled = true
-
-	[fast_fresh_water.butterflyfish]
-		chance = 8
-		min = 5
-		max = 6
-		enabled = true
-
-	[fast_fresh_water.cowfish]
 		chance = 8
 		min = 5
 		max = 6
@@ -64,12 +76,6 @@
 		max = 1
 		enabled = true
 
-	[fast_fresh_water.horseshoe_crab]
-		chance = 8
-		min = 5
-		max = 6
-		enabled = true
-
 	[fast_fresh_water.sea_bunny]
 		chance = 8
 		min = 5
@@ -79,19 +85,7 @@
 [slow_fresh_water]
 	biomes = ["minecraft:swamp", "minecraft:swamp_hills"]
 
-	[slow_fresh_water.lionfish]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.elephant_seal]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.harbor_seal]
+	[slow_fresh_water.alligator_gar]
 		chance = 8
 		min = 1
 		max = 2
@@ -103,57 +97,9 @@
 		max = 2
 		enabled = true
 
-	[slow_fresh_water.ws_dolphin]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.cownose_ray]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.nurse_shark]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
 	[slow_fresh_water.flamingo]
 		chance = 15
 		min = 4
 		max = 6
-		enabled = true
-
-	[slow_fresh_water.alligator_gar]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.grey_seal]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.ribbon_seal]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.napoleon_wrasse]
-		chance = 8
-		min = 1
-		max = 2
-		enabled = true
-
-	[slow_fresh_water.blacktip_shark]
-		chance = 8
-		min = 1
-		max = 2
 		enabled = true
 

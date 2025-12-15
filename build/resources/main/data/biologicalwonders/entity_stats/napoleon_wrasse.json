@@ -1,20 +1,18 @@
 {
-  "temperament": "territorial",
-  "kibble": "zawa:carnivore_kibble",
-  "size": "medium",
-  "fertility": "medium",
-  "breeding_item": "minecraft:chicken",
+  "temperament": "neutral",
+  "kibble": "zawa:piscivore_kibble",
+  "size": "small",
+  "fertility": "low",
+  "breeding_item": "zawa:shrimp",
   "litter_size": {
-    "min": 4,
+    "min": 3,
     "max": 5
   },
-  "diet": "zawa:small_carnivore",
+  "diet": "zawa:piscivore",
   "speed": "slow",
   "enrichment": {
     "zawa:blocks": [
-      "zawa:heat_lamp",
-      "zawa:heat_rock",
-      "zawa:sprinkler"
+      "zawa:heat_rock"
     ]
   },
   "variant_count": 3

@@ -11,10 +11,9 @@ public class WSDolphinRenderer extends ZawaMobRenderer<WSDolphinEntity, WSDolphi
         super(manager, new WSDolphinModel.Adult(), new WSDolphinModel.Child(), 0.6F);
 
     }
-
     @Override
     protected void scale(WSDolphinEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.455F : 1.1F;
+        float scale = entity.isBaby() ? 0.95F : 1.5F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }
