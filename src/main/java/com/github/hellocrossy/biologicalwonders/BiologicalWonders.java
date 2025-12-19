@@ -14,6 +14,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(BiologicalWonders.MOD_ID)
 public class BiologicalWonders {
     public static final String MOD_ID = "biologicalwonders";
+    public static final String[] PLUSHIES_LIST = new String[]{"pelican", "crocodile", "shark", "ray", "seal"};
+
     public BiologicalWonders() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 

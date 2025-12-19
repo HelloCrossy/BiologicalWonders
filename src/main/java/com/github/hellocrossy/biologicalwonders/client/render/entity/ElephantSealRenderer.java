@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class ElephantSealRenderer extends ZawaMobRenderer<ElephantSealEntity, ElephantSealModel> {
     public ElephantSealRenderer(EntityRendererManager manager) {
-        super(manager, new ElephantSealModel.AdultMale(), new ElephantSealModel.Child(), 0.5F);
+        super(manager, new ElephantSealModel.AdultMale(), new ElephantSealModel.Child(), 2.25F);
         adultFemaleModel = new ElephantSealModel.AdultFemale();
     }
 

@@ -10,14 +10,16 @@ import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.goal.NonTamedTargetGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class ElephantSealEntity extends ZawaSemiAquaticEntity {
+public class ElephantSealEntity extends ZawaSemiAquaticEntity implements SpeciesVariantsEntity {
     public ElephantSealEntity(EntityType<? extends ZawaSemiAquaticEntity> type, World world) {
         super(type, world);
     }
@@ -43,11 +45,17 @@ public class ElephantSealEntity extends ZawaSemiAquaticEntity {
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(3, new NonTamedTargetGoal<>(this, PlayerEntity.class, true, (entity) -> this.distanceToSqr(entity) <= 10.0));
     }
+    @Override
+    public int getVariantByBiome(IWorld iWorld) {
+        return random.nextInt(getWildVariants());
+    }
 
     @Override
     public boolean canBabySwim() {
         return false;
     }
+
+
 
     @Override
     public float swimSpeedMultiplier() {

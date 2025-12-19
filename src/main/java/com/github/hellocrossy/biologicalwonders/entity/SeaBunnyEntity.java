@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.entity.ai.goal.FindWaterGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
@@ -38,7 +39,7 @@ public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEnt
     public SeaBunnyEntity(EntityType<? extends ZawaBaseAmbientEntity> type, World world) {
         super(type, world);
         this.maxUpStep = 1.0F;
-        this.setPathfindingMalus(PathNodeType.WATER, 0.0F);
+        this.moveControl = new MovementController(this);
     }
 
     public static AttributeModifierMap.MutableAttribute registerSeaBunnyAttributes() {
@@ -66,62 +67,25 @@ public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEnt
         return BioEntities.SEA_BUNNY.get().create(world);
     }
 
-    @Override
-    protected PathNavigator createNavigation(World world) {
-        return new ClimberPathNavigator(this, world);
-    }
-
-    @Override
-    protected void playStepSound(BlockPos blockPos, BlockState blockState) {
-    }
-
-    @Override
-    public boolean canBreatheUnderwater() {
-        return true;
-    }
-
-    @Override
-    public CreatureAttribute getMobType() {
-        return CreatureAttribute.WATER;
-    }
-
-    @Override
-    public boolean checkSpawnObstruction(IWorldReader level) {
-        return level.isUnobstructed(this);
-    }
-
-    @Override
-    public boolean isPushedByFluid() {
-        return false;
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (!level.isClientSide && horizontalCollision)
-            setClimbing(isClimbableBlock(level, blockPosition().relative(getDirection())));
-    }
-
-    @Override
-    public boolean onClimbable() {
-        return isClimbing();
-    }
-
-    @Override
-    public boolean causeFallDamage(float distance, float damageMultiplier) {
-        return false;
-    }
-
-    @Override
     public boolean isClimbing() {
-        return entityData.get(CLIMBING);
+        return (Boolean)this.entityData.get(CLIMBING);
     }
 
-    @Override
     public void setClimbing(boolean climbing) {
         this.entityData.set(CLIMBING, climbing);
     }
 
+    public void tick() {
+        super.tick();
+        if (!this.level.isClientSide && this.horizontalCollision) {
+            this.setClimbing(this.isClimbableBlock(this.level, this.blockPosition().relative(this.getDirection())));
+        }
+
+    }
+
+    public boolean onClimbable() {
+        return this.isClimbing();
+    }
     @Override
     public boolean isClimbableBlock(World level, BlockPos blockPos) {
         Block block = (level.getBlockState(blockPos)).getBlock();

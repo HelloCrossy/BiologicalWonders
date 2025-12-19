@@ -24,6 +24,11 @@
   "entity.biologicalwonders.tulip_snail": "Tulip Snail",
 
   "__comment": "Blocks",
+  "block.biologicalwonders.pelican_plush": "Pelican Plush",
+  "block.biologicalwonders.ray_plush": "Cownose Ray Plush",
+  "block.biologicalwonders.seal_plush": "Grey Seal Plush",
+  "block.biologicalwonders.shark_plush": "Blacktip Reef Shark Plush",
+  "block.biologicalwonders.crocodile_plush": "Cuban Crocodile Plush",
 
   "__comment": "Items",
   "item.biologicalwonders.butterflyfish": "Longnose Butterflyfish",

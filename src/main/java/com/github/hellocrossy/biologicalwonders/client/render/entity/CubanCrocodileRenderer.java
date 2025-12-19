@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class CubanCrocodileRenderer extends ZawaMobRenderer<CubanCrocodileEntity, CubanCrocodileModel> {
     public CubanCrocodileRenderer(EntityRendererManager manager) {
-        super(manager, new CubanCrocodileModel.Adult(), new CubanCrocodileModel.Child(), 0.6F);
+        super(manager, new CubanCrocodileModel.Adult(), new CubanCrocodileModel.Child(), 0.75F);
 
     }
 

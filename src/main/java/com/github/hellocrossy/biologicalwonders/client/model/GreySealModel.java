@@ -224,7 +224,7 @@ public abstract class GreySealModel extends ZawaBaseModel<GreySealEntity> {
 
         public Child() {
             this.texWidth = 64;
-            this.texHeight = 64;
+            this.texHeight = 32;
             this.LegLeft = new ModelRenderer(this, 19, 18);
             this.LegLeft.setPos(2.5F, 2.3F, 1.6F);
             this.LegLeft.addBox(-1.0F, -1.5F, 0.0F, 1.0F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F);

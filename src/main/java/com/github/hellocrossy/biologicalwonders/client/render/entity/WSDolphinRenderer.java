@@ -8,7 +8,7 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
 public class WSDolphinRenderer extends ZawaMobRenderer<WSDolphinEntity, WSDolphinModel> {
     public WSDolphinRenderer(EntityRendererManager manager) {
-        super(manager, new WSDolphinModel.Adult(), new WSDolphinModel.Child(), 0.6F);
+        super(manager, new WSDolphinModel.Adult(), new WSDolphinModel.Child(), 1.5F);
 
     }
     @Override

@@ -175,8 +175,8 @@ public abstract class BlacktipSharkModel extends ZawaBaseModel<BlacktipSharkEnti
         @Override
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
-            float speed = 2.0F;
-            float degree = 1.5F;
+            float speed = 1.5F;
+            float degree = 1.0F;
             this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 0.2F) * limbSwingAmount * 0.5F;
             this.Tail2.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * -0.4F) * limbSwingAmount * 0.5F;
             this.LeftPectoralFin1.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 2.0F) * limbSwingAmount * 0.5F + 0.409F;
@@ -188,8 +188,8 @@ public abstract class BlacktipSharkModel extends ZawaBaseModel<BlacktipSharkEnti
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
             if (entity.isInWater()) {
-                float speed = 2.0F;
-                float degree = 1.5F;
+                float speed = 1.5F;
+                float degree = 1.0F;
                 this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * 0.8F) * limbSwingAmount * 0.5F;
                 this.Tail2.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * -0.9F) * limbSwingAmount * 0.5F;
                 this.Tail3.yRot = MathHelper.cos(4.0F + (limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * 2.5F) * limbSwingAmount * 0.5F;
