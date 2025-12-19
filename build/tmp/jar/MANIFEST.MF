@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: BiologicalWonders
-Implementation-Version: 1.16.5-1.0.0-beta1
-Implementation-Vendor: HelloCrossy67
-
