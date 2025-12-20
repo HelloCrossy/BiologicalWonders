@@ -21,7 +21,7 @@ public class ElephantSealRenderer extends ZawaMobRenderer<ElephantSealEntity, El
 
     @Override
     protected boolean hasBabyVariants(ElephantSealEntity entity) {
-        return false;
+        return true;
     }
 
     @Override
