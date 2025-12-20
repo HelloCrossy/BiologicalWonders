@@ -7,7 +7,6 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
-import org.zawamod.zawa.client.model.ZawaModelRenderer;
 
 public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
     public ModelRenderer Body;
@@ -228,9 +227,15 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
         @Override
         public void setupAnim(WSDolphinEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-            this.Body.yRot = (float) Math.toRadians((double) netHeadYaw) * 0.25F;
-            this.Body.xRot = (float) Math.toRadians((double) headPitch);
-            this.Head.yRot = (float) Math.toRadians((double) netHeadYaw) * 0.25F;
+            this.Body.yRot = (float) Math.toRadians(netHeadYaw) * 0.25F;
+            this.Body.xRot = (float) Math.toRadians(headPitch);
+            this.Head.yRot = (float) Math.toRadians(netHeadYaw) * 0.25F;
+            this.Head.xRot = (float) Math.toRadians(headPitch) * 0.25F - 0.10F;
+
+            if (Entity.getHorizontalDistanceSqr(entity.getDeltaMovement()) > 1.0E-7D) {
+//                this.Body.xRot += -0.05F + -0.05F * MathHelper.cos(ageInTicks * 0.3F);
+                this.Body.xRot += MathHelper.cos(limbSwing * 0.3F + (float) Math.PI) * 0.5F * limbSwingAmount * 0.5F;
+            }
         }
 
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -249,12 +254,12 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
             float speed = 2.5F;
-            float degree = 2.0F;
+            float degree = 1.0F;
             if (entity.isInWater()) {
                 this.Body.xRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * 0.5F * limbSwingAmount * 0.5F;
                 this.Tail1.xRot = MathHelper.cos(1.0F + limbSwing * speed * 0.3F + 3.1415927F) * degree * -0.9F * limbSwingAmount * 0.5F + -0.1F;
                 this.Tail2.xRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * -0.5F * limbSwingAmount * 0.5F;
-                this.Chest.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.3F + 3.1415927F) * degree * -0.5F * limbSwingAmount * 0.5F + 0.15F;
+                this.Chest.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.3F + 3.1415927F) * degree * -0.25F * limbSwingAmount * 0.5F + 0.15F;
                 this.Tail3.xRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * -1.0F * limbSwingAmount * 0.5F + -0.2F;
                 this.PectoralFinRight1.yRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * 0.05F * limbSwingAmount * 0.5F + 0.1F;
                 this.PectoralFinLeft1.yRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * 0.05F * limbSwingAmount * 0.5F + -0.1F;
@@ -425,9 +430,9 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
         @Override
         public void setupAnim(WSDolphinEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-            this.Body.yRot = (float)Math.toRadians((double)netHeadYaw) * 0.25F;
-            this.Body.xRot = (float)Math.toRadians((double)headPitch);
-            this.Head.yRot = (float)Math.toRadians((double)netHeadYaw) * 0.25F;
+            this.Body.yRot = (float) Math.toRadians((double) netHeadYaw) * 0.25F;
+            this.Body.xRot = (float) Math.toRadians((double) headPitch);
+            this.Head.yRot = (float) Math.toRadians((double) netHeadYaw) * 0.25F;
         }
 
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -440,8 +445,9 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
                 this.Tail2.xRot = MathHelper.cos(limbSwing * speed * 0.2F + 3.1415927F) * degree * -0.1F * limbSwingAmount * 0.5F;
                 this.Chest.xRot = MathHelper.cos(1.0F + limbSwing * speed * 0.2F + 3.1415927F) * degree * -0.1F * limbSwingAmount * 0.5F + 0.15F;
                 this.Tail3.xRot = MathHelper.cos(limbSwing * speed * 0.2F + 3.1415927F) * degree * -0.6F * limbSwingAmount * 0.5F + -0.2F;
-               }
+            }
         }
+
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
             float speed = 1.5F;
@@ -452,7 +458,7 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
                 this.Tail2.xRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * -0.5F * limbSwingAmount * 0.5F;
                 this.Chest.xRot = MathHelper.cos(6.0F + limbSwing * speed * 0.3F + 3.1415927F) * degree * -0.5F * limbSwingAmount * 0.5F + 0.15F;
                 this.Tail3.xRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * -1.0F * limbSwingAmount * 0.5F + -0.2F;
-                 this.PectoralFinRight.yRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * 0.05F * limbSwingAmount * 0.5F + 0.1F;
+                this.PectoralFinRight.yRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * 0.05F * limbSwingAmount * 0.5F + 0.1F;
                 this.PectoralFinLeft1.yRot = MathHelper.cos(limbSwing * speed * 0.3F + 3.1415927F) * degree * 0.05F * limbSwingAmount * 0.5F + -0.1F;
             }
 
