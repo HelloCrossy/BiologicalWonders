@@ -45,6 +45,7 @@ public class ElephantSealEntity extends ZawaSemiAquaticEntity implements Species
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(3, new NonTamedTargetGoal<>(this, PlayerEntity.class, true, (entity) -> this.distanceToSqr(entity) <= 10.0));
     }
+
     @Override
     public int getVariantByBiome(IWorld iWorld) {
         return random.nextInt(getWildVariants());
@@ -54,8 +55,6 @@ public class ElephantSealEntity extends ZawaSemiAquaticEntity implements Species
     public boolean canBabySwim() {
         return false;
     }
-
-
 
     @Override
     public float swimSpeedMultiplier() {
