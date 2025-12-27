@@ -116,8 +116,8 @@ public abstract class NapoleonWrasseModel extends ZawaBaseModel<NapoleonWrasseEn
         @Override
         public void setupAnim(NapoleonWrasseEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-            this.Head.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
-            this.Tail.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
+            this.Head.yRot = (float) Math.toRadians(netHeadYaw) *  0.25F;
+            this.Head.yRot = (float) Math.toRadians(netHeadYaw) * 0.25F;
         }
 
         @Override
@@ -125,11 +125,11 @@ public abstract class NapoleonWrasseModel extends ZawaBaseModel<NapoleonWrasseEn
             this.loadBase();
             float speed = 1.0F;
             float degree = 2.0F;
-            this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 0.2F) * limbSwingAmount * 0.5F;
-            this.Tail.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * -0.4F) * limbSwingAmount * 0.5F;
-            this.PectorialFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 2.0F) * limbSwingAmount * 0.5F + 0.409F;
-            this.PectorialFinRight.yRot = MathHelper.cos((limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * -2.0F) * limbSwingAmount * 0.5F + -0.409F;
-            this.Jaw.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 0.3F) * limbSwingAmount * 0.5F;
+            this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
+          //  this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
+            this.PectorialFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount - 0.7F;
+            this.PectorialFinRight.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + 0.77F;
+            this.Mouth.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 0.3F) * limbSwingAmount + -0.5F;
         }
 
         @Override
@@ -138,9 +138,11 @@ public abstract class NapoleonWrasseModel extends ZawaBaseModel<NapoleonWrasseEn
             if (entity.isInWater()) {
                 float speed = 1.0F;
                 float degree = 2.0F;
-                this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * 0.8F) * limbSwingAmount * 0.5F;
-                this.Tail.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * -0.9F) * limbSwingAmount * 0.5F;
-                this.TailFinTop.yRot = MathHelper.cos(4.0F + (limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * 2.5F) * limbSwingAmount * 0.5F;
+                this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.5F)) * (degree * 0.8F) * limbSwingAmount;
+                //this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -0.9F) * limbSwingAmount;
+                this.PectorialFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount - 0.77F;
+                this.PectorialFinRight.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -1.0F) * limbSwingAmount + 0.77F;
+                this.Tail.yRot = MathHelper.cos(4.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount;
             }
         }
     }
