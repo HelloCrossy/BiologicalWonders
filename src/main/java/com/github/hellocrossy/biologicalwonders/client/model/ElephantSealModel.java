@@ -519,9 +519,11 @@ public abstract class ElephantSealModel extends ZawaBaseModel<ElephantSealEntity
                 this.Body2.xRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * -0.1F) * limbSwingAmount;
                 this.Hips.xRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * -0.1F) * limbSwingAmount;
 
-                this.LegRight.xRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.25F) * limbSwingAmount;
+                this.LegRight.xRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * -0.25F) * limbSwingAmount + 0.07F;
+                this.FootRight.xRot = 0F;
                 this.FootRight.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.6F) * limbSwingAmount + 0.3F;
-                this.LegLeft.xRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.25F) * limbSwingAmount;
+                this.LegLeft.xRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * -0.25F) * limbSwingAmount + 0.07F;
+                this.FootLeft.xRot = 0F;
                 this.FootLeft.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.6F) * limbSwingAmount - 0.3F;
 
             } else {
