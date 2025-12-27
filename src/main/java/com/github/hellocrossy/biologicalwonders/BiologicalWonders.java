@@ -34,6 +34,8 @@ public class BiologicalWonders {
 
     private void setupClient(final FMLClientSetupEvent event) {
         BioBlocks.setRenderLayers();
+        BioEntities.registerRenderers();
     }
+
 }
 

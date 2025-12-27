@@ -2,24 +2,18 @@ package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.client.model.AlligatorGarModel;
 import com.github.hellocrossy.biologicalwonders.entity.AlligatorGarEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import mcp.MethodsReturnNonnullByDefault;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.vector.Vector3f;
-import org.zawamod.zawa.client.model.ZawaBaseModel;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Vector3f;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
-import org.zawamod.zawa.world.entity.ambient.ZawaSalmon;
 
 public class AlligatorGarRenderer extends ZawaMobRenderer<AlligatorGarEntity, AlligatorGarModel> {
-    public AlligatorGarRenderer(EntityRendererManager manager) {
+    public AlligatorGarRenderer(EntityRendererProvider.Context manager) {
         super(manager, new AlligatorGarModel.Adult(), new AlligatorGarModel.Child(), 0.6F);
 
     }
 
-    protected void setupRotations(AlligatorGarEntity entity, MatrixStack stack, float p_225621_3_, float p_225621_4_, float p_225621_5_) {
+    protected void setupRotations(AlligatorGarEntity entity, PoseStack stack, float p_225621_3_, float p_225621_4_, float p_225621_5_) {
         super.setupRotations(entity, stack, p_225621_3_, p_225621_4_, p_225621_5_);
         float f = 4.3F * MathHelper.sin(0.6F * p_225621_3_);
         stack.mulPose(Vector3f.YP.rotationDegrees(f));
@@ -29,10 +23,10 @@ public class AlligatorGarRenderer extends ZawaMobRenderer<AlligatorGarEntity, Al
         }
     }
         @Override
-        protected void scale (AlligatorGarEntity entity, MatrixStack matrixStack,float partialTickTime){
+        protected void scale (AlligatorGarEntity entity, PoseStack PoseStack,float partialTickTime){
             float scale = entity.isBaby() ? 0.75F : 1.0F;
-            matrixStack.scale(scale, scale, scale);
-            super.scale(entity, matrixStack, partialTickTime);
+            PoseStack.scale(scale, scale, scale);
+            super.scale(entity, PoseStack, partialTickTime);
         }
     }
 
