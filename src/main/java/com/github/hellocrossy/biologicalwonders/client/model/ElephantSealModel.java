@@ -265,7 +265,7 @@ public abstract class ElephantSealModel extends ZawaBaseModel<ElephantSealEntity
                 this.LegLeft.xRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.25F) * limbSwingAmount;
                 this.FootLeft.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.6F) * limbSwingAmount - 0.2F;
 
-            } else {
+            } else if (entity.isOnGround()) {
                 this.UpperArmRight.y = MathHelper.cos(4.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount + 2.0F;
                 this.UpperArmRight.xRot = MathHelper.cos(3.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount + 0.0F;
                 this.LowerArmRight.xRot = MathHelper.cos(4.0F + (limbSwing * speed * 0.2F)) * (degree * 0.5F) * limbSwingAmount + 0.12F;
@@ -526,7 +526,7 @@ public abstract class ElephantSealModel extends ZawaBaseModel<ElephantSealEntity
                 this.FootLeft.xRot = 0F;
                 this.FootLeft.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.6F) * limbSwingAmount - 0.3F;
 
-            } else {
+            } else if (entity.isOnGround()) {
                 this.UpperArmRight.y = MathHelper.cos(4.0F + (limbSwing * speed * 0.2F)) * (degree * 0.5F) * limbSwingAmount + -1.5F;
                 this.UpperArmRight.xRot = MathHelper.cos(3.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount + 0.0F;
                 this.LowerArmRight.xRot = MathHelper.cos(4.0F + (limbSwing * speed * 0.2F)) * (degree * 0.5F) * limbSwingAmount + 0.12F;
@@ -724,7 +724,7 @@ public abstract class ElephantSealModel extends ZawaBaseModel<ElephantSealEntity
                 this.LegRight.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.6F) * limbSwingAmount - 0.4F;
                 this.LegLeft.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.6F) * limbSwingAmount + 0.4F;
 
-            } else {
+            } else if (entity.isOnGround()) {
                 this.UpperArmRight.xRot = MathHelper.cos(3.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount + -0.085F;
                 this.ArmRight.xRot = MathHelper.cos(4.0F + (limbSwing * speed * 0.2F)) * (degree * 0.5F) * limbSwingAmount + 0.12F;
                 this.HandRight.yRot = MathHelper.cos(3.0F + (limbSwing * speed * 0.2F)) * (degree * 1.0F) * limbSwingAmount + 0.05F;
