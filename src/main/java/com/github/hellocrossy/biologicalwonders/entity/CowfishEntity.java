@@ -1,31 +1,28 @@
 package com.github.hellocrossy.biologicalwonders.entity;
 
 import com.github.hellocrossy.biologicalwonders.item.BioItems;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.PanicGoal;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.entity.AgeableEntity;
+import net.minecraft.entity.EntitySize;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.PanicGoal;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 
 import javax.annotation.Nullable;
 
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
-
 public class CowfishEntity extends ZawaAmbientFishEntity {
-    public CowfishEntity(EntityType<? extends ZawaAmbientFishEntity> type, Level world) {
+    public CowfishEntity(EntityType<? extends ZawaAmbientFishEntity> type, World world) {
         super(type, world);
     }
 
-    public static AttributeSupplier.Builder registerAttributes() {
+    public static AttributeModifierMap.MutableAttribute registerAttributes() {
         return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.30F).add(Attributes.MAX_HEALTH, 4.0);
     }
 
@@ -39,13 +36,13 @@ public class CowfishEntity extends ZawaAmbientFishEntity {
         return SoundEvents.COD_FLOP;
     }
 
-    protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
+    protected float getStandingEyeHeight(Pose pose, EntitySize size) {
         return size.height * 0.85F;
     }
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
+    public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
         return BioEntities.COWFISH.get().create(world);
     }
 

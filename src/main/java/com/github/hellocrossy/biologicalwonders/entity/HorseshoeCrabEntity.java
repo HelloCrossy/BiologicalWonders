@@ -1,38 +1,43 @@
 package com.github.hellocrossy.biologicalwonders.entity;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
+import com.github.hellocrossy.biologicalwonders.item.BioItems;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.PanicGoal;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.ClimberPathNavigator;
+import net.minecraft.pathfinding.PathNavigator;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.PanicGoal;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.Tags;
 import org.zawamod.zawa.world.entity.ClimbingEntity;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 import org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static jdk.internal.icu.lang.UCharacter.getDirection;
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class HorseshoeCrabEntity extends ZawaBaseAmbientEntity implements ClimbingEntity {
     public static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(HorseshoeCrabEntity.class, DataSerializers.BOOLEAN);
 
-    public HorseshoeCrabEntity(EntityType<? extends ZawaBaseAmbientEntity> type, Level world) {
+    public HorseshoeCrabEntity(EntityType<? extends ZawaBaseAmbientEntity> type, World world) {
         super(type, world);
         this.maxUpStep = 1.0F;
         this.setPathfindingMalus(PathNodeType.WATER, 0.0F);
     }
 
-    public static AttributeSupplier.Builder registerAttributes() {
+    public static AttributeModifierMap.MutableAttribute registerAttributes() {
         return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.30F).add(Attributes.MAX_HEALTH, 4.0);
     }
     @Override
@@ -41,13 +46,13 @@ public class HorseshoeCrabEntity extends ZawaBaseAmbientEntity implements Climbi
         this.entityData.define(CLIMBING, false);
     }
 
-    protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
+    protected float getStandingEyeHeight(Pose pose, EntitySize size) {
         return size.height * 0.85F;
     }
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
+    public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
         return BioEntities.HORSESHOE_CRAB.get().create(world);
     }
 
@@ -57,7 +62,7 @@ public class HorseshoeCrabEntity extends ZawaBaseAmbientEntity implements Climbi
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.33D));
     }
     @Override
-    protected PathNavigator createNavigation(Level world) {
+    protected PathNavigator createNavigation(World world) {
         return new ClimberPathNavigator(this, world);
     }
 
@@ -76,7 +81,7 @@ public class HorseshoeCrabEntity extends ZawaBaseAmbientEntity implements Climbi
     }
 
     @Override
-    public boolean checkSpawnObstruction(LevelAccessorReader level) {
+    public boolean checkSpawnObstruction(IWorldReader level) {
         return level.isUnobstructed(this);
     }
 

@@ -1,37 +1,35 @@
 package com.github.hellocrossy.biologicalwonders.entity;
 
 import com.github.hellocrossy.biologicalwonders.item.BioItems;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.goal.HurtByTargetGoal;
+import net.minecraft.entity.ai.goal.NonTamedTargetGoal;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class CubanCrocodileEntity extends ZawaSemiAquaticEntity implements OviparousEntity {
-    public CubanCrocodileEntity(EntityType<? extends ZawaSemiAquaticEntity> type, Level world) {
+    public CubanCrocodileEntity(EntityType<? extends ZawaSemiAquaticEntity> type, World world) {
         super(type, world);
     }
 
-    public static AttributeSupplier.Builder registerAttributes() {
+    public static AttributeModifierMap.MutableAttribute registerAttributes() {
         return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.15F).add(Attributes.MAX_HEALTH, 22.0).add(Attributes.ATTACK_DAMAGE, 6.0);
     }
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
+    public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
         return BioEntities.CUBAN_CROCODILE.get().create(world);
     }
 
@@ -45,16 +43,16 @@ public class CubanCrocodileEntity extends ZawaSemiAquaticEntity implements Ovipa
         super.registerGoals();
         this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 1.5, 1.33, true));
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
-        this.targetSelector.addGoal(3, new NonTamedTargetGoal<>(this, Player.class, true, (entity) -> this.distanceToSqr(entity) <= 10.0));
+        this.targetSelector.addGoal(3, new NonTamedTargetGoal<>(this, PlayerEntity.class, true, (entity) -> this.distanceToSqr(entity) <= 10.0));
     }
 
-    protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
+    protected float getStandingEyeHeight(Pose pose, EntitySize size) {
         return size.height * 0.85F;
     }
 
     protected void customServerAiStep() {
         if (this.getMoveControl().hasWanted()) {
-            this.setSpriLevelnting(this.getMoveControl().getSpeedModifier() >= 1.33);
+            this.setSprinting(this.getMoveControl().getSpeedModifier() >= 1.33);
         }
 
         super.customServerAiStep();
