@@ -16,7 +16,7 @@ public class TriggerfishRenderer extends ZawaMobRenderer<TriggerfishEntity, Trig
 
     @Override
     protected void scale(TriggerfishEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        matrixStack.scale(0.5F, 0.5F, 0.5F);
+        matrixStack.scale(0.65F, 0.65F, 0.65F);
         super.scale(entity, matrixStack, partialTickTime);
     }
 
