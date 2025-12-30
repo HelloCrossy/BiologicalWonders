@@ -20,6 +20,7 @@ import net.minecraft.pathfinding.ClimberPathNavigator;
 import net.minecraft.pathfinding.PathNavigator;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -30,13 +31,14 @@ import net.minecraftforge.common.Tags;
 import org.zawamod.zawa.world.entity.ClimbingEntity;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 import org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity;
+import org.zawamod.zawa.world.item.ZawaItems;
 
 import javax.annotation.Nullable;
 
-public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEntity{
+public class SeaBunnyEntity extends ZawaAmbientFishEntity implements ClimbingEntity{
     public static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(SeaBunnyEntity.class, DataSerializers.BOOLEAN);
 
-    public SeaBunnyEntity(EntityType<? extends ZawaBaseAmbientEntity> type, World world) {
+    public SeaBunnyEntity(EntityType<? extends ZawaAmbientFishEntity> type, World world) {
         super(type, world);
         this.maxUpStep = 1.0F;
         this.moveControl = new MovementController(this);
@@ -65,6 +67,13 @@ public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEnt
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
         return BioEntities.SEA_BUNNY.get().create(world);
+    }
+    protected ItemStack getBucketItemStack() {
+        return new ItemStack((IItemProvider) ZawaItems.PLECOSTOMUS_BUCKET.get());
+    }
+
+    protected SoundEvent getFlopSound() {
+        return SoundEvents.COD_FLOP;
     }
 
     public boolean isClimbing() {

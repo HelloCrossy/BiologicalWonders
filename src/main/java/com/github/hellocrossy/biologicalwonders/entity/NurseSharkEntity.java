@@ -33,7 +33,7 @@ import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEntity, ClimbingEntity {
+public class NurseSharkEntity extends ZawaAquaticEntity implements ClimbingEntity {
     public static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(NurseSharkEntity.class, DataSerializers.BOOLEAN);
 
     public NurseSharkEntity(EntityType<? extends ZawaAquaticEntity> type, World world) {
@@ -50,12 +50,6 @@ public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEnti
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
         return BioEntities.NURSE_SHARK.get().create(world);
     }
-
-    @Override
-    public ItemStack getBreedEggItem() {
-        return BioItems.NURSE_SHARK_EGG.get().getDefaultInstance();
-    }
-
     @Override
     protected void registerGoals() {
         super.registerGoals();
