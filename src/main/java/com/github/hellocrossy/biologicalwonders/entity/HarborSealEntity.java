@@ -8,14 +8,12 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ai.goal.BreachGoal;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class HarborSealEntity extends ZawaSemiAquaticEntity {
     public HarborSealEntity(EntityType<? extends ZawaSemiAquaticEntity> type, Level world) {
@@ -32,6 +30,7 @@ public class HarborSealEntity extends ZawaSemiAquaticEntity {
         return BioEntities.HARBOR_SEAL.get().create(world);
     }
 
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }

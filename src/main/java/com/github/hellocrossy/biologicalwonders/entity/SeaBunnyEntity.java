@@ -1,30 +1,40 @@
 package com.github.hellocrossy.biologicalwonders.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.Tags;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.fluids.FluidType;
 import org.zawamod.zawa.world.entity.ClimbingEntity;
 import org.zawamod.zawa.world.entity.ambient.ZawaBaseAmbientEntity;
-import javax.annotation.Nullable;
-import java.util.logging.Level;
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
-public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEntity{
-    public static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(SeaBunnyEntity.class, DataSerializers.BOOLEAN);
+import javax.annotation.Nullable;
+
+public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEntity {
+    public static final EntityDataAccessor<Boolean> CLIMBING = SynchedEntityData.defineId(SeaBunnyEntity.class, EntityDataSerializers.BOOLEAN);
 
     public SeaBunnyEntity(EntityType<? extends ZawaBaseAmbientEntity> type, Level world) {
         super(type, world);
-        this.maxUpStep = 1.0F;
-        this.moveControl = new MovementController(this);
+        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
     }
 
     public static AttributeSupplier.Builder registerSeaBunnyAttributes() {
@@ -34,10 +44,10 @@ public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEnt
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(0, new FindWaterGoal(this));
+        this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.33D));
         this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Player.class, 8.0F, 0.8D, 1.33D, AVOID_PLAYERS::test));
-        this.goalSelector.addGoal(8, new RandomWalkingGoal(this, 1.0D));
+        this.goalSelector.addGoal(8, new RandomStrollGoal(this, 1.0D));
     }
 
     @Override
@@ -52,29 +62,65 @@ public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEnt
         return BioEntities.SEA_BUNNY.get().create(world);
     }
 
-    public boolean isClimbing() {
-        return (Boolean)this.entityData.get(CLIMBING);
+    @Override
+    protected PathNavigation createNavigation(Level world) {
+        return new WallClimberNavigation(this, world);
     }
 
-    public void setClimbing(boolean climbing) {
-        this.entityData.set(CLIMBING, climbing);
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
     }
 
+    @Override
+    public boolean canBreatheUnderwater() {
+        return true;
+    }
+
+    @Override
+    public MobType getMobType() {
+        return MobType.WATER;
+    }
+
+    @Override
+    public boolean checkSpawnObstruction(LevelReader level) {
+        return level().isUnobstructed(this);
+    }
+
+    @Override
+    public boolean isPushedByFluid(FluidType type) {
+        return false;
+    }
+
+    @Override
     public void tick() {
         super.tick();
-        if (!this.level.isClientSide && this.horizontalCollision) {
-            this.setClimbing(this.isClimbableBlock(this.level, this.blockPosition().relative(this.getDirection())));
-        }
-
+        if (!level().isClientSide && horizontalCollision)
+            setClimbing(isClimbableBlock(level(), blockPosition().relative(getDirection())));
     }
 
+    @Override
     public boolean onClimbable() {
         return this.isClimbing();
     }
 
     @Override
+    public boolean causeFallDamage(float p_147187_, float p_147188_, DamageSource p_147189_) {
+        return false;
+    }
+
+    @Override
+    public boolean isClimbing() {
+        return entityData.get(CLIMBING);
+    }
+
+    @Override
+    public void setClimbing(boolean climbing) {
+        entityData.set(CLIMBING, climbing);
+    }
+
+    @Override
     public boolean isClimbableBlock(Level level, BlockPos blockPos) {
-        Block block = (level.getBlockState(blockPos)).getBlock();
-        return Tags.Blocks.DIRT.contains(block) || BlockTags.SAND.contains(block) || ClimbingEntity.super.isClimbableBlock(level, blockPos);
+        BlockState blockState = level.getBlockState(blockPos);
+        return blockState.is(BlockTags.DIRT) || blockState.is(BlockTags.SAND) || ClimbingEntity.super.isClimbableBlock(level, blockPos);
     }
 }

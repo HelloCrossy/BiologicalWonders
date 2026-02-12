@@ -10,15 +10,13 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.ai.goal.BreachGoal;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
-import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
-import javax.annotation.Nullable;
-import java.util.logging.Level;
 
-import static net.minecraft.world.entity.Mob.createMobAttributes;
+import javax.annotation.Nullable;
 
 public class AlligatorGarEntity extends ZawaAquaticEntity implements OviparousEntity {
     public AlligatorGarEntity(EntityType<? extends ZawaAquaticEntity> type, Level world) {
@@ -47,9 +45,10 @@ public class AlligatorGarEntity extends ZawaAquaticEntity implements OviparousEn
         this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 4.0, 1.33, true));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
     }
+
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }
-
 }
 

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
-import org.zawamod.zawa.Zawa;
+import net.minecraftforge.registries.RegistryObject;
 import org.zawamod.zawa.config.ZawaSpawnCategory;
 import org.zawamod.zawa.world.entity.ZawaEntityRegistry;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
@@ -15,7 +15,7 @@ import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 public class BioEntities {
-    public static final ZawaEntityRegistry REGISTRY = new ZawaEntityRegistry(BiologicalWonders.MOD_ID, Zawa.ENTITIES_GROUP);
+    public static final ZawaEntityRegistry REGISTRY = new ZawaEntityRegistry(BiologicalWonders.MOD_ID);
 
     public static final RegistryObject<EntityType<CubanCrocodileEntity>> CUBAN_CROCODILE =
             REGISTRY.builder(CubanCrocodileEntity::new, MobCategory.CREATURE)
@@ -26,7 +26,7 @@ public class BioEntities {
     public static final RegistryObject<EntityType<AlligatorGarEntity>> ALLIGATOR_GAR =
             REGISTRY.builder(AlligatorGarEntity::new, MobCategory.WATER_CREATURE)
                     .attributes(AlligatorGarEntity::registerAttributes)
-                    .spawns(10, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER,ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(10, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER, ZawaSpawnCategory.FAST_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(1.0F, 0.8F).clientTrackingRange(10))
                     .build("alligator_gar");
     public static final RegistryObject<EntityType<BlacktipSharkEntity>> BLACKTIP_SHARK =
@@ -83,11 +83,11 @@ public class BioEntities {
                     .spawns(10, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("nurse_shark");
-    public static final RegistryObject<EntityType< WSDolphinEntity>> WS_DOLPHIN =
-            REGISTRY.builder( WSDolphinEntity::new, MobCategory.WATER_CREATURE)
-                    .attributes( WSDolphinEntity::registerAttributes)
+    public static final RegistryObject<EntityType<WSDolphinEntity>> WS_DOLPHIN =
+            REGISTRY.builder(WSDolphinEntity::new, MobCategory.WATER_CREATURE)
+                    .attributes(WSDolphinEntity::registerAttributes)
                     .spawns(8, 1, 2, ZawaSpawnCategory.PELAGIC_OCEAN)
-                    .data(entityBuilder -> entityBuilder.sized(2.0F,1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(2.0F, 1.0F).clientTrackingRange(10))
                     .build("ws_dolphin");
 
     //AMBIENT ENTITIES
@@ -145,7 +145,7 @@ public class BioEntities {
                     .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("tulip_snail");
-    
+
     public static void registerSpawnPlacements() {
         SpawnPlacements.register(CUBAN_CROCODILE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaSemiAquaticEntity::checkSemiAquaticSpawnRules);
         SpawnPlacements.register(ELEPHANT_SEAL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaSemiAquaticEntity::checkSemiAquaticSpawnRules);
@@ -170,27 +170,28 @@ public class BioEntities {
         SpawnPlacements.register(TRIGGERFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
         SpawnPlacements.register(TULIP_SNAIL.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
     }
+
     public static void registerRenderers() {
-        EntityRenderers.register(CUBAN_CROCODILE.get(),CubanCrocodileRenderer::new);
-        EntityRenderers.register(ELEPHANT_SEAL.get(),ElephantSealRenderer::new);
-        EntityRenderers.register(GREY_SEAL.get(),GreySealRenderer::new);
-        EntityRenderers.register(RIBBON_SEAL.get(),RibbonSealRenderer::new);
-        EntityRenderers.register(HARBOR_SEAL.get(),HarborSealRenderer::new);
-        EntityRenderers.register(ALLIGATOR_GAR.get(),AlligatorGarRenderer::new);
-        EntityRenderers.register(BLACKTIP_SHARK.get(),BlacktipSharkRenderer::new);
-        EntityRenderers.register(COWNOSE_RAY.get(),CownoseRayRenderer::new);
-        EntityRenderers.register(LIONFISH.get(),LionfishRenderer::new);
-        EntityRenderers.register(NAPOLEON_WRASSE.get(),NapoleonWrasseRenderer::new);
-        EntityRenderers.register(NURSE_SHARK.get(),NurseSharkRenderer::new);
-        EntityRenderers.register(WS_DOLPHIN.get(),WSDolphinRenderer::new);
-        EntityRenderers.register(BUTTERFLYFISH.get(),ButterflyfishRenderer::new);
-        EntityRenderers.register(COWFISH.get(),CowfishRenderer::new);
-        EntityRenderers.register(HORSESHOE_CRAB.get(),HorseshoeCrabRenderer::new);
-        EntityRenderers.register(MOORISH_IDOL.get(),MoorishIdolRenderer::new);
-        EntityRenderers.register(SEA_BUNNY.get(),SeaBunnyRenderer::new);
-        EntityRenderers.register(SPOTTED_DRUM.get(),SpottedDrumRenderer::new);
-        EntityRenderers.register(SQUIRRELFISH.get(),SquirrelfishRenderer::new);
-        EntityRenderers.register(TRIGGERFISH.get(),TriggerfishRenderer::new);
-        EntityRenderers.register(TULIP_SNAIL.get(),TulipSnailRenderer::new);
+        EntityRenderers.register(CUBAN_CROCODILE.get(), CubanCrocodileRenderer::new);
+        EntityRenderers.register(ELEPHANT_SEAL.get(), ElephantSealRenderer::new);
+        EntityRenderers.register(GREY_SEAL.get(), GreySealRenderer::new);
+        EntityRenderers.register(RIBBON_SEAL.get(), RibbonSealRenderer::new);
+        EntityRenderers.register(HARBOR_SEAL.get(), HarborSealRenderer::new);
+        EntityRenderers.register(ALLIGATOR_GAR.get(), AlligatorGarRenderer::new);
+        EntityRenderers.register(BLACKTIP_SHARK.get(), BlacktipSharkRenderer::new);
+        EntityRenderers.register(COWNOSE_RAY.get(), CownoseRayRenderer::new);
+        EntityRenderers.register(LIONFISH.get(), LionfishRenderer::new);
+        EntityRenderers.register(NAPOLEON_WRASSE.get(), NapoleonWrasseRenderer::new);
+        EntityRenderers.register(NURSE_SHARK.get(), NurseSharkRenderer::new);
+        EntityRenderers.register(WS_DOLPHIN.get(), WSDolphinRenderer::new);
+        EntityRenderers.register(BUTTERFLYFISH.get(), ButterflyfishRenderer::new);
+        EntityRenderers.register(COWFISH.get(), CowfishRenderer::new);
+        EntityRenderers.register(HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
+        EntityRenderers.register(MOORISH_IDOL.get(), MoorishIdolRenderer::new);
+        EntityRenderers.register(SEA_BUNNY.get(), SeaBunnyRenderer::new);
+        EntityRenderers.register(SPOTTED_DRUM.get(), SpottedDrumRenderer::new);
+        EntityRenderers.register(SQUIRRELFISH.get(), SquirrelfishRenderer::new);
+        EntityRenderers.register(TRIGGERFISH.get(), TriggerfishRenderer::new);
+        EntityRenderers.register(TULIP_SNAIL.get(), TulipSnailRenderer::new);
     }
 }

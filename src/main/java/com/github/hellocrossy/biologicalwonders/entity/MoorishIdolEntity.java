@@ -7,16 +7,15 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class MoorishIdolEntity extends ZawaAmbientFishEntity {
     public MoorishIdolEntity(EntityType<? extends ZawaAmbientFishEntity> type, Level world) {
@@ -28,7 +27,7 @@ public class MoorishIdolEntity extends ZawaAmbientFishEntity {
     }
 
     @Override
-    protected ItemStack getBucketItemStack() {
+    public ItemStack getBucketItemStack() {
         return new ItemStack(BioItems.MOORISH_IDOL_BUCKET.get());
     }
 
@@ -37,6 +36,7 @@ public class MoorishIdolEntity extends ZawaAmbientFishEntity {
         return SoundEvents.COD_FLOP;
     }
 
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }

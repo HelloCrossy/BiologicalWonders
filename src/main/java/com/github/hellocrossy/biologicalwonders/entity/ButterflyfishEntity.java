@@ -12,12 +12,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class ButterflyfishEntity extends ZawaAmbientFishEntity {
     public ButterflyfishEntity(EntityType<? extends ZawaAmbientFishEntity> type, Level world) {
@@ -29,7 +27,7 @@ public class ButterflyfishEntity extends ZawaAmbientFishEntity {
     }
 
     @Override
-    protected ItemStack getBucketItemStack() {
+    public ItemStack getBucketItemStack() {
         return new ItemStack(BioItems.BUTTERFLYFISH_BUCKET.get());
     }
 
@@ -38,6 +36,7 @@ public class ButterflyfishEntity extends ZawaAmbientFishEntity {
         return SoundEvents.COD_FLOP;
     }
 
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }

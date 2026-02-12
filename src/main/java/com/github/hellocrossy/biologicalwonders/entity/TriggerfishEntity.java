@@ -12,14 +12,13 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 
 import javax.annotation.Nullable;
 
-import static net.minecraft.world.entity.Mob.createMobAttributes;
-
 public class TriggerfishEntity extends ZawaAmbientFishEntity {
-    public TriggerfishEntity(EntityType<? extends ZawaAmbientFishEntity> type, World world) {
+    public TriggerfishEntity(EntityType<? extends ZawaAmbientFishEntity> type, Level world) {
         super(type, world);
     }
 
@@ -28,7 +27,7 @@ public class TriggerfishEntity extends ZawaAmbientFishEntity {
     }
 
     @Override
-    protected ItemStack getBucketItemStack() {
+    public ItemStack getBucketItemStack() {
         return new ItemStack(BioItems.TRIGGERFISH_BUCKET.get());
     }
 
@@ -37,6 +36,7 @@ public class TriggerfishEntity extends ZawaAmbientFishEntity {
         return SoundEvents.COD_FLOP;
     }
 
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }

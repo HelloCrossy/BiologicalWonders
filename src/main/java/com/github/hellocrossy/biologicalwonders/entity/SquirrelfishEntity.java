@@ -12,15 +12,14 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class SquirrelfishEntity extends ZawaAmbientFishEntity {
-    public SquirrelfishEntity(EntityType<? extends ZawaAmbientFishEntity> type, Level world) {super(type, world);
+    public SquirrelfishEntity(EntityType<? extends ZawaAmbientFishEntity> type, Level world) {
+        super(type, world);
     }
 
     public static AttributeSupplier.Builder registerAttributes() {
@@ -28,7 +27,7 @@ public class SquirrelfishEntity extends ZawaAmbientFishEntity {
     }
 
     @Override
-    protected ItemStack getBucketItemStack() {
+    public ItemStack getBucketItemStack() {
         return new ItemStack(BioItems.SQUIRRELFISH_BUCKET.get());
     }
 
@@ -37,6 +36,7 @@ public class SquirrelfishEntity extends ZawaAmbientFishEntity {
         return SoundEvents.COD_FLOP;
     }
 
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }

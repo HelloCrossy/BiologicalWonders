@@ -8,14 +8,12 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ai.goal.BreachGoal;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class RibbonSealEntity extends ZawaSemiAquaticEntity {
     public RibbonSealEntity(EntityType<? extends ZawaSemiAquaticEntity> type, Level world) {
@@ -24,7 +22,7 @@ public class RibbonSealEntity extends ZawaSemiAquaticEntity {
 
     public static AttributeSupplier.Builder registerAttributes() {
         return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.15F).add(Attributes.MAX_HEALTH, 20.0).add(Attributes.ATTACK_DAMAGE, 4.0);
-}
+    }
 
     @Nullable
     @Override
@@ -32,6 +30,7 @@ public class RibbonSealEntity extends ZawaSemiAquaticEntity {
         return BioEntities.RIBBON_SEAL.get().create(world);
     }
 
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }

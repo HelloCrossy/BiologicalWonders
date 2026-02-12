@@ -1,8 +1,13 @@
 package com.github.hellocrossy.biologicalwonders;
 
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.entity.BioEntities;
 import com.github.hellocrossy.biologicalwonders.item.BioItems;
 import com.github.hellocrossy.biologicalwonders.sounds.BioSounds;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
+import net.minecraft.util.Tuple;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -10,6 +15,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.zawamod.zawa.Zawa;
+
+import java.util.function.Supplier;
 
 @Mod(BiologicalWonders.MOD_ID)
 public class BiologicalWonders {
@@ -25,6 +32,7 @@ public class BiologicalWonders {
 
         bus.addListener(this::addCreativeTabs);
         bus.addListener(this::setup);
+        bus.addListener(this::registerLayerDefinitions);
         bus.addListener(this::setupClient);
     }
 
@@ -48,5 +56,10 @@ public class BiologicalWonders {
         BioEntities.registerRenderers();
     }
 
+    public void registerLayerDefinitions(final EntityRenderersEvent.RegisterLayerDefinitions event) {
+        for (Tuple<ModelLayerLocation, Supplier<LayerDefinition>> layer : BioModelLayers.MODEL_LAYERS_LIST) {
+            event.registerLayerDefinition(layer.getA(), layer.getB());
+        }
+    }
 }
 

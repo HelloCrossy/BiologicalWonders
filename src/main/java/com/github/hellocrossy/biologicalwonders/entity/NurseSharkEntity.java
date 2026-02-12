@@ -2,39 +2,40 @@ package com.github.hellocrossy.biologicalwonders.entity;
 
 import com.github.hellocrossy.biologicalwonders.item.BioItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.navigation.PathNavigation;
+import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.Tags;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.fluids.FluidType;
 import org.zawamod.zawa.world.entity.ClimbingEntity;
 import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.ai.goal.BreachGoal;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
-import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
-import java.util.logging.Level;
-
-import static net.minecraft.world.entity.Mob.createMobAttributes;
 
 public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEntity, ClimbingEntity {
-    public static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(NurseSharkEntity.class, DataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Boolean> CLIMBING = SynchedEntityData.defineId(NurseSharkEntity.class, EntityDataSerializers.BOOLEAN);
 
     public NurseSharkEntity(EntityType<? extends ZawaAquaticEntity> type, Level world) {
         super(type, world);
-        this.maxUpStep = 1.0F;
-        this.moveControl = new MovementController(this);
+        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
     }
+
     public static AttributeSupplier.Builder registerAttributes() {
         return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.15F).add(Attributes.MAX_HEALTH, 12.0).add(Attributes.ATTACK_DAMAGE, 4.0);
     }
@@ -57,17 +58,23 @@ public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEnti
         this.goalSelector.addGoal(5, new ZawaMeleeAttackGoal(this, 4.0, 1.33, true));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
     }
+
+    @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(CLIMBING, false);
     }
 
-    protected PathNavigator createNavigation(Level world) {
-        return new ClimberPathNavigator(this, world);
+    @Override
+    protected PathNavigation createNavigation(Level world) {
+        return new WallClimberNavigation(this, world);
     }
+
+    @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
     }
+
     @Override
     protected void playStepSound(BlockPos blockPos, BlockState blockState) {
     }
@@ -78,25 +85,25 @@ public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEnti
     }
 
     @Override
-    public CreatureAttribute getMobType() {
-        return CreatureAttribute.WATER;
+    public MobType getMobType() {
+        return MobType.WATER;
     }
 
     @Override
-    public boolean checkSpawnObstruction(LevelAccessorReader level) {
-        return level.isUnobstructed(this);
+    public boolean checkSpawnObstruction(LevelReader level) {
+        return level().isUnobstructed(this);
     }
 
     @Override
-    public boolean isPushedByFluid() {
+    public boolean isPushedByFluid(FluidType type) {
         return false;
     }
 
     @Override
     public void tick() {
         super.tick();
-        if (!level.isClientSide && horizontalCollision)
-            setClimbing(isClimbableBlock(level, blockPosition().relative(getDirection())));
+        if (!level().isClientSide && horizontalCollision)
+            setClimbing(isClimbableBlock(level(), blockPosition().relative(getDirection())));
     }
 
     @Override
@@ -105,7 +112,7 @@ public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEnti
     }
 
     @Override
-    public boolean causeFallDamage(float distance, float damageMultiplier) {
+    public boolean causeFallDamage(float p_147187_, float p_147188_, DamageSource p_147189_) {
         return false;
     }
 
@@ -121,7 +128,7 @@ public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEnti
 
     @Override
     public boolean isClimbableBlock(Level level, BlockPos blockPos) {
-        Block block = (level.getBlockState(blockPos)).getBlock();
-        return Tags.Blocks.DIRT.contains(block) || BlockTags.SAND.contains(block) || ClimbingEntity.super.isClimbableBlock(level, blockPos);
+        BlockState blockState = level.getBlockState(blockPos);
+        return blockState.is(BlockTags.DIRT) || blockState.is(BlockTags.SAND) || ClimbingEntity.super.isClimbableBlock(level, blockPos);
     }
 }
