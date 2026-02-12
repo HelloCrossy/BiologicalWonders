@@ -159,11 +159,11 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
             this.loadBase();
             float speed = 2.0F;
             float degree = 1.5F;
-            this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
-            this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
-            this.PectoralFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount - 0.49F;
-            this.PectoralFinRight.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + 0.49F;
-            this.Mouth1.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 0.3F) * limbSwingAmount + -1.274F;
+            this.Head.yRot = Mth.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
+            this.Hips.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
+            this.PectoralFinLeft.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount - 0.49F;
+            this.PectoralFinRight.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + 0.49F;
+            this.Mouth1.xRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 0.3F) * limbSwingAmount + -1.274F;
         }
 
         @Override
@@ -172,11 +172,11 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
             if (entity.isInWater()) {
                 float speed = 1.0F;
                 float degree = 1.0F;
-                this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.5F)) * (degree * 0.8F) * limbSwingAmount;
-                this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -0.9F) * limbSwingAmount;
-                this.PectoralFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount - 0.49F;
-                this.PectoralFinRight.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -1.0F) * limbSwingAmount + 0.49F;
-                this.Tail1.yRot = MathHelper.cos(4.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount;
+                this.Head.yRot = Mth.cos((limbSwing * speed * 0.5F)) * (degree * 0.8F) * limbSwingAmount;
+                this.Hips.yRot = Mth.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -0.9F) * limbSwingAmount;
+                this.PectoralFinLeft.yRot = Mth.cos(1.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount - 0.49F;
+                this.PectoralFinRight.yRot = Mth.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -1.0F) * limbSwingAmount + 0.49F;
+                this.Tail1.yRot = Mth.cos(4.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount;
             }
         }
     }
@@ -318,7 +318,7 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
             this.loadBase();
             float speed = 2.0F;
             float degree = 1.5F;
-            this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
+            this.Head.yRot = Mth.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
             this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
             this.PectoralFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount + 0.409F;
             this.PectoralFinRight.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + -0.409F;

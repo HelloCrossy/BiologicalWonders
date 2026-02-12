@@ -218,7 +218,7 @@ public abstract class ElephantSealModel extends ZawaBaseModel<ElephantSealEntity
             this.Head.xRot = (float) Math.toRadians(headPitch) * 0.5F + (isSwimming ? 0F : 0.46F);
 
             if (isSwimming && Entity.getHorizontalDistanceSqr(entity.getDeltaMovement()) > 1.0E-7D) {
-                this.Chest.xRot += MathHelper.cos(limbSwing * 0.3F) * 0.25F * limbSwingAmount;
+                this.Chest.xRot += Mth.cos(limbSwing * 0.3F) * 0.25F * limbSwingAmount;
             }
         }
 
@@ -227,12 +227,12 @@ public abstract class ElephantSealModel extends ZawaBaseModel<ElephantSealEntity
             this.loadBase();
             float speed = 1.0F;
             float degree = 1.0F;
-            this.Neck1.xRot = MathHelper.cos((limbSwing * speed * 0.1F)) * (degree * 0.1F) * limbSwingAmount - 0.50F;
-            this.Neck2.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.1F)) * (degree * 0.2F) * limbSwingAmount + 0.20F;
-            this.Neck3.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.1F)) * (degree * 0.1F) * limbSwingAmount + 0.30F;
-            this.Head.xRot = MathHelper.cos(2.0F + (limbSwing * speed * 0.1F)) * (degree * -0.2F) * limbSwingAmount + 0.46F;
-            this.SnoutTop.xRot = MathHelper.cos(3.0F + (limbSwing * speed * 0.1F)) * (degree * -0.3F) * limbSwingAmount + 0.39F;
-            this.Nose.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.1F)) * (degree * 0.2F) * limbSwingAmount + 0.64F;
+            this.Neck1.xRot = Mth.cos((limbSwing * speed * 0.1F)) * (degree * 0.1F) * limbSwingAmount - 0.50F;
+            this.Neck2.xRot = Mth.cos(1.0F + (limbSwing * speed * 0.1F)) * (degree * 0.2F) * limbSwingAmount + 0.20F;
+            this.Neck3.xRot = Mth.cos(1.0F + (limbSwing * speed * 0.1F)) * (degree * 0.1F) * limbSwingAmount + 0.30F;
+            this.Head.xRot = Mth.cos(2.0F + (limbSwing * speed * 0.1F)) * (degree * -0.2F) * limbSwingAmount + 0.46F;
+            this.SnoutTop.xRot = Mth.cos(3.0F + (limbSwing * speed * 0.1F)) * (degree * -0.3F) * limbSwingAmount + 0.39F;
+            this.Nose.xRot = Mth.cos(1.0F + (limbSwing * speed * 0.1F)) * (degree * 0.2F) * limbSwingAmount + 0.64F;
         }
 
         @Override
@@ -245,7 +245,7 @@ public abstract class ElephantSealModel extends ZawaBaseModel<ElephantSealEntity
                 limbSwingAmount = 0.3F;
                 speed = 1.0F;
 
-                this.UpperArmRight.xRot = MathHelper.cos(3.0F + (limbSwing * speed * 0.1F)) * (degree * 0.8F) * limbSwingAmount + 0.5F;
+                this.UpperArmRight.xRot = Mth.cos(3.0F + (limbSwing * speed * 0.1F)) * (degree * 0.8F) * limbSwingAmount + 0.5F;
                 this.LowerArmRight.xRot = MathHelper.cos(4.0F + (limbSwing * speed * 0.1F)) * (degree * 0.5F) * limbSwingAmount + 0.12F;
                 this.ArmRight.zRot = MathHelper.cos(3.0F + (limbSwing * speed * 0.1F)) * (degree * -0.8F) * limbSwingAmount - 1.4F;
                 this.ArmRight.xRot = -0.09F;

@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.ButterflyfishModel;
 import com.github.hellocrossy.biologicalwonders.entity.ButterflyfishEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class ButterflyfishRenderer extends ZawaMobRenderer<ButterflyfishEntity, ButterflyfishModel> {
-    public ButterflyfishRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new ButterflyfishModel(), 0.2F);
+    public ButterflyfishRenderer(EntityRendererProvider.Context context) {
+        super(context, new ButterflyfishModel(context.bakeLayer(BioModelLayers.BUTTERFLYFISH)), 0.2F);
     }
 
     @Override

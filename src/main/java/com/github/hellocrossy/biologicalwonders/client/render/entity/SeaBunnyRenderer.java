@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.SeaBunnyModel;
 import com.github.hellocrossy.biologicalwonders.entity.SeaBunnyEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class SeaBunnyRenderer extends ZawaMobRenderer<SeaBunnyEntity, SeaBunnyModel> {
-    public SeaBunnyRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new SeaBunnyModel(), 0.2F);
+    public SeaBunnyRenderer(EntityRendererProvider.Context context) {
+        super(context, new SeaBunnyModel(context.bakeLayer(BioModelLayers.SEA_BUNNY)), 0.2F);
     }
 
     @Override

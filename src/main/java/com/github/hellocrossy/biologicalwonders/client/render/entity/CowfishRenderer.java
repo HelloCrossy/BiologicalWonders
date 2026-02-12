@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.CowfishModel;
 import com.github.hellocrossy.biologicalwonders.entity.CowfishEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class CowfishRenderer extends ZawaMobRenderer<CowfishEntity, CowfishModel> {
-    public CowfishRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new CowfishModel(), 0.2F);
+    public CowfishRenderer(EntityRendererProvider.Context context) {
+        super(context, new CowfishModel(context.bakeLayer(BioModelLayers.COWFISH)), 0.2F);
     }
 
     @Override

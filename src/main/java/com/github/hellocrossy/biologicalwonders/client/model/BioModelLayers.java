@@ -18,6 +18,40 @@ import java.util.function.Supplier;
 public class BioModelLayers {
     public static final Set<ModelLayerLocation> ALL_MODELS = Sets.newHashSet();
     public static final List<Tuple<ModelLayerLocation, Supplier<LayerDefinition>>> MODEL_LAYERS_LIST = new ArrayList<>();
+    public static final ModelLayerLocation CUBAN_CROCODILE_ADULT = register("cuban_crocodile", "adult", CubanCrocodileModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation CUBAN_CROCODILE_CHILD = register("cuban_crocodile", "child", CubanCrocodileModel.Child::createBodyLayer);
+    public static final ModelLayerLocation ALLIGATOR_GAR_ADULT = register("alligator_gar", "adult", AlligatorGarModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation ALLIGATOR_GAR_CHILD = register("alligator_gar", "child", AlligatorGarModel.Child::createBodyLayer);
+    public static final ModelLayerLocation BLACKTIP_SHARK_ADULT = register("blacktip_shark", "adult", BlacktipSharkModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation BLACKTIP_SHARK_CHILD = register("blacktip_shark", "child", BlacktipSharkModel.Child::createBodyLayer);
+    public static final ModelLayerLocation COWNOSE_RAY_ADULT = register("cownose_ray", "adult", CownoseRayModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation COWNOSE_RAY_CHILD = register("cownose_ray", "child", CownoseRayModel.Child::createBodyLayer);
+    public static final ModelLayerLocation ELEPHANT_SEAL_ADULT_MALE = register("elephant_seal", "adult/male", ElephantSealModel.AdultMale::createBodyLayer);
+    public static final ModelLayerLocation ELEPHANT_SEAL_ADULT_FEMALE = register("elephant_seal", "adult/female", ElephantSealModel.AdultFemale::createBodyLayer);
+    public static final ModelLayerLocation ELEPHANT_SEAL_CHILD = register("elephant_seal", "child", ElephantSealModel.Child::createBodyLayer);
+    public static final ModelLayerLocation GREY_SEAL_ADULT = register("grey_seal", "adult", GreySealModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation GREY_SEAL_CHILD = register("grey_seal", "child", GreySealModel.Child::createBodyLayer);
+    public static final ModelLayerLocation RIBBON_SEAL_ADULT = register("ribbon_seal", "adult", RibbonSealModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation RIBBON_SEAL_CHILD = register("ribbon_seal", "child", RibbonSealModel.Child::createBodyLayer);
+    public static final ModelLayerLocation HARBOR_SEAL_ADULT = register("harbor_seal", "adult", HarborSealModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation HARBOR_SEAL_CHILD = register("harbor_seal", "child", HarborSealModel.Child::createBodyLayer);
+    public static final ModelLayerLocation LIONFISH_ADULT = register("lionfish", "adult", LionfishModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation LIONFISH_CHILD = register("lionfish", "child", LionfishModel.Child::createBodyLayer);
+    public static final ModelLayerLocation NAPOLEON_WRASSE_ADULT = register("napoleon_wrasse", "adult", NapoleonWrasseModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation NAPOLEON_WRASSE_CHILD = register("napoleon_wrasse", "child", NapoleonWrasseModel.Child::createBodyLayer);
+    public static final ModelLayerLocation NURSE_SHARK_ADULT = register("nurse_shark", "adult", NurseSharkModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation NURSE_SHARK_CHILD = register("nurse_shark", "child", NurseSharkModel.Child::createBodyLayer);
+    public static final ModelLayerLocation WS_DOLPHIN_ADULT = register("ws_dolphin", "adult", WSDolphinModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation WS_DOLPHIN_CHILD = register("ws_dolphin", "child", WSDolphinModel.Child::createBodyLayer);
+    public static final ModelLayerLocation BUTTERFLYFISH = register("butterflyfish", ButterflyfishModel::createBodyLayer);
+    public static final ModelLayerLocation COWFISH = register("cowfish", CowfishModel::createBodyLayer);
+    public static final ModelLayerLocation HORSESHOE_CRAB = register("horseshoe_crab", HorseshoeCrabModel::createBodyLayer);
+    public static final ModelLayerLocation MOORISH_IDOL = register("moorish_idol", MoorishIdolModel::createBodyLayer);
+    public static final ModelLayerLocation SEA_BUNNY = register("sea_bunny", SeaBunnyModel::createBodyLayer);
+    public static final ModelLayerLocation SPOTTED_DRUM = register("spotted_drum", SpottedDrumModel::createBodyLayer);
+    public static final ModelLayerLocation SQUIRRELFISH = register("squirrelfish", SquirrelfishModel::createBodyLayer);
+    public static final ModelLayerLocation TRIGGERFISH = register("triggerfish", TriggerfishModel::createBodyLayer);
+    public static final ModelLayerLocation TULIP_SNAIL = register("tulip_snail", TulipSnailModel::createBodyLayer);
 
     public BioModelLayers() {
     }

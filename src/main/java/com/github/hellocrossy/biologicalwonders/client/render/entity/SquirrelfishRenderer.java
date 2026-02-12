@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.SquirrelfishModel;
 import com.github.hellocrossy.biologicalwonders.entity.SquirrelfishEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class SquirrelfishRenderer extends ZawaMobRenderer<SquirrelfishEntity, SquirrelfishModel> {
-    public SquirrelfishRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new SquirrelfishModel(), 0.2F);
+    public SquirrelfishRenderer(EntityRendererProvider.Context context) {
+        super(context, new SquirrelfishModel(context.bakeLayer(BioModelLayers.SQUIRRELFISH)), 0.2F);
     }
 
     @Override

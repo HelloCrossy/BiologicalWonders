@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.TulipSnailModel;
 import com.github.hellocrossy.biologicalwonders.entity.TulipSnailEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class TulipSnailRenderer extends ZawaMobRenderer<TulipSnailEntity, TulipSnailModel> {
-    public TulipSnailRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new TulipSnailModel(), 0.2F);
+    public TulipSnailRenderer(EntityRendererProvider.Context context) {
+        super(context, new TulipSnailModel(context.bakeLayer(BioModelLayers.TULIP_SNAIL)), 0.2F);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.MoorishIdolModel;
 import com.github.hellocrossy.biologicalwonders.entity.MoorishIdolEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class MoorishIdolRenderer extends ZawaMobRenderer<MoorishIdolEntity, MoorishIdolModel> {
-    public MoorishIdolRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new MoorishIdolModel(), 0.2F);
+    public MoorishIdolRenderer(EntityRendererProvider.Context context) {
+        super(context, new MoorishIdolModel(context.bakeLayer(BioModelLayers.MOORISH_IDOL)), 0.2F);
     }
 
     @Override

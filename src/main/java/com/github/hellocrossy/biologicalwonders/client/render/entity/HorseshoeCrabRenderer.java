@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.HorseshoeCrabModel;
 import com.github.hellocrossy.biologicalwonders.entity.HorseshoeCrabEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class HorseshoeCrabRenderer extends ZawaMobRenderer<HorseshoeCrabEntity, HorseshoeCrabModel> {
-    public HorseshoeCrabRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new HorseshoeCrabModel(), 0.2F);
+    public HorseshoeCrabRenderer(EntityRendererProvider.Context context) {
+        super(context, new HorseshoeCrabModel(context.bakeLayer(BioModelLayers.HORSESHOE_CRAB)), 0.2F);
     }
 
     @Override

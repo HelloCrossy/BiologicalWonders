@@ -133,11 +133,11 @@ public abstract class NapoleonWrasseModel extends ZawaBaseModel<NapoleonWrasseEn
             this.loadBase();
             float speed = 1.0F;
             float degree = 2.0F;
-            this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
-          //  this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
-            this.PectorialFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount - 0.7F;
-            this.PectorialFinRight.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + 0.77F;
-            this.Mouth.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 0.3F) * limbSwingAmount + -0.5F;
+            this.Head.yRot = Mth.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
+          //  this.Hips.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
+            this.PectorialFinLeft.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount - 0.7F;
+            this.PectorialFinRight.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + 0.77F;
+            this.Mouth.xRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 0.3F) * limbSwingAmount + -0.5F;
         }
 
         @Override
@@ -146,11 +146,11 @@ public abstract class NapoleonWrasseModel extends ZawaBaseModel<NapoleonWrasseEn
             if (entity.isInWater()) {
                 float speed = 1.0F;
                 float degree = 2.0F;
-                this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.5F)) * (degree * 0.8F) * limbSwingAmount;
-                //this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -0.9F) * limbSwingAmount;
-                this.PectorialFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount - 0.77F;
-                this.PectorialFinRight.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -1.0F) * limbSwingAmount + 0.77F;
-                this.Tail.yRot = MathHelper.cos(4.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount;
+                this.Head.yRot = Mth.cos((limbSwing * speed * 0.5F)) * (degree * 0.8F) * limbSwingAmount;
+                //this.Hips.yRot = Mth.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -0.9F) * limbSwingAmount;
+                this.PectorialFinLeft.yRot = Mth.cos(1.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount - 0.77F;
+                this.PectorialFinRight.yRot = Mth.cos(1.0F + (limbSwing * speed * 1F)) * (degree * -1.0F) * limbSwingAmount + 0.77F;
+                this.Tail.yRot = Mth.cos(4.0F + (limbSwing * speed * 1F)) * (degree * 1.0F) * limbSwingAmount;
             }
         }
     }

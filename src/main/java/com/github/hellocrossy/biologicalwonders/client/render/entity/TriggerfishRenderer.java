@@ -1,6 +1,7 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
 import com.github.hellocrossy.biologicalwonders.BiologicalWonders;
+import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.TriggerfishModel;
 import com.github.hellocrossy.biologicalwonders.entity.TriggerfishEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,8 +11,8 @@ import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 import org.zawamod.zawa.resources.EntityStatsManager;
 
 public class TriggerfishRenderer extends ZawaMobRenderer<TriggerfishEntity, TriggerfishModel> {
-    public TriggerfishRenderer(EntityRendererProvider.Context manager) {
-        super(manager, new TriggerfishModel(), 0.2F);
+    public TriggerfishRenderer(EntityRendererProvider.Context context) {
+        super(context, new TriggerfishModel(context.bakeLayer(BioModelLayers.TRIGGERFISH)), 0.2F);
     }
 
     @Override
