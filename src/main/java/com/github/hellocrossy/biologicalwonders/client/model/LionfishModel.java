@@ -3,9 +3,13 @@ package com.github.hellocrossy.biologicalwonders.client.model;
 import com.github.hellocrossy.biologicalwonders.entity.LionfishEntity;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Entity;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 
 public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
@@ -13,7 +17,6 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
     protected Iterable<ModelPart> parts;
 
     @Override
-    @MethodsReturnNonnullByDefault
     public Iterable<ModelPart> parts() {
         if (this.parts == null) {
             this.parts = ImmutableList.of(Body);
@@ -43,110 +46,65 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
 
         public Adult(ModelPart root) {
             this.Body = root.getChild("Body");
-            this.texWidth = 64;
-            this.texHeight = 32;
+            this.Chest = this.Body.getChild("Chest");
+            this.Head = this.Chest.getChild("Head");
+            this.RightEye = this.Head.getChild("RightEye");
+            this.EyelashRight = this.RightEye.getChild("EyelashRight");
 
-            this.Body.addChild(this.Chest);
-            this.Tail1.addChild(this.Tail2);
-            this.Head.addChild(this.RightEye);
-            this.Head.addChild(this.Mouth1);
-            this.Hips.addChild(this.DorsalFin2);
-            this.Body.addChild(this.PectoralFinLeft);
-            this.Body.addChild(this.PectoralFinRight);
-            this.RightEye.addChild(this.EyelashRight);
-            this.Hips.addChild(this.Tail1);
-            this.Mouth1.addChild(this.Mouth2);
-            this.Body.addChild(this.Hips);
-            this.Chest.addChild(this.Head);
-            this.Head.addChild(this.LeftEye);
-            this.Body.addChild(this.DorsalFin1);
-            this.DorsalFin2.addChild(this.AnalFin);
-            this.Tail2.addChild(this.TailFin);
-            this.LeftEye.addChild(this.EyelashLeft);
-            
+            this.Mouth1 = this.Head.getChild("Mouth1");
+            this.Mouth2 = this.Mouth1.getChild("Mouth2");
 
+            this.LeftEye = this.Head.getChild("LeftEye");
+            this.EyelashLeft = this.LeftEye.getChild("EyelashLeft");
+
+            this.PectoralFinLeft = this.Body.getChild("PectoralFinLeft");
+
+            this.PectoralFinRight = this.Body.getChild("PectoralFinRight");
+
+            this.Hips = this.Body.getChild("Hips");
+            this.DorsalFin2 = this.Hips.getChild("DorsalFin2");
+            this.AnalFin = this.DorsalFin2.getChild("AnalFin");
+
+            this.Tail1 = this.Hips.getChild("Tail1");
+            this.Tail2 = this.Tail1.getChild("Tail2");
+            this.TailFin = this.Tail2.getChild("TailFin");
+
+            this.DorsalFin1 = this.Body.getChild("DorsalFin1");
         }
+
         public static LayerDefinition createBodyLayer() {
             MeshDefinition meshDefinition = new MeshDefinition();
             PartDefinition partDefinition = meshDefinition.getRoot();
 
-            this.RightEye = new ModelPart(this, 29, 0);
-            this.RightEye.mirror = true;
-            this.RightEye.setPos(-1.0F, 0.5F, -2.8F);
-            this.RightEye.addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(RightEye, 0.8196066007575706F, 0.0F, 0.0F);
-            this.TailFin = new ModelPart(this, 17, 12);
-            this.TailFin.mirror = true;
-            this.TailFin.setPos(0.0F, 0.0F, 1.0F);
-            this.TailFin.addBox(0.0F, -3.0F, 0.0F, 0.0F, 6.0F, 4.0F, 0.0F, 0.0F, 0.0F);
-            this.PectoralFinLeft = new ModelPart(this, -1, 13);
-            this.PectoralFinLeft.mirror = true;
-            this.PectoralFinLeft.setPos(1.9F, 0.5F, -2.5F);
-            this.PectoralFinLeft.addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(PectoralFinLeft, -0.23457224414434488F, 0.5462880425584197F, 0.0F);
-            this.Tail2 = new ModelPart(this, 0, 0);
-            this.Tail2.setPos(0.0F, -0.1F, 2.0F);
-            this.Tail2.addBox(-0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.Tail1 = new ModelPart(this, 44, 0);
-            this.Tail1.setPos(0.0F, 0.2F, 2.2F);
-            this.Tail1.addBox(-1.0F, -1.5F, 0.0F, 2.0F, 3.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Tail1, 0.19547687289441354F, 0.0F, 0.0F);
-            this.LeftEye = new ModelPart(this, 29, 0);
-            this.LeftEye.setPos(1.0F, 0.5F, -2.8F);
-            this.LeftEye.addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(LeftEye, 0.8196066007575706F, 0.0F, 0.0F);
-            this.Mouth1 = new ModelPart(this, 30, 7);
-            this.Mouth1.setPos(0.0F, 1.1F, 0.0F);
-            this.Mouth1.addBox(-0.8F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Mouth1, -1.2747885016356248F, 0.0F, 0.0F);
-            this.DorsalFin1 = new ModelPart(this, 34, 7);
-            this.DorsalFin1.mirror = true;
-            this.DorsalFin1.setPos(0.0F, -1.4F, 0.6F);
-            this.DorsalFin1.addBox(0.0F, -6.0F, -4.5F, 0.0F, 7.0F, 9.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(DorsalFin1, 0.0781907508222411F, 0.0F, 0.0F);
-            this.Mouth2 = new ModelPart(this, 30, 7);
-            this.Mouth2.setPos(0.0F, 0.0F, 0.0F);
-            this.Mouth2.addBox(-0.2F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.Head = new ModelPart(this, 20, 7);
-            this.Head.setPos(0.0F, 1.21F, -1.05F);
-            this.Head.addBox(-1.0F, -1.5F, -3.0F, 2.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Head, -0.8196066007575706F, 0.0F, 0.0F);
-            this.DorsalFin2 = new ModelPart(this, 7, 13);
-            this.DorsalFin2.mirror = true;
-            this.DorsalFin2.setPos(0.0F, -1.5F, 3.5F);
-            this.DorsalFin2.addBox(0.0F, -3.0F, -2.0F, 0.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.Hips = new ModelPart(this, 20, 0);
-            this.Hips.setPos(0.0F, -0.2F, 0.5F);
-            this.Hips.addBox(-1.5F, -2.0F, 0.0F, 3.0F, 4.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Hips, -0.19547687289441354F, 0.0F, 0.0F);
-            this.Body = new ModelPart(this, 0, 0);
-            this.Body.setPos(0.0F, 18.21F, 0.4F);
-            this.Body.addBox(-2.0F, -2.5F, -3.0F, 4.0F, 5.0F, 5.0F, 0.0F, 0.0F, 0.0F);
-            this.Chest = new ModelPart(this, 32, 0);
-            this.Chest.setPos(0.0F, -0.3F, -2.4F);
-            this.Chest.addBox(-1.5F, -2.0F, -2.0F, 3.0F, 4.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Chest, 0.27366763203903305F, 0.0F, 0.0F);
-            this.AnalFin = new ModelPart(this, 7, 10);
-            this.AnalFin.mirror = true;
-            this.AnalFin.setPos(0.0F, 3.5F, -1.4F);
-            this.AnalFin.addBox(0.0F, 0.0F, 0.0F, 0.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(AnalFin, 0.5473352640780661F, 0.0F, 0.0F);
-            this.EyelashRight = new ModelPart(this, 0, 17);
-            this.EyelashRight.setPos(-0.1F, 0.0F, 0.0F);
-            this.EyelashRight.addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(EyelashRight, -0.27314402127920984F, 0.0F, 0.0F);
-            this.PectoralFinRight = new ModelPart(this, -1, 13);
-            this.PectoralFinRight.setPos(-1.9F, 0.5F, -2.5F);
-            this.PectoralFinRight.addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(PectoralFinRight, -0.23457224414434488F, -0.5462880425584197F, 0.0F);
-            this.EyelashLeft = new ModelPart(this, 0, 17);
-            this.EyelashLeft.mirror = true;
-            this.EyelashLeft.setPos(0.1F, 0.0F, 0.0F);
-            this.EyelashLeft.addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(EyelashLeft, -0.27314402127920984F, 0.0F, 0.0F);
+            PartDefinition Body = partDefinition.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(0, 0).addBox(-2.0F, -2.5F, -3.0F, 4.0F, 5.0F, 5.0F), PartPose.offset(0.0F, 18.21F, 0.4F));
+            PartDefinition Chest = Body.addOrReplaceChild("RightEye", CubeListBuilder.create().texOffs(29, 0).mirror(true).addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(-1.0F, 0.5F, -2.8F, 0.8196066007575706F, 0.0F, 0.0F));
+            PartDefinition Head = Chest.addOrReplaceChild("Hips", CubeListBuilder.create().texOffs(20, 0).addBox(-1.5F, -2.0F, 0.0F, 3.0F, 4.0F, 3.0F), PartPose.offsetAndRotation(0.0F, -0.2F, 0.5F, -0.19547687289441354F, 0.0F, 0.0F));
+            PartDefinition RightEye = Head.addOrReplaceChild("PectoralFinLeft", CubeListBuilder.create().texOffs(-1, 13).mirror(true).addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F), PartPose.offsetAndRotation(1.9F, 0.5F, -2.5F, -0.23457224414434488F, 0.5462880425584197F, 0.0F));
+            PartDefinition EyelashRight = RightEye.addOrReplaceChild("DorsalFin1", CubeListBuilder.create().texOffs(34, 7).mirror(true).addBox(0.0F, -6.0F, -4.5F, 0.0F, 7.0F, 9.0F), PartPose.offsetAndRotation(0.0F, -1.4F, 0.6F, 0.0781907508222411F, 0.0F, 0.0F));
 
-            return LayerDefinition.create(meshDefinition, texWidth, texHeight);
+            PartDefinition Mouth1 = Head.addOrReplaceChild("Tail2", CubeListBuilder.create().texOffs(0, 0).addBox(-0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 1.0F), PartPose.offset(0.0F, -0.1F, 2.0F));
+            PartDefinition Mouth2 = Mouth1.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(20, 7).addBox(-1.0F, -1.5F, -3.0F, 2.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 1.21F, -1.05F, -0.8196066007575706F, 0.0F, 0.0F));
+
+            PartDefinition LeftEye = Head.addOrReplaceChild("Chest", CubeListBuilder.create().texOffs(32, 0).addBox(-1.5F, -2.0F, -2.0F, 3.0F, 4.0F, 2.0F), PartPose.offsetAndRotation(0.0F, -0.3F, -2.4F, 0.27366763203903305F, 0.0F, 0.0F));
+            PartDefinition EyelashLeft = LeftEye.addOrReplaceChild("EyelashLeft", CubeListBuilder.create().texOffs(0, 17).mirror(true).addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(0.1F, 0.0F, 0.0F, -0.27314402127920984F, 0.0F, 0.0F));
+
+            PartDefinition PectoralFinLeft = Body.addOrReplaceChild("LeftEye", CubeListBuilder.create().texOffs(29, 0).addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(1.0F, 0.5F, -2.8F, 0.8196066007575706F, 0.0F, 0.0F));
+
+            PartDefinition PectoralFinRight = Body.addOrReplaceChild("Mouth1", CubeListBuilder.create().texOffs(30, 7).addBox(-0.8F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 1.1F, 0.0F, -1.2747885016356248F, 0.0F, 0.0F));
+
+            PartDefinition Hips = Body.addOrReplaceChild("DorsalFin2", CubeListBuilder.create().texOffs(7, 13).mirror(true).addBox(0.0F, -3.0F, -2.0F, 0.0F, 3.0F, 3.0F), PartPose.offset(0.0F, -1.5F, 3.5F));
+            PartDefinition DorsalFin2 = Hips.addOrReplaceChild("Tail1", CubeListBuilder.create().texOffs(44, 0).addBox(-1.0F, -1.5F, 0.0F, 2.0F, 3.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 0.2F, 2.2F, 0.19547687289441354F, 0.0F, 0.0F));
+            PartDefinition AnalFin = DorsalFin2.addOrReplaceChild("EyelashRight", CubeListBuilder.create().texOffs(0, 17).addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(-0.1F, 0.0F, 0.0F, -0.27314402127920984F, 0.0F, 0.0F));
+
+            PartDefinition Tail1 = Hips.addOrReplaceChild("Mouth2", CubeListBuilder.create().texOffs(30, 7).addBox(-0.2F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F), PartPose.offset(0.0F, 0.0F, 0.0F));
+            PartDefinition Tail2 = Tail1.addOrReplaceChild("TailFin", CubeListBuilder.create().texOffs(17, 12).mirror(true).addBox(0.0F, -3.0F, 0.0F, 0.0F, 6.0F, 4.0F), PartPose.offset(0.0F, 0.0F, 1.0F));
+            PartDefinition TailFin = Tail2.addOrReplaceChild("PectoralFinRight", CubeListBuilder.create().texOffs(-1, 13).addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F), PartPose.offsetAndRotation(-1.9F, 0.5F, -2.5F, -0.23457224414434488F, -0.5462880425584197F, 0.0F));
+
+            PartDefinition DorsalFin1 = Body.addOrReplaceChild("AnalFin", CubeListBuilder.create().texOffs(7, 10).mirror(true).addBox(0.0F, 0.0F, 0.0F, 0.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 3.5F, -1.4F, 0.5473352640780661F, 0.0F, 0.0F));
+
+            return LayerDefinition.create(meshDefinition, 64, 32);
         }
+
         @Override
         public void setupAnim(LionfishEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
@@ -202,110 +160,65 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
 
         public Child(ModelPart root) {
             this.Body = root.getChild("Body");
-            this.texWidth = 64;
-            this.texHeight = 32;
+            this.PectoralFinLeft = this.Body.getChild("PectoralFinLeft");
 
-            this.Head.addChild(this.RightEye);
-            this.Tail2.addChild(this.TailFin);
-            this.Body.addChild(this.PectoralFinLeft);
-            this.Tail1.addChild(this.Tail2);
-            this.Hips.addChild(this.Tail1);
-            this.Head.addChild(this.LeftEye);
-            this.Head.addChild(this.Mouth1);
-            this.Body.addChild(this.DorsalFin1);
-            this.Mouth1.addChild(this.Mouth2);
-            this.Chest.addChild(this.Head);
-            this.Hips.addChild(this.DorsalFin2);
-            this.Body.addChild(this.Hips);
-            this.Body.addChild(this.Chest);
-            this.DorsalFin2.addChild(this.AnalFin);
-            this.RightEye.addChild(this.EyelashRight);
-            this.Body.addChild(this.PectoralFinRight);
-            this.LeftEye.addChild(this.EyelashLeft);
-            
+            this.DorsalFin1 = this.Body.getChild("DorsalFin1");
 
+            this.Hips = this.Body.getChild("Hips");
+            this.Tail1 = this.Hips.getChild("Tail1");
+            this.Tail2 = this.Tail1.getChild("Tail2");
+            this.TailFin = this.Tail2.getChild("TailFin");
+
+            this.DorsalFin2 = this.Hips.getChild("DorsalFin2");
+            this.AnalFin = this.DorsalFin2.getChild("AnalFin");
+
+            this.Chest = this.Body.getChild("Chest");
+            this.Head = this.Chest.getChild("Head");
+            this.RightEye = this.Head.getChild("RightEye");
+            this.EyelashRight = this.RightEye.getChild("EyelashRight");
+
+            this.LeftEye = this.Head.getChild("LeftEye");
+            this.EyelashLeft = this.LeftEye.getChild("EyelashLeft");
+
+            this.Mouth1 = this.Head.getChild("Mouth1");
+            this.Mouth2 = this.Mouth1.getChild("Mouth2");
+
+            this.PectoralFinRight = this.Body.getChild("PectoralFinRight");
         }
+
         public static LayerDefinition createBodyLayer() {
             MeshDefinition meshDefinition = new MeshDefinition();
             PartDefinition partDefinition = meshDefinition.getRoot();
 
-            this.RightEye = new ModelPart(this, 29, 0);
-            this.RightEye.mirror = true;
-            this.RightEye.setPos(-1.0F, 0.5F, -2.8F);
-            this.RightEye.addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(RightEye, 0.8196066007575706F, 0.0F, 0.0F);
-            this.TailFin = new ModelPart(this, 17, 12);
-            this.TailFin.mirror = true;
-            this.TailFin.setPos(0.0F, 0.0F, 1.0F);
-            this.TailFin.addBox(0.0F, -3.0F, 0.0F, 0.0F, 6.0F, 4.0F, 0.0F, 0.0F, 0.0F);
-            this.PectoralFinLeft = new ModelPart(this, -1, 13);
-            this.PectoralFinLeft.mirror = true;
-            this.PectoralFinLeft.setPos(1.9F, 0.5F, -2.5F);
-            this.PectoralFinLeft.addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(PectoralFinLeft, -0.23457224414434488F, 0.5462880425584197F, 0.0F);
-            this.Tail2 = new ModelPart(this, 0, 0);
-            this.Tail2.setPos(0.0F, -0.1F, 2.0F);
-            this.Tail2.addBox(-0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.Tail1 = new ModelPart(this, 44, 0);
-            this.Tail1.setPos(0.0F, 0.2F, 2.2F);
-            this.Tail1.addBox(-1.0F, -1.5F, 0.0F, 2.0F, 3.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Tail1, 0.19547687289441354F, 0.0F, 0.0F);
-            this.LeftEye = new ModelPart(this, 29, 0);
-            this.LeftEye.setPos(1.0F, 0.5F, -2.8F);
-            this.LeftEye.addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(LeftEye, 0.8196066007575706F, 0.0F, 0.0F);
-            this.Mouth1 = new ModelPart(this, 30, 7);
-            this.Mouth1.setPos(0.0F, 1.1F, 0.0F);
-            this.Mouth1.addBox(-0.8F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Mouth1, -1.2747885016356248F, 0.0F, 0.0F);
-            this.DorsalFin1 = new ModelPart(this, 34, 7);
-            this.DorsalFin1.mirror = true;
-            this.DorsalFin1.setPos(0.0F, -1.4F, 0.6F);
-            this.DorsalFin1.addBox(0.0F, -6.0F, -4.5F, 0.0F, 7.0F, 9.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(DorsalFin1, 0.0781907508222411F, 0.0F, 0.0F);
-            this.Mouth2 = new ModelPart(this, 30, 7);
-            this.Mouth2.setPos(0.0F, 0.0F, 0.0F);
-            this.Mouth2.addBox(-0.2F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.Head = new ModelPart(this, 20, 7);
-            this.Head.setPos(0.0F, 1.21F, -1.05F);
-            this.Head.addBox(-1.0F, -1.5F, -3.0F, 2.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Head, -0.8196066007575706F, 0.0F, 0.0F);
-            this.DorsalFin2 = new ModelPart(this, 7, 13);
-            this.DorsalFin2.mirror = true;
-            this.DorsalFin2.setPos(0.0F, -1.5F, 3.5F);
-            this.DorsalFin2.addBox(0.0F, -3.0F, -2.0F, 0.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.Hips = new ModelPart(this, 20, 0);
-            this.Hips.setPos(0.0F, -0.2F, 0.5F);
-            this.Hips.addBox(-1.5F, -2.0F, 0.0F, 3.0F, 4.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Hips, -0.19547687289441354F, 0.0F, 0.0F);
-            this.Body = new ModelPart(this, 0, 0);
-            this.Body.setPos(0.0F, 18.21F, 0.4F);
-            this.Body.addBox(-2.0F, -2.5F, -3.0F, 4.0F, 5.0F, 5.0F, 0.0F, 0.0F, 0.0F);
-            this.Chest = new ModelPart(this, 32, 0);
-            this.Chest.setPos(0.0F, -0.3F, -2.4F);
-            this.Chest.addBox(-1.5F, -2.0F, -2.0F, 3.0F, 4.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(Chest, 0.27366763203903305F, 0.0F, 0.0F);
-            this.AnalFin = new ModelPart(this, 7, 10);
-            this.AnalFin.mirror = true;
-            this.AnalFin.setPos(0.0F, 3.5F, -1.4F);
-            this.AnalFin.addBox(0.0F, 0.0F, 0.0F, 0.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(AnalFin, 0.5473352640780661F, 0.0F, 0.0F);
-            this.EyelashRight = new ModelPart(this, 0, 17);
-            this.EyelashRight.setPos(-0.1F, 0.0F, 0.0F);
-            this.EyelashRight.addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(EyelashRight, -0.27314402127920984F, 0.0F, 0.0F);
-            this.PectoralFinRight = new ModelPart(this, -1, 13);
-            this.PectoralFinRight.setPos(-1.9F, 0.5F, -2.5F);
-            this.PectoralFinRight.addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(PectoralFinRight, -0.23457224414434488F, -0.5462880425584197F, 0.0F);
-            this.EyelashLeft = new ModelPart(this, 0, 17);
-            this.EyelashLeft.mirror = true;
-            this.EyelashLeft.setPos(0.1F, 0.0F, 0.0F);
-            this.EyelashLeft.addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F, 0.0F, 0.0F, 0.0F);
-            this.setRotateAngle(EyelashLeft, -0.27314402127920984F, 0.0F, 0.0F);
+            PartDefinition Body = partDefinition.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(0, 0).addBox(-2.0F, -2.5F, -3.0F, 4.0F, 5.0F, 5.0F), PartPose.offset(0.0F, 18.21F, 0.4F));
+            PartDefinition PectoralFinLeft = Body.addOrReplaceChild("PectoralFinLeft", CubeListBuilder.create().texOffs(-1, 13).mirror(true).addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F), PartPose.offsetAndRotation(1.9F, 0.5F, -2.5F, -0.23457224414434488F, 0.5462880425584197F, 0.0F));
 
-            return LayerDefinition.create(meshDefinition, texWidth, texHeight);
+            PartDefinition DorsalFin1 = Body.addOrReplaceChild("DorsalFin1", CubeListBuilder.create().texOffs(34, 7).mirror(true).addBox(0.0F, -6.0F, -4.5F, 0.0F, 7.0F, 9.0F), PartPose.offsetAndRotation(0.0F, -1.4F, 0.6F, 0.0781907508222411F, 0.0F, 0.0F));
+
+            PartDefinition Hips = Body.addOrReplaceChild("Hips", CubeListBuilder.create().texOffs(20, 0).addBox(-1.5F, -2.0F, 0.0F, 3.0F, 4.0F, 3.0F), PartPose.offsetAndRotation(0.0F, -0.2F, 0.5F, -0.19547687289441354F, 0.0F, 0.0F));
+            PartDefinition Tail1 = Hips.addOrReplaceChild("Tail1", CubeListBuilder.create().texOffs(44, 0).addBox(-1.0F, -1.5F, 0.0F, 2.0F, 3.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 0.2F, 2.2F, 0.19547687289441354F, 0.0F, 0.0F));
+            PartDefinition Tail2 = Tail1.addOrReplaceChild("Tail2", CubeListBuilder.create().texOffs(0, 0).addBox(-0.5F, -1.0F, 0.0F, 1.0F, 2.0F, 1.0F), PartPose.offset(0.0F, -0.1F, 2.0F));
+            PartDefinition TailFin = Tail2.addOrReplaceChild("TailFin", CubeListBuilder.create().texOffs(17, 12).mirror(true).addBox(0.0F, -3.0F, 0.0F, 0.0F, 6.0F, 4.0F), PartPose.offset(0.0F, 0.0F, 1.0F));
+
+            PartDefinition DorsalFin2 = Hips.addOrReplaceChild("DorsalFin2", CubeListBuilder.create().texOffs(7, 13).mirror(true).addBox(0.0F, -3.0F, -2.0F, 0.0F, 3.0F, 3.0F), PartPose.offset(0.0F, -1.5F, 3.5F));
+            PartDefinition AnalFin = DorsalFin2.addOrReplaceChild("AnalFin", CubeListBuilder.create().texOffs(7, 10).mirror(true).addBox(0.0F, 0.0F, 0.0F, 0.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 3.5F, -1.4F, 0.5473352640780661F, 0.0F, 0.0F));
+
+            PartDefinition Chest = Body.addOrReplaceChild("Chest", CubeListBuilder.create().texOffs(32, 0).addBox(-1.5F, -2.0F, -2.0F, 3.0F, 4.0F, 2.0F), PartPose.offsetAndRotation(0.0F, -0.3F, -2.4F, 0.27366763203903305F, 0.0F, 0.0F));
+            PartDefinition Head = Chest.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(20, 7).addBox(-1.0F, -1.5F, -3.0F, 2.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.0F, 1.21F, -1.05F, -0.8196066007575706F, 0.0F, 0.0F));
+            PartDefinition RightEye = Head.addOrReplaceChild("RightEye", CubeListBuilder.create().texOffs(29, 0).mirror(true).addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(-1.0F, 0.5F, -2.8F, 0.8196066007575706F, 0.0F, 0.0F));
+            PartDefinition EyelashRight = RightEye.addOrReplaceChild("EyelashRight", CubeListBuilder.create().texOffs(0, 17).addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(-0.1F, 0.0F, 0.0F, -0.27314402127920984F, 0.0F, 0.0F));
+
+            PartDefinition LeftEye = Head.addOrReplaceChild("LeftEye", CubeListBuilder.create().texOffs(29, 0).addBox(-0.5F, -0.5F, -0.5F, 1.0F, 1.0F, 1.0F), PartPose.offsetAndRotation(1.0F, 0.5F, -2.8F, 0.8196066007575706F, 0.0F, 0.0F));
+            PartDefinition EyelashLeft = LeftEye.addOrReplaceChild("EyelashLeft", CubeListBuilder.create().texOffs(0, 17).mirror(true).addBox(0.0F, -2.0F, -0.5F, 0.0F, 2.0F, 1.0F), PartPose.offsetAndRotation(0.1F, 0.0F, 0.0F, -0.27314402127920984F, 0.0F, 0.0F));
+
+            PartDefinition Mouth1 = Head.addOrReplaceChild("Mouth1", CubeListBuilder.create().texOffs(30, 7).addBox(-0.8F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F), PartPose.offsetAndRotation(0.0F, 1.1F, 0.0F, -1.2747885016356248F, 0.0F, 0.0F));
+            PartDefinition Mouth2 = Mouth1.addOrReplaceChild("Mouth2", CubeListBuilder.create().texOffs(30, 7).addBox(-0.2F, 0.0F, -0.5F, 1.0F, 3.0F, 1.0F), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+            PartDefinition PectoralFinRight = Body.addOrReplaceChild("PectoralFinRight", CubeListBuilder.create().texOffs(-1, 13).addBox(0.0F, -4.5F, 0.0F, 0.0F, 9.0F, 8.0F), PartPose.offsetAndRotation(-1.9F, 0.5F, -2.5F, -0.23457224414434488F, -0.5462880425584197F, 0.0F));
+
+            return LayerDefinition.create(meshDefinition, 64, 32);
         }
+
         @Override
         public void setupAnim(LionfishEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
@@ -319,10 +232,10 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
             float speed = 2.0F;
             float degree = 1.5F;
             this.Head.yRot = Mth.cos((limbSwing * speed * 0.2F)) * (degree * 0.2F) * limbSwingAmount;
-            this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
-            this.PectoralFinLeft.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount + 0.409F;
-            this.PectoralFinRight.yRot = MathHelper.cos((limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + -0.409F;
-            this.Mouth2.xRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 0.3F) * limbSwingAmount;
+            this.Hips.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * -0.4F) * limbSwingAmount;
+            this.PectoralFinLeft.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 2.0F) * limbSwingAmount + 0.409F;
+            this.PectoralFinRight.yRot = Mth.cos((limbSwing * speed * 0.2F)) * (degree * -2.0F) * limbSwingAmount + -0.409F;
+            this.Mouth2.xRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F)) * (degree * 0.3F) * limbSwingAmount;
         }
 
         @Override
@@ -331,9 +244,9 @@ public abstract class LionfishModel extends ZawaBaseModel<LionfishEntity> {
             if (entity.isInWater()) {
                 float speed = 2.0F;
                 float degree = 1.5F;
-                this.Head.yRot = MathHelper.cos((limbSwing * speed * 0.5F)) * (degree * 0.8F) * limbSwingAmount;
-                this.Hips.yRot = MathHelper.cos(1.0F + (limbSwing * speed * 0.5F)) * (degree * -0.9F) * limbSwingAmount;
-                this.Tail1.yRot = MathHelper.cos(4.0F + (limbSwing * speed * 0.5F)) * (degree * 2.5F) * limbSwingAmount;
+                this.Head.yRot = Mth.cos((limbSwing * speed * 0.5F)) * (degree * 0.8F) * limbSwingAmount;
+                this.Hips.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.5F)) * (degree * -0.9F) * limbSwingAmount;
+                this.Tail1.yRot = Mth.cos(4.0F + (limbSwing * speed * 0.5F)) * (degree * 2.5F) * limbSwingAmount;
             }
         }
     }
