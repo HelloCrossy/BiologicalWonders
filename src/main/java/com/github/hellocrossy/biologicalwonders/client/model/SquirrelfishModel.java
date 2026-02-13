@@ -3,11 +3,14 @@ package com.github.hellocrossy.biologicalwonders.client.model;
 import com.github.hellocrossy.biologicalwonders.entity.SquirrelfishEntity;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.geom.ModelPart;
+import net.minecraft.client.model.geom.PartPose;
+import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
+import org.zawamod.zawa.client.model.ZawaBaseAmbientModel;
 
-public class SquirrelfishModel extends SegmentedModel<SquirrelfishEntity> {
+public class SquirrelfishModel extends ZawaBaseAmbientModel<SquirrelfishEntity> {
     public ModelPart Body;
     public ModelPart Tail;
     public ModelPart BackFin;
@@ -32,80 +35,56 @@ public class SquirrelfishModel extends SegmentedModel<SquirrelfishEntity> {
 
     public SquirrelfishModel(ModelPart root) {
         this.Body = root.getChild("Body");
-        this.texWidth = 64;
-        this.texHeight = 32;
+        this.UnderFinLeft = this.Body.getChild("UnderFinLeft");
 
-        this.Body.addChild(this.UnderFinLeft);
-        this.Body.addChild(this.PectoralFinLeft);
-        this.Body.addChild(this.BackFin);
-        this.Body.addChild(this.PectoralFinRight);
-        this.Tail.addChild(this.BackFin2);
-        this.Tail.addChild(this.TailFinTop);
-        this.Body.addChild(this.UnderFinRight);
-        this.Tail.addChild(this.TailFinBottom);
-        this.Body.addChild(this.Tail);
-        this.Body.addChild(this.head);
-        this.head.addChild(this.Mouth);
+        this.PectoralFinLeft = this.Body.getChild("PectoralFinLeft");
+
+        this.BackFin = this.Body.getChild("BackFin");
+
+        this.PectoralFinRight = this.Body.getChild("PectoralFinRight");
+
+        this.UnderFinRight = this.Body.getChild("UnderFinRight");
+
+        this.Tail = this.Body.getChild("Tail");
+        this.BackFin2 = this.Tail.getChild("BackFin2");
+
+        this.TailFinTop = this.Tail.getChild("TailFinTop");
+
+        this.TailFinBottom = this.Tail.getChild("TailFinBottom");
+
+        this.head = this.Body.getChild("head");
+        this.Mouth = this.head.getChild("Mouth");
     }
+
     public static LayerDefinition createBodyLayer() {
         MeshDefinition meshDefinition = new MeshDefinition();
         PartDefinition partDefinition = meshDefinition.getRoot();
 
-        this.UnderFinLeft = new ModelPart(this, 0, 28);
-        this.UnderFinLeft.setPos(1.2F, 2.5F, -1.0F);
-        this.UnderFinLeft.addBox(0.0F, 0.0F, -1.0F, 3.0F, 0.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(UnderFinLeft, -0.04555309164612875F, -0.18203784630933073F, 1.2747885016356248F);
-        this.PectoralFinLeft = new ModelPart(this, 27, 13);
-        this.PectoralFinLeft.setPos(2.3F, 2.7F, -2.5F);
-        this.PectoralFinLeft.addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 4.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(PectoralFinLeft, 0.0F, 0.3186971254089062F, 0.0F);
-        this.BackFin = new ModelPart(this, 40, 19);
-        this.BackFin.setPos(0.5F, -1.7F, 1.4F);
-        this.BackFin.addBox(0.0F, -2.0F, -2.5F, 0.0F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F);
-        this.PectoralFinRight = new ModelPart(this, 40, 6);
-        this.PectoralFinRight.setPos(-1.3F, 2.7F, -2.6F);
-        this.PectoralFinRight.addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 4.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(PectoralFinRight, 0.0F, -0.3186971254089062F, 0.0F);
-        this.Body = new ModelPart(this, 0, 0);
-        this.Body.setPos(0.0F, 19.0F, -1.8F);
-        this.Body.addBox(-1.5F, -1.5F, -2.5F, 4.0F, 5.0F, 7.0F, 0.0F, 0.0F, 0.0F);
-        this.BackFin2 = new ModelPart(this, 4, 17);
-        this.BackFin2.setPos(0.0F, -0.3F, 1.9F);
-        this.BackFin2.addBox(0.0F, -4.0F, -1.0F, 0.0F, 4.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(BackFin2, -0.500909508638178F, 0.0F, 0.0F);
-        this.TailFinTop = new ModelPart(this, 3, 10);
-        this.TailFinTop.setPos(0.0F, 0.4F, 4.2F);
-        this.TailFinTop.addBox(0.0F, -4.0F, -1.5F, 0.0F, 4.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(TailFinTop, -1.0016444470669013F, 0.0F, 0.0F);
-        this.UnderFinRight = new ModelPart(this, 13, 15);
-        this.UnderFinRight.setPos(-0.2F, 2.5F, -1.0F);
-        this.UnderFinRight.addBox(0.0F, 0.0F, -1.0F, 3.0F, 0.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(UnderFinRight, -0.04555309164612875F, -0.18203784630933073F, 1.8212510478244721F);
-        this.TailFinBottom = new ModelPart(this, 11, 10);
-        this.TailFinBottom.setPos(0.0F, 0.6F, 3.4F);
-        this.TailFinBottom.addBox(0.0F, -4.0F, -1.5F, 0.0F, 4.0F, 2.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(TailFinBottom, -2.048841998263499F, 0.0F, 0.0F);
-        this.Tail = new ModelPart(this, 22, 0);
-        this.Tail.setPos(0.5F, 1.0F, 2.4F);
-        this.Tail.addBox(-1.5F, -1.5F, 0.0F, 3.0F, 3.0F, 5.0F, 0.0F, 0.0F, 0.0F);
-        this.head = new ModelPart(this, 38, 0);
-        this.head.setPos(0.5F, 0.2F, -2.2F);
-        this.head.addBox(-1.5F, -1.5F, -3.0F, 3.0F, 3.0F, 3.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(head, 0.13665927909957545F, 0.0F, 0.0F);
-        this.Mouth = new ModelPart(this, 50, 0);
-        this.Mouth.setPos(0.0F, 0.5F, -2.4F);
-        this.Mouth.addBox(-1.0F, -1.5F, -1.5F, 2.0F, 3.0F, 4.0F, 0.0F, 0.0F, 0.0F);
-        this.setRotateAngle(Mouth, -0.500909508638178F, 0.0F, 0.0F);
+        PartDefinition Body = partDefinition.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(0, 0).addBox(-1.5F, -1.5F, -2.5F, 4.0F, 5.0F, 7.0F), PartPose.offset(0.0F, 19.0F, -1.8F));
+        PartDefinition UnderFinLeft = Body.addOrReplaceChild("UnderFinLeft", CubeListBuilder.create().texOffs(0, 28).addBox(0.0F, 0.0F, -1.0F, 3.0F, 0.0F, 3.0F), PartPose.offsetAndRotation(1.2F, 2.5F, -1.0F, -0.04555309164612875F, -0.18203784630933073F, 1.2747885016356248F));
 
-        return LayerDefinition.create(meshDefinition, texWidth, texHeight);
+        PartDefinition PectoralFinLeft = Body.addOrReplaceChild("PectoralFinLeft", CubeListBuilder.create().texOffs(27, 13).addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 4.0F), PartPose.offsetAndRotation(2.3F, 2.7F, -2.5F, 0.0F, 0.3186971254089062F, 0.0F));
+
+        PartDefinition BackFin = Body.addOrReplaceChild("BackFin", CubeListBuilder.create().texOffs(40, 19).addBox(0.0F, -2.0F, -2.5F, 0.0F, 3.0F, 5.0F), PartPose.offset(0.5F, -1.7F, 1.4F));
+
+        PartDefinition PectoralFinRight = Body.addOrReplaceChild("PectoralFinRight", CubeListBuilder.create().texOffs(40, 6).addBox(0.0F, -1.0F, 0.0F, 0.0F, 2.0F, 4.0F), PartPose.offsetAndRotation(-1.3F, 2.7F, -2.6F, 0.0F, -0.3186971254089062F, 0.0F));
+
+        PartDefinition UnderFinRight = Body.addOrReplaceChild("UnderFinRight", CubeListBuilder.create().texOffs(13, 15).addBox(0.0F, 0.0F, -1.0F, 3.0F, 0.0F, 3.0F), PartPose.offsetAndRotation(-0.2F, 2.5F, -1.0F, -0.04555309164612875F, -0.18203784630933073F, 1.8212510478244721F));
+
+        PartDefinition Tail = Body.addOrReplaceChild("Tail", CubeListBuilder.create().texOffs(22, 0).addBox(-1.5F, -1.5F, 0.0F, 3.0F, 3.0F, 5.0F), PartPose.offset(0.5F, 1.0F, 2.4F));
+        PartDefinition BackFin2 = Tail.addOrReplaceChild("BackFin2", CubeListBuilder.create().texOffs(4, 17).addBox(0.0F, -4.0F, -1.0F, 0.0F, 4.0F, 2.0F), PartPose.offsetAndRotation(0.0F, -0.3F, 1.9F, -0.500909508638178F, 0.0F, 0.0F));
+
+        PartDefinition TailFinTop = Tail.addOrReplaceChild("TailFinTop", CubeListBuilder.create().texOffs(3, 10).addBox(0.0F, -4.0F, -1.5F, 0.0F, 4.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 0.4F, 4.2F, -1.0016444470669013F, 0.0F, 0.0F));
+
+        PartDefinition TailFinBottom = Tail.addOrReplaceChild("TailFinBottom", CubeListBuilder.create().texOffs(11, 10).addBox(0.0F, -4.0F, -1.5F, 0.0F, 4.0F, 2.0F), PartPose.offsetAndRotation(0.0F, 0.6F, 3.4F, -2.048841998263499F, 0.0F, 0.0F));
+
+        PartDefinition head = Body.addOrReplaceChild("head", CubeListBuilder.create().texOffs(38, 0).addBox(-1.5F, -1.5F, -3.0F, 3.0F, 3.0F, 3.0F), PartPose.offsetAndRotation(0.5F, 0.2F, -2.2F, 0.13665927909957545F, 0.0F, 0.0F));
+        PartDefinition Mouth = head.addOrReplaceChild("Mouth", CubeListBuilder.create().texOffs(50, 0).addBox(-1.0F, -1.5F, -1.5F, 2.0F, 3.0F, 4.0F), PartPose.offsetAndRotation(0.0F, 0.5F, -2.4F, -0.500909508638178F, 0.0F, 0.0F));
+
+        return LayerDefinition.create(meshDefinition, 64, 32);
     }
+
     @Override
     public void setupAnim(SquirrelfishEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-    }
-
-    public void setRotateAngle(ModelPart ModelPart, float x, float y, float z) {
-        ModelPart.xRot = x;
-        ModelPart.yRot = y;
-        ModelPart.zRot = z;
     }
 }
