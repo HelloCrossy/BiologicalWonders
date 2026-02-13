@@ -41,8 +41,8 @@ public class BioModelLayers {
     public static final ModelLayerLocation NAPOLEON_WRASSE_CHILD = register("napoleon_wrasse", "child", NapoleonWrasseModel.Child::createBodyLayer);
     public static final ModelLayerLocation NURSE_SHARK_ADULT = register("nurse_shark", "adult", NurseSharkModel.Adult::createBodyLayer);
     public static final ModelLayerLocation NURSE_SHARK_CHILD = register("nurse_shark", "child", NurseSharkModel.Child::createBodyLayer);
-    public static final ModelLayerLocation WS_DOLPHIN_ADULT = register("ws_dolphin", "adult", WSDolphinModel.Adult::createBodyLayer);
-    public static final ModelLayerLocation WS_DOLPHIN_CHILD = register("ws_dolphin", "child", WSDolphinModel.Child::createBodyLayer);
+    public static final ModelLayerLocation PACIFIC_WHITE_SIDED_DOLPHIN_ADULT = register("pacific_white_sided_dolphin", "adult", PacificWhiteSidedDolphinModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation PACIFIC_WHITE_SIDED_DOLPHIN_CHILD = register("pacific_white_sided_dolphin", "child", PacificWhiteSidedDolphinModel.Child::createBodyLayer);
     public static final ModelLayerLocation BUTTERFLYFISH = register("butterflyfish", ButterflyfishModel::createBodyLayer);
     public static final ModelLayerLocation COWFISH = register("cowfish", CowfishModel::createBodyLayer);
     public static final ModelLayerLocation HORSESHOE_CRAB = register("horseshoe_crab", HorseshoeCrabModel::createBodyLayer);

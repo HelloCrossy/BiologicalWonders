@@ -1,6 +1,6 @@
 package com.github.hellocrossy.biologicalwonders.client.model;
 
-import com.github.hellocrossy.biologicalwonders.entity.WSDolphinEntity;
+import com.github.hellocrossy.biologicalwonders.entity.PacificWhiteSidedDolphinEntity;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -9,7 +9,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 
-public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
+public abstract class PacificWhiteSidedDolphinModel extends ZawaBaseModel<PacificWhiteSidedDolphinEntity> {
     public ModelPart Body;
     protected Iterable<ModelPart> parts;
 
@@ -22,7 +22,7 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
         return this.parts;
     }
 
-    public static class Adult extends WSDolphinModel {
+    public static class Adult extends PacificWhiteSidedDolphinModel {
         public ModelPart Chest;
         public ModelPart Tail1;
         public ModelPart TopFin1Right;
@@ -155,7 +155,7 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
         }
 
         @Override
-        public void setupAnim(WSDolphinEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        public void setupAnim(PacificWhiteSidedDolphinEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Body.yRot = (float) Math.toRadians(netHeadYaw) * 0.25F;
             this.Body.xRot = (float) Math.toRadians(headPitch);
@@ -197,7 +197,7 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
         }
     }
 
-    public static class Child extends WSDolphinModel {
+    public static class Child extends PacificWhiteSidedDolphinModel {
         public ModelPart Chest;
         public ModelPart Tail1;
         public ModelPart TopFin1Right;
@@ -307,7 +307,7 @@ public abstract class WSDolphinModel extends ZawaBaseModel<WSDolphinEntity> {
         }
 
         @Override
-        public void setupAnim(WSDolphinEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        public void setupAnim(PacificWhiteSidedDolphinEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             this.Body.yRot = (float) Math.toRadians(netHeadYaw) * 0.25F;
             this.Body.xRot = (float) Math.toRadians(headPitch);

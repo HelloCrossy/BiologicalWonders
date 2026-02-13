@@ -83,12 +83,12 @@ public class BioEntities {
                     .spawns(10, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("nurse_shark");
-    public static final RegistryObject<EntityType<WSDolphinEntity>> WS_DOLPHIN =
-            REGISTRY.builder(WSDolphinEntity::new, MobCategory.WATER_CREATURE)
-                    .attributes(WSDolphinEntity::registerAttributes)
+    public static final RegistryObject<EntityType<PacificWhiteSidedDolphinEntity>> PACIFIC_WHITE_SIDED_DOLPHIN =
+            REGISTRY.builder(PacificWhiteSidedDolphinEntity::new, MobCategory.WATER_CREATURE)
+                    .attributes(PacificWhiteSidedDolphinEntity::registerAttributes)
                     .spawns(8, 1, 2, ZawaSpawnCategory.PELAGIC_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(2.0F, 1.0F).clientTrackingRange(10))
-                    .build("ws_dolphin");
+                    .build("pacific_white_sided_dolphin");
 
     //AMBIENT ENTITIES
     public static final RegistryObject<EntityType<ButterflyfishEntity>> BUTTERFLYFISH =
@@ -158,7 +158,7 @@ public class BioEntities {
         SpawnPlacements.register(LIONFISH.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         SpawnPlacements.register(NAPOLEON_WRASSE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         SpawnPlacements.register(NURSE_SHARK.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
-        SpawnPlacements.register(WS_DOLPHIN.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
+        SpawnPlacements.register(PACIFIC_WHITE_SIDED_DOLPHIN.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
 
         SpawnPlacements.register(BUTTERFLYFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
         SpawnPlacements.register(COWFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
@@ -183,7 +183,7 @@ public class BioEntities {
         EntityRenderers.register(LIONFISH.get(), LionfishRenderer::new);
         EntityRenderers.register(NAPOLEON_WRASSE.get(), NapoleonWrasseRenderer::new);
         EntityRenderers.register(NURSE_SHARK.get(), NurseSharkRenderer::new);
-        EntityRenderers.register(WS_DOLPHIN.get(), WSDolphinRenderer::new);
+        EntityRenderers.register(PACIFIC_WHITE_SIDED_DOLPHIN.get(), PacificWhiteSidedDolphinRenderer::new);
         EntityRenderers.register(BUTTERFLYFISH.get(), ButterflyfishRenderer::new);
         EntityRenderers.register(COWFISH.get(), CowfishRenderer::new);
         EntityRenderers.register(HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
