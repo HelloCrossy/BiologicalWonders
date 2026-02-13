@@ -20,8 +20,8 @@ import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class WSDolphinEntity extends ZawaAquaticEntity {
-    public WSDolphinEntity(EntityType<? extends ZawaAquaticEntity> type, World world) {
+public class PacificWhiteSidedDolphinEntity extends ZawaAquaticEntity {
+    public PacificWhiteSidedDolphinEntity(EntityType<? extends ZawaAquaticEntity> type, World world) {
         super(type, world);
     }
 
@@ -32,7 +32,7 @@ public class WSDolphinEntity extends ZawaAquaticEntity {
     @Nullable
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
-        return BioEntities.WS_DOLPHIN.get().create(world);
+        return BioEntities.PACIFIC_WHITE_SIDED_DOLPHIN.get().create(world);
     }
 
     @Override

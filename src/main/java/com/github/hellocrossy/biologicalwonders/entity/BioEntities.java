@@ -95,13 +95,13 @@ public class BioEntities {
                     .spawns(10, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
                     .build("nurse_shark");
-    public static final RegistryObject<EntityType< WSDolphinEntity>> WS_DOLPHIN =
-            REGISTRY.builder( WSDolphinEntity::new, EntityClassification.WATER_CREATURE)
-                    .attributes( WSDolphinEntity::registerAttributes)
-                    .renderer(() ->  WSDolphinRenderer::new)
+    public static final RegistryObject<EntityType<PacificWhiteSidedDolphinEntity>> PACIFIC_WHITE_SIDED_DOLPHIN =
+            REGISTRY.builder(PacificWhiteSidedDolphinEntity::new, EntityClassification.WATER_CREATURE)
+                    .attributes(PacificWhiteSidedDolphinEntity::registerAttributes)
+                    .renderer(() ->  PacificWhiteSidedDolphinRenderer::new)
                     .spawns(8, 1, 2, ZawaSpawnCategory.PELAGIC_OCEAN)
-                    .data(entityBuilder -> entityBuilder.sized(2.0F,1.0F).clientTrackingRange(10))
-                    .build("ws_dolphin");
+                    .data(entityBuilder -> entityBuilder.sized(2.0F, 1.0F).clientTrackingRange(10))
+                    .build("pacific_white_sided_dolphin");
     public static final RegistryObject<EntityType<KingfisherEntity>> KINGFISHER =
             REGISTRY.builder(KingfisherEntity::new, EntityClassification.CREATURE)
                     .attributes(KingfisherEntity::registerAttributes)
@@ -175,7 +175,7 @@ public class BioEntities {
                     .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("tulip_snail");
-    
+
     public static void registerSpawnPlacements() {
         EntitySpawnPlacementRegistry.register(CUBAN_CROCODILE.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaSemiAquaticEntity::checkSemiAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(ELEPHANT_SEAL.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaSemiAquaticEntity::checkSemiAquaticSpawnRules);
@@ -188,7 +188,7 @@ public class BioEntities {
         EntitySpawnPlacementRegistry.register(LIONFISH.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(NAPOLEON_WRASSE.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(NURSE_SHARK.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
-        EntitySpawnPlacementRegistry.register(WS_DOLPHIN.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
+        EntitySpawnPlacementRegistry.register(PACIFIC_WHITE_SIDED_DOLPHIN.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(KINGFISHER.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, ZawaFlyingEntity::checkFlyingSpawnRules);
 
         EntitySpawnPlacementRegistry.register(BUTTERFLYFISH.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
