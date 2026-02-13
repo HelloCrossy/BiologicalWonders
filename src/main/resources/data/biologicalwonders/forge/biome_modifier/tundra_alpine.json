@@ -1,0 +1,25 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:or",
+    "values": [
+      {
+        "type": "forge:and",
+        "values": [
+          "#is_overworld",
+          "#forge:is_slope",
+          "#forge:is_snowy"
+        ]
+      },
+      {
+        "type": "forge:and",
+        "values": [
+          "#is_overworld",
+          "#forge:is_peak",
+          "#forge:is_snowy"
+        ]
+      }
+    ]
+  },
+  "spawners": []
+}

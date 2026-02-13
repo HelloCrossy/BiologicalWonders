@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:and",
+    "values": [
+      "#is_overworld",
+      {"type": "forge:or", "values": ["#forge:is_plains", "#forge:is_wasteland"]},
+      {"type": "forge:not", "value": "#forge:is_hot"}
+    ]
+  },
+  "spawners": []
+}

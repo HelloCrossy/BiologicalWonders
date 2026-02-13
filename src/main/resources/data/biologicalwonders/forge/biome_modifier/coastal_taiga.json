@@ -1,0 +1,28 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:or",
+    "values": [
+      {
+        "type": "forge:and",
+        "values": [
+          "#is_overworld",
+          "#forge:is_coniferous",
+          {"type": "forge:not", "value": "#forge:is_snowy"},
+          {"type": "forge:not", "value": "#minecraft:is_mountain"},
+          {"type": "forge:not", "value": "#minecraft:is_hill"}
+        ]
+      },
+      {
+        "type": "forge:and",
+        "values": [
+          "#is_overworld",
+          "#minecraft:is_beach",
+          {"type": "forge:not", "value": "#forge:is_hot"},
+          {"type": "forge:not", "value": "#forge:is_rare"}
+        ]
+      }
+    ]
+  },
+  "spawners": []
+}

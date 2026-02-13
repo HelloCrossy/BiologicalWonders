@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:and",
+    "values": [
+      "#is_overworld",
+      "#forge:is_plateau",
+      {"type": "forge:not", "value": "#forge:is_wet"}
+    ]
+  },
+  "spawners": []
+}

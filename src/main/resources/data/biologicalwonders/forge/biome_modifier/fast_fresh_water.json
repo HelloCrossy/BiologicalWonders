@@ -1,0 +1,72 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:and",
+    "values": [
+      "#is_overworld",
+      "#minecraft:is_river"
+    ]
+  },
+  "spawners": [
+    {
+      "type": "ecoregions:alligator_gar",
+      "weight": 10,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "ecoregions:butterflyfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:cowfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:horseshoe_crab",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:moorish_idol",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:sea_bunny",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:spotted_drum",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:squirrelfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:triggerfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "ecoregions:tulip_snail",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    }
+  ]
+}

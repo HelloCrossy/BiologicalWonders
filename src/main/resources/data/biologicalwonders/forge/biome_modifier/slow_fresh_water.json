@@ -1,0 +1,32 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:or",
+    "values": [
+      {"type": "forge:and", "values": ["#is_overworld", "#forge:is_swamp"]},
+      {
+        "type": "forge:and",
+        "values": [
+          "#is_overworld",
+          "#forge:is_water",
+          {"type": "forge:not", "value": "#minecraft:is_river"},
+          {"type": "forge:not", "value": "#minecraft:is_ocean"}
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "ecoregions:cuban_crocodile",
+      "weight": 2,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "ecoregions:alligator_gar",
+      "weight": 10,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

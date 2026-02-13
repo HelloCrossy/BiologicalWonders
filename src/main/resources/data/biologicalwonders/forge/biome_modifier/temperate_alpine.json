@@ -1,0 +1,15 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:and",
+    "values": [
+      "#is_overworld",
+      {"type": "forge:or", "values": ["#minecraft:is_hill", "#forge:is_slope"]},
+      {"type": "forge:not", "value": "#forge:is_dense"},
+      {"type": "forge:not", "value": "#forge:is_cold"},
+      {"type": "forge:not", "value": "#forge:is_hot"},
+      {"type": "forge:not", "value": "#minecraft:is_badlands"}
+    ]
+  },
+  "spawners": []
+}

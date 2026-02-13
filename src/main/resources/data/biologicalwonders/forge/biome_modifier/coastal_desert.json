@@ -1,0 +1,51 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:or",
+    "values": [
+      {
+        "type": "forge:and",
+        "values": [
+          "#is_overworld",
+          "#minecraft:is_beach",
+          {"type": "forge:not", "value": "#forge:is_cold"},
+          {"type": "forge:not", "value": "#forge:is_snowy"}
+        ]
+      },
+      {
+        "type": "forge:and",
+        "values": [
+          "#is_overworld",
+          "#minecraft:is_savanna",
+          {"type": "forge:not", "value": "#forge:is_rare"}
+        ]
+      }
+    ]
+  },
+  "spawners": [
+    {
+      "type": "ecoregions:elephant_seal",
+      "weight": 10,
+      "minCount": 2,
+      "maxCount": 5
+    },
+    {
+      "type": "ecoregions:grey_seal",
+      "weight": 8,
+      "minCount": 1,
+      "maxCount": 4
+    },
+    {
+      "type": "ecoregions:ribbon_seal",
+      "weight": 8,
+      "minCount": 1,
+      "maxCount": 4
+    },
+    {
+      "type": "ecoregions:harbor_seal",
+      "weight": 10,
+      "minCount": 1,
+      "maxCount": 4
+    }
+  ]
+}
