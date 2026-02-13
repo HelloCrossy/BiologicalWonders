@@ -19,8 +19,8 @@ import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class BlacktipSharkEntity extends ZawaAquaticEntity implements OviparousEntity {
-    public BlacktipSharkEntity(EntityType<? extends ZawaAquaticEntity> type, Level world) {
+public class BlacktipReefSharkEntity extends ZawaAquaticEntity implements OviparousEntity {
+    public BlacktipReefSharkEntity(EntityType<? extends ZawaAquaticEntity> type, Level world) {
         super(type, world);
     }
 
@@ -31,12 +31,12 @@ public class BlacktipSharkEntity extends ZawaAquaticEntity implements OviparousE
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
-        return BioEntities.BLACKTIP_SHARK.get().create(world);
+        return BioEntities.BLACKTIP_REEF_SHARK.get().create(world);
     }
 
     @Override
     public ItemStack getBreedEggItem() {
-        return BioItems.BLACKTIP_SHARK_EGG.get().getDefaultInstance();
+        return BioItems.BLACKTIP_REEF_SHARK_EGG.get().getDefaultInstance();
     }
 
     @Override

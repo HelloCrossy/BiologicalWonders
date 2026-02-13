@@ -22,8 +22,8 @@ public class BioModelLayers {
     public static final ModelLayerLocation CUBAN_CROCODILE_CHILD = register("cuban_crocodile", "child", CubanCrocodileModel.Child::createBodyLayer);
     public static final ModelLayerLocation ALLIGATOR_GAR_ADULT = register("alligator_gar", "adult", AlligatorGarModel.Adult::createBodyLayer);
     public static final ModelLayerLocation ALLIGATOR_GAR_CHILD = register("alligator_gar", "child", AlligatorGarModel.Child::createBodyLayer);
-    public static final ModelLayerLocation BLACKTIP_SHARK_ADULT = register("blacktip_shark", "adult", BlacktipSharkModel.Adult::createBodyLayer);
-    public static final ModelLayerLocation BLACKTIP_SHARK_CHILD = register("blacktip_shark", "child", BlacktipSharkModel.Child::createBodyLayer);
+    public static final ModelLayerLocation BLACKTIP_REEF_SHARK_ADULT = register("blacktip_reef_shark", "adult", BlacktipReefSharkModel.Adult::createBodyLayer);
+    public static final ModelLayerLocation BLACKTIP_REEF_SHARK_CHILD = register("blacktip_reef_shark", "child", BlacktipReefSharkModel.Child::createBodyLayer);
     public static final ModelLayerLocation COWNOSE_RAY_ADULT = register("cownose_ray", "adult", CownoseRayModel.Adult::createBodyLayer);
     public static final ModelLayerLocation COWNOSE_RAY_CHILD = register("cownose_ray", "child", CownoseRayModel.Child::createBodyLayer);
     public static final ModelLayerLocation ELEPHANT_SEAL_ADULT_MALE = register("elephant_seal", "adult/male", ElephantSealModel.AdultMale::createBodyLayer);

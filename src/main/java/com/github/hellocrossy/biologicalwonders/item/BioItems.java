@@ -77,7 +77,7 @@ public class BioItems {
 
     public static final RegistryObject<Item> TULIP_SNAIL = ITEMS_REGISTRAR.register("tulip_snail", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ALLIGATOR_GAR_EGG = ITEMS_REGISTRAR.register("alligator_gar_egg", () -> new ZawaEggItem(BioEntities.ALLIGATOR_GAR, new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> BLACKTIP_SHARK_EGG = ITEMS_REGISTRAR.register("blacktip_shark_egg", () -> new ZawaEggItem(BioEntities.BLACKTIP_SHARK, new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> BLACKTIP_REEF_SHARK_EGG = ITEMS_REGISTRAR.register("blacktip_reef_shark_egg", () -> new ZawaEggItem(BioEntities.BLACKTIP_REEF_SHARK, new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> COWNOSE_RAY_EGG = ITEMS_REGISTRAR.register("cownose_ray_egg", () -> new ZawaEggItem(BioEntities.COWNOSE_RAY, new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> NURSE_SHARK_EGG = ITEMS_REGISTRAR.register("nurse_shark_egg", () -> new ZawaEggItem(BioEntities.NURSE_SHARK, new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> NAPOLEON_WRASSE_EGG = ITEMS_REGISTRAR.register("napoleon_wrasse_egg", () -> new ZawaEggItem(BioEntities.NAPOLEON_WRASSE, new Item.Properties().stacksTo(16)));

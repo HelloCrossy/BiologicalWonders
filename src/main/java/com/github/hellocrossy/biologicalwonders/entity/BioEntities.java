@@ -29,12 +29,12 @@ public class BioEntities {
                     .spawns(10, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER, ZawaSpawnCategory.FAST_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(1.0F, 0.8F).clientTrackingRange(10))
                     .build("alligator_gar");
-    public static final RegistryObject<EntityType<BlacktipSharkEntity>> BLACKTIP_SHARK =
-            REGISTRY.builder(BlacktipSharkEntity::new, MobCategory.WATER_CREATURE)
-                    .attributes(BlacktipSharkEntity::registerAttributes)
+    public static final RegistryObject<EntityType<BlacktipReefSharkEntity>> BLACKTIP_REEF_SHARK =
+            REGISTRY.builder(BlacktipReefSharkEntity::new, MobCategory.WATER_CREATURE)
+                    .attributes(BlacktipReefSharkEntity::registerAttributes)
                     .spawns(10, 1, 4, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(1.4F, 0.4F).clientTrackingRange(10))
-                    .build("blacktip_shark");
+                    .build("blacktip_reef_shark");
     public static final RegistryObject<EntityType<CownoseRayEntity>> COWNOSE_RAY =
             REGISTRY.builder(CownoseRayEntity::new, MobCategory.WATER_CREATURE)
                     .attributes(CownoseRayEntity::registerAttributes)
@@ -153,7 +153,7 @@ public class BioEntities {
         SpawnPlacements.register(RIBBON_SEAL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaSemiAquaticEntity::checkSemiAquaticSpawnRules);
         SpawnPlacements.register(HARBOR_SEAL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaSemiAquaticEntity::checkSemiAquaticSpawnRules);
         SpawnPlacements.register(ALLIGATOR_GAR.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
-        SpawnPlacements.register(BLACKTIP_SHARK.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
+        SpawnPlacements.register(BLACKTIP_REEF_SHARK.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         SpawnPlacements.register(COWNOSE_RAY.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         SpawnPlacements.register(LIONFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         SpawnPlacements.register(NAPOLEON_WRASSE.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
@@ -178,7 +178,7 @@ public class BioEntities {
         EntityRenderers.register(RIBBON_SEAL.get(), RibbonSealRenderer::new);
         EntityRenderers.register(HARBOR_SEAL.get(), HarborSealRenderer::new);
         EntityRenderers.register(ALLIGATOR_GAR.get(), AlligatorGarRenderer::new);
-        EntityRenderers.register(BLACKTIP_SHARK.get(), BlacktipSharkRenderer::new);
+        EntityRenderers.register(BLACKTIP_REEF_SHARK.get(), BlacktipReefSharkRenderer::new);
         EntityRenderers.register(COWNOSE_RAY.get(), CownoseRayRenderer::new);
         EntityRenderers.register(LIONFISH.get(), LionfishRenderer::new);
         EntityRenderers.register(NAPOLEON_WRASSE.get(), NapoleonWrasseRenderer::new);

@@ -10,7 +10,7 @@
   },
   "spawners": [
     {
-      "type": "biologicalwonders:blacktip_shark",
+      "type": "biologicalwonders:blacktip_reef_shark",
       "weight": 10,
       "minCount": 1,
       "maxCount": 4
