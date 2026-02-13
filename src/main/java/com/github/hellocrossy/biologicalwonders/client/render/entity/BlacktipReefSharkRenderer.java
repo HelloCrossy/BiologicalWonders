@@ -1,20 +1,19 @@
 package com.github.hellocrossy.biologicalwonders.client.render.entity;
 
-import com.github.hellocrossy.biologicalwonders.client.model.BlacktipSharkModel;
-import com.github.hellocrossy.biologicalwonders.entity.BlacktipSharkEntity;
-import com.github.hellocrossy.biologicalwonders.entity.NapoleonWrasseEntity;
+import com.github.hellocrossy.biologicalwonders.client.model.BlacktipReefSharkModel;
+import com.github.hellocrossy.biologicalwonders.entity.BlacktipReefSharkEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 
-public class BlacktipSharkRenderer extends ZawaMobRenderer<BlacktipSharkEntity, BlacktipSharkModel> {
-    public BlacktipSharkRenderer(EntityRendererManager manager) {
-        super(manager, new BlacktipSharkModel.Adult(), new BlacktipSharkModel.Child(), 0.6F);
-
+public class BlacktipReefSharkRenderer extends ZawaMobRenderer<BlacktipReefSharkEntity, BlacktipReefSharkModel> {
+    public BlacktipReefSharkRenderer(EntityRendererManager manager) {
+        super(manager, new BlacktipReefSharkModel.Adult(), new BlacktipReefSharkModel.Child(), 0.6F);
     }
-    protected void setupRotations(BlacktipSharkEntity entity, MatrixStack stack, float p_225621_3_, float p_225621_4_, float p_225621_5_) {
+
+    protected void setupRotations(BlacktipReefSharkEntity entity, MatrixStack stack, float p_225621_3_, float p_225621_4_, float p_225621_5_) {
         super.setupRotations(entity, stack, p_225621_3_, p_225621_4_, p_225621_5_);
         float f = 4.3F * MathHelper.sin(0.6F * p_225621_3_);
         stack.mulPose(Vector3f.YP.rotationDegrees(f));
@@ -24,7 +23,7 @@ public class BlacktipSharkRenderer extends ZawaMobRenderer<BlacktipSharkEntity, 
         }
     }
     @Override
-    protected void scale(BlacktipSharkEntity entity, MatrixStack matrixStack, float partialTickTime) {
+    protected void scale(BlacktipReefSharkEntity entity, MatrixStack matrixStack, float partialTickTime) {
         float scale = entity.isBaby() ? 0.75F : 1.0F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);

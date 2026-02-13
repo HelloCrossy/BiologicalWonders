@@ -1,6 +1,6 @@
 package com.github.hellocrossy.biologicalwonders.client.model;
 
-import com.github.hellocrossy.biologicalwonders.entity.BlacktipSharkEntity;
+import com.github.hellocrossy.biologicalwonders.entity.BlacktipReefSharkEntity;
 import com.google.common.collect.ImmutableList;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.model.ModelRenderer;
@@ -8,7 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import org.zawamod.zawa.client.model.ZawaBaseModel;
 
-public abstract class BlacktipSharkModel extends ZawaBaseModel<BlacktipSharkEntity> {
+public abstract class BlacktipReefSharkModel extends ZawaBaseModel<BlacktipReefSharkEntity> {
     public ModelRenderer Body;
     protected Iterable<ModelRenderer> parts;
 
@@ -22,7 +22,7 @@ public abstract class BlacktipSharkModel extends ZawaBaseModel<BlacktipSharkEnti
         return this.parts;
     }
 
-    public static class Adult extends BlacktipSharkModel {
+    public static class Adult extends BlacktipReefSharkModel {
         public ModelRenderer Tail1;
         public ModelRenderer BackFin1;
         public ModelRenderer LeftPectoralFin1;
@@ -166,7 +166,7 @@ public abstract class BlacktipSharkModel extends ZawaBaseModel<BlacktipSharkEnti
         }
 
         @Override
-        public void setupAnim(BlacktipSharkEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
+        public void setupAnim(BlacktipReefSharkEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, HeadPitch);
             this.Head.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
             this.Tail2.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
@@ -197,7 +197,7 @@ public abstract class BlacktipSharkModel extends ZawaBaseModel<BlacktipSharkEnti
         }
     }
 
-    public static class Child extends BlacktipSharkModel {
+    public static class Child extends BlacktipReefSharkModel {
         public ModelRenderer Tail1;
         public ModelRenderer BackFin1;
         public ModelRenderer LeftPectoralFin1;
@@ -330,7 +330,7 @@ public abstract class BlacktipSharkModel extends ZawaBaseModel<BlacktipSharkEnti
         }
 
         @Override
-        public void setupAnim(BlacktipSharkEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
+        public void setupAnim(BlacktipReefSharkEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, HeadPitch);
         }
 

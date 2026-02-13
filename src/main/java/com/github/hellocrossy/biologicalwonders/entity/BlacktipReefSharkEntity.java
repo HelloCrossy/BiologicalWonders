@@ -16,8 +16,8 @@ import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class BlacktipSharkEntity extends ZawaAquaticEntity {
-    public BlacktipSharkEntity(EntityType<? extends ZawaAquaticEntity> type, World world) {
+public class BlacktipReefSharkEntity extends ZawaAquaticEntity {
+    public BlacktipReefSharkEntity(EntityType<? extends ZawaAquaticEntity> type, World world) {
         super(type, world);
     }
 
@@ -27,7 +27,7 @@ public class BlacktipSharkEntity extends ZawaAquaticEntity {
     @Nullable
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld world, AgeableEntity entity) {
-        return BioEntities.BLACKTIP_SHARK.get().create(world);
+        return BioEntities.BLACKTIP_REEF_SHARK.get().create(world);
     }
     @Override
     protected void registerGoals() {
