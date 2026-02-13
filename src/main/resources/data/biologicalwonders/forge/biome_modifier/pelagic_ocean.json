@@ -11,13 +11,13 @@
   },
   "spawners": [
     {
-      "type": "ecoregions:cownose_ray",
+      "type": "biologicalwonders:cownose_ray",
       "weight": 10,
       "minCount": 1,
       "maxCount": 1
     },
     {
-      "type": "ecoregions:pacific_white_sided_dolphin",
+      "type": "biologicalwonders:pacific_white_sided_dolphin",
       "weight": 8,
       "minCount": 1,
       "maxCount": 2

@@ -24,25 +24,25 @@
   },
   "spawners": [
     {
-      "type": "ecoregions:elephant_seal",
+      "type": "biologicalwonders:elephant_seal",
       "weight": 10,
       "minCount": 2,
       "maxCount": 5
     },
     {
-      "type": "ecoregions:grey_seal",
+      "type": "biologicalwonders:grey_seal",
       "weight": 8,
       "minCount": 1,
       "maxCount": 4
     },
     {
-      "type": "ecoregions:ribbon_seal",
+      "type": "biologicalwonders:ribbon_seal",
       "weight": 8,
       "minCount": 1,
       "maxCount": 4
     },
     {
-      "type": "ecoregions:harbor_seal",
+      "type": "biologicalwonders:harbor_seal",
       "weight": 10,
       "minCount": 1,
       "maxCount": 4
