@@ -12,6 +12,7 @@ import org.zawamod.zawa.config.ZawaSpawnCategory;
 import org.zawamod.zawa.world.entity.ZawaEntityRegistry;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
+import org.zawamod.zawa.world.entity.animal.ZawaFlyingEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 public class BioEntities {
@@ -101,6 +102,14 @@ public class BioEntities {
                     .spawns(8, 1, 2, ZawaSpawnCategory.PELAGIC_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(2.0F,1.0F).clientTrackingRange(10))
                     .build("ws_dolphin");
+    public static final RegistryObject<EntityType<KingfisherEntity>> KINGFISHER =
+            REGISTRY.builder(KingfisherEntity::new, EntityClassification.CREATURE)
+                    .attributes(KingfisherEntity::registerAttributes)
+                    .renderer(() -> KingfisherRenderer::new)
+                    .spawns(15, 1, 2, ZawaSpawnCategory.COASTAL_DESERT)
+                    .data(entityBuilder -> entityBuilder.sized(0.4F, 0.4F).clientTrackingRange(8))
+                    .build("kingfisher");
+
 
     //AMBIENT ENTITIES
     public static final RegistryObject<EntityType<ButterflyfishEntity>> BUTTERFLYFISH =
@@ -180,6 +189,7 @@ public class BioEntities {
         EntitySpawnPlacementRegistry.register(NAPOLEON_WRASSE.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(NURSE_SHARK.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(WS_DOLPHIN.get(), EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAquaticEntity::checkAquaticSpawnRules);
+        EntitySpawnPlacementRegistry.register(KINGFISHER.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, ZawaFlyingEntity::checkFlyingSpawnRules);
 
         EntitySpawnPlacementRegistry.register(BUTTERFLYFISH.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
         EntitySpawnPlacementRegistry.register(COWFISH.get(), EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, ZawaAmbientFishEntity::checkAquaticSpawnRules);
