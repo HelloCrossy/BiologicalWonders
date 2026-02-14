@@ -12,16 +12,18 @@ import net.minecraft.entity.ai.goal.NonTamedTargetGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.zawamod.zawa.world.entity.OviparousEntity;
+import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaSemiAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class LionfishEntity extends ZawaAquaticEntity implements OviparousEntity {
+public class LionfishEntity extends ZawaAquaticEntity implements OviparousEntity, SpeciesVariantsEntity {
     public LionfishEntity(EntityType<? extends ZawaAquaticEntity> type, World world) {
         super(type, world);
     }
@@ -50,4 +52,10 @@ public class LionfishEntity extends ZawaAquaticEntity implements OviparousEntity
     protected float getStandingEyeHeight(Pose pose, EntitySize size) {
         return size.height * 0.85F;
     }
+
+    @Override
+    public int getVariantByBiome(IWorld iWorld) {
+        return random.nextInt(getWildVariants());
+    }
+
 }
