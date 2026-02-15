@@ -41,9 +41,6 @@ public class BioItems {
 
     public static final RegistryObject<Item>
             MOORISH_IDOL = ITEMS_REGISTRAR.register("moorish_idol", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item>
-            HORSESHOE_CRAB_BUCKET = ITEMS_REGISTRAR.register("bucket_of_horseshoe_crab", () -> new ZawaBucketItem(BioEntities.HORSESHOE_CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH,
-            new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item>
             MOORISH_IDOL_BUCKET = ITEMS_REGISTRAR.register("bucket_of_moorish_idol", () -> new ZawaBucketItem(BioEntities.MOORISH_IDOL, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH,
