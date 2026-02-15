@@ -1,0 +1,22 @@
+{
+  "temperament": "timid",
+  "kibble": "zawa:piscivore_kibble",
+  "size": "tiny",
+  "fertility": "medium",
+  "breeding_item": "zawa:corydoras",
+  "litter_size": {
+    "min": 3,
+    "max": 4
+  },
+  "diet": "zawa:piscivore",
+  "speed": "fast",
+  "enrichment": {
+    "zawa:blocks": [
+      "zawa:perching_stand",
+      "zawa:branch",
+      "zawa:sprinkler",
+      "zawa:pineapple_pinata"
+    ]
+  },
+  "variant_count": 6
+}
