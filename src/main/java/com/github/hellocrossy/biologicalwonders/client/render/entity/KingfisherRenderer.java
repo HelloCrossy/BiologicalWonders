@@ -3,9 +3,7 @@ package com.github.hellocrossy.biologicalwonders.client.render.entity;
 import com.github.hellocrossy.biologicalwonders.client.model.BioModelLayers;
 import com.github.hellocrossy.biologicalwonders.client.model.KingfisherModel;
 import com.github.hellocrossy.biologicalwonders.entity.KingfisherEntity;
-import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.zawamod.zawa.client.renderer.entity.ZawaMobRenderer;
 

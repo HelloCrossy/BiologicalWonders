@@ -47,28 +47,36 @@ public abstract class KingfisherModel extends ZawaBaseModel<KingfisherEntity> {
         public ModelPart RightFootRightToe;
 
         public Adult(ModelPart root) {
+            this.Body = root.getChild("Body");
+
             this.LeftLeg = this.Body.getChild("LeftLeg");
-            this.TailLeft = this.TailMiddle.getChild("TailLeft");
-            this.Forehead = this.Head.getChild("Forehead");
+            this.LeftFoot = this.LeftLeg.getChild("LeftFoot");
             this.LeftFootLeftToe = this.LeftFoot.getChild("LeftFootLeftToe");
-            this.Mouth = this.Beak.getChild("Mouth");
-            this.Neck2 = this.Neck1.getChild("Neck2");
+            this.LeftFootRightToe = this.LeftFoot.getChild("LeftFootRightToe");
+
             this.RightWing = this.Body.getChild("RightWing");
+
+            this.TailBase = this.Body.getChild("TailBase");
+            this.TailMiddle = this.TailBase.getChild("TailMiddle");
+            this.TailLeft = this.TailMiddle.getChild("TailLeft");
+            this.TailRight = this.TailMiddle.getChild("TailRight");
+
+            this.Neck1 = this.Body.getChild("Neck1");
+            this.Neck2 = this.Neck1.getChild("Neck2");
+            this.Neck2Front = this.Neck2.getChild("Neck2Front");
+            this.Head = this.Neck2.getChild("Head");
+            this.Crest = this.Head.getChild("Crest");
+            this.Forehead = this.Head.getChild("Forehead");
+            this.Beak = this.Head.getChild("Beak");
+            this.Mouth = this.Beak.getChild("Mouth");
+
+            this.LeftWing = this.Body.getChild("LeftWing");
+
+            this.RightLeg = this.Body.getChild("RightLeg");
+            this.RightFoot = this.RightLeg.getChild("RightFoot");
             this.RightFootLeftToe = this.RightFoot.getChild("RightFootLeftToe");
             this.RightFootRightToe = this.RightFoot.getChild("RightFootRightToe");
-            this.LeftFootRightToe = this.LeftFoot.getChild("LeftFootRightToe");
-            this.RightFoot = this.RightLeg.getChild("RightFoot");
-            this.Head = this.Neck2.getChild("Head");
-            this.TailMiddle = this.TailBase.getChild("TailMiddle");
-            this.TailBase = this.Body.getChild("TailBase");
-            this.Neck2Front = this.Neck2.getChild("Neck2Front");
-            this.Neck1 = this.Body.getChild("Neck1");
-            this.TailRight = this.TailMiddle.getChild("TailRight");
-            this.LeftWing = this.Body.getChild("LeftWing");
-            this.Crest = this.Head.getChild("Crest");
-            this.Beak = this.Head.getChild("Beak");
-            this.RightLeg = this.Body.getChild("RightLeg");
-            this.LeftFoot = this.LeftLeg.getChild("LeftFoot");
+
         }
 
         public static LayerDefinition createBodyLayer() {

@@ -94,7 +94,7 @@ public class BioEntities {
             REGISTRY.builder(KingfisherEntity::new, MobCategory.WATER_CREATURE)
                     .attributes(KingfisherEntity::registerAttributes)
                     .spawns(8, 1, 2, ZawaSpawnCategory.PELAGIC_OCEAN)
-                    .data(entityBuilder -> entityBuilder.sized(2.0F, 1.0F).clientTrackingRange(10))
+                    .data(entityBuilder -> entityBuilder.sized(0.4F, 0.4F).clientTrackingRange(10))
                     .build("kingfisher");
 
     //AMBIENT ENTITIES
