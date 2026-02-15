@@ -11,12 +11,14 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import org.zawamod.zawa.world.entity.OviparousEntity;
+import org.zawamod.zawa.world.entity.SpeciesVariantsEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class LionfishEntity extends ZawaAquaticEntity implements OviparousEntity {
+public class LionfishEntity extends ZawaAquaticEntity implements OviparousEntity, SpeciesVariantsEntity {
     public LionfishEntity(EntityType<? extends ZawaAquaticEntity> type, Level world) {
         super(type, world);
     }
@@ -45,5 +47,9 @@ public class LionfishEntity extends ZawaAquaticEntity implements OviparousEntity
     @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
         return size.height * 0.85F;
+    }
+    @Override
+    public int getVariantByBiome(LevelAccessor iWorld) {
+        return random.nextInt(getWildVariants());
     }
 }
