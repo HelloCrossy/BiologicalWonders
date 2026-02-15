@@ -1,6 +1,5 @@
 package com.github.hellocrossy.biologicalwonders.entity;
 
-import com.github.hellocrossy.biologicalwonders.item.BioItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -14,21 +13,19 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.fluids.FluidType;
 import org.zawamod.zawa.world.entity.ClimbingEntity;
-import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.ai.goal.BreachGoal;
 import org.zawamod.zawa.world.entity.ai.goal.ZawaMeleeAttackGoal;
 import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEntity, ClimbingEntity {
+public class NurseSharkEntity extends ZawaAquaticEntity implements ClimbingEntity {
     public static final EntityDataAccessor<Boolean> CLIMBING = SynchedEntityData.defineId(NurseSharkEntity.class, EntityDataSerializers.BOOLEAN);
 
     public NurseSharkEntity(EntityType<? extends ZawaAquaticEntity> type, Level world) {
@@ -44,11 +41,6 @@ public class NurseSharkEntity extends ZawaAquaticEntity implements OviparousEnti
     @Override
     public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
         return BioEntities.NURSE_SHARK.get().create(world);
-    }
-
-    @Override
-    public ItemStack getBreedEggItem() {
-        return BioItems.NURSE_SHARK_EGG.get().getDefaultInstance();
     }
 
     @Override

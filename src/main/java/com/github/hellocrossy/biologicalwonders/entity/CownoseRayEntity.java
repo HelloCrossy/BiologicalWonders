@@ -1,6 +1,5 @@
 package com.github.hellocrossy.biologicalwonders.entity;
 
-import com.github.hellocrossy.biologicalwonders.item.BioItems;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityDimensions;
@@ -11,14 +10,12 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import org.zawamod.zawa.world.entity.OviparousEntity;
 import org.zawamod.zawa.world.entity.animal.ZawaAquaticEntity;
 
 import javax.annotation.Nullable;
 
-public class CownoseRayEntity extends ZawaAquaticEntity implements OviparousEntity {
+public class CownoseRayEntity extends ZawaAquaticEntity {
     public CownoseRayEntity(EntityType<? extends ZawaAquaticEntity> type, Level world) {
         super(type, world);
     }
@@ -31,11 +28,6 @@ public class CownoseRayEntity extends ZawaAquaticEntity implements OviparousEnti
     @Override
     public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
         return BioEntities.COWNOSE_RAY.get().create(world);
-    }
-
-    @Override
-    public ItemStack getBreedEggItem() {
-        return BioItems.COWNOSE_RAY_EGG.get().getDefaultInstance();
     }
 
     @Override
