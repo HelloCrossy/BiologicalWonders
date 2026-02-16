@@ -138,7 +138,7 @@ public abstract class BlacktipReefSharkModel extends ZawaBaseModel<BlacktipReefS
             PartDefinition PectoralFinLeft3 = PectoralFinLeft1.addOrReplaceChild("PectoralFinLeft3", CubeListBuilder.create().texOffs(37, 0).addBox(0.0F, -0.5F, 0.0F, 5.0F, 1.0F, 2.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(2.5F, 0.01F, -1.5F, 0.0F, -0.4300491170387584F, 0.0F));
             PartDefinition PectoralFinLeft2 = PectoralFinLeft1.addOrReplaceChild("PectoralFinLeft2", CubeListBuilder.create().texOffs(52, 6).addBox(0.0F, -0.5F, -2.5F, 4.0F, 1.0F, 2.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offset(2.5F, 0.0F, 3.0F));
 
-            return LayerDefinition.create(meshDefinition, 128, 44);
+            return LayerDefinition.create(meshDefinition, 64, 64);
         }
 
         @Override
