@@ -144,32 +144,20 @@ public abstract class BlacktipReefSharkModel extends ZawaBaseModel<BlacktipReefS
         @Override
         public void setupAnim(BlacktipReefSharkEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, HeadPitch);
-            this.Head.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
-            this.Tail2.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
         }
 
         @Override
         public void playIdleAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
             this.loadBase();
-            float speed = 1.5F;
+            float speed = 1.0F;
             float degree = 1.0F;
-            this.Head.yRot = Mth.cos((limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 0.2F) * limbSwingAmount * 0.5F;
-            this.Tail2.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * -0.4F) * limbSwingAmount * 0.5F;
-//            this.LeftPectoralFin1.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 2.0F) * limbSwingAmount * 0.5F + 0.409F;
-//            this.RightPectoralFin1.yRot = Mth.cos((limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * -2.0F) * limbSwingAmount * 0.5F + -0.409F;
-            this.Mouth1.xRot = Mth.cos(1.0F + (limbSwing * speed * 0.2F) + (float) Math.PI) * (degree * 0.3F) * limbSwingAmount * 0.5F;
-        }
+         }
 
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
             this.loadBase();
-            if (entity.isInWater()) {
-                float speed = 1.5F;
-                float degree = 1.0F;
-                this.Head.yRot = Mth.cos((limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * 0.8F) * limbSwingAmount * 0.5F;
-                this.Tail2.yRot = Mth.cos(1.0F + (limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * -0.9F) * limbSwingAmount * 0.5F;
-                this.Tail3.yRot = Mth.cos(4.0F + (limbSwing * speed * 0.5F) + (float) Math.PI) * (degree * 2.5F) * limbSwingAmount * 0.5F;
-            }
+            float speed = 1.0F;
+            float degree = 1.0F;
         }
     }
 
@@ -288,16 +276,8 @@ public abstract class BlacktipReefSharkModel extends ZawaBaseModel<BlacktipReefS
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float HeadPitch) {
             this.loadBase();
-            limbSwing *= 2.0F;
-            limbSwingAmount = 0.15F;
-            float speed = 1.2F;
+            float speed = 1.0F;
             float degree = 1.0F;
-            if (this.isSwimming) {
-                limbSwing = (float) entity.tickCount;
-                limbSwingAmount = 0.3F;
-                speed = 0.7F;
-            } else {
-            }
         }
     }
 }
