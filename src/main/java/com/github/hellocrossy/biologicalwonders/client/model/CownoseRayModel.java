@@ -134,16 +134,8 @@ public abstract class CownoseRayModel extends ZawaBaseModel<CownoseRayEntity> {
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
-            float speed = 1.2F;
+            float speed = 1.0F;
             float degree = 1.0F;
-            if (this.isSwimming) {
-                limbSwing = (float) entity.tickCount;
-                limbSwingAmount = 0.3F;
-                speed = 1.4F;
-                degree = 0.8F;
-            } else {
-
-            }
         }
     }
 
@@ -227,16 +219,8 @@ public abstract class CownoseRayModel extends ZawaBaseModel<CownoseRayEntity> {
         @Override
         public void playMovementAnimation(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             this.loadBase();
-            limbSwing *= 2.0F;
-            limbSwingAmount = 0.15F;
-            float speed = 1.2F;
+            float speed = 1.0F;
             float degree = 1.0F;
-            if (this.isSwimming) {
-                limbSwing = (float) entity.tickCount;
-                limbSwingAmount = 0.3F;
-                speed = 0.7F;
-            } else {
-            }
         }
     }
 }
