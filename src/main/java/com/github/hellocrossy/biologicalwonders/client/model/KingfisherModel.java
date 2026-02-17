@@ -233,6 +233,7 @@ public abstract class KingfisherModel extends ZawaBaseModel<KingfisherEntity> {
         public ModelRenderer Neck2Front;
         public ModelRenderer Forehead;
         public ModelRenderer Beak;
+        public ModelRenderer Crest;
         public ModelRenderer Mouth;
 
         public Flying() {
@@ -397,6 +398,10 @@ public abstract class KingfisherModel extends ZawaBaseModel<KingfisherEntity> {
             this.LeftWing2.setPos(2.0F, 4.0F, -0.01F);
             this.LeftWing2.addBox(0.0F, -4.0F, -0.1F, 3.0F, 4.0F, 1.0F, 0.0F, 0.0F, 0.0F);
             this.setRotateAngle(LeftWing2, 0.0F, 0.0F, -0.4098033003787853F);
+            this.Crest = new ModelRenderer(this, 20, 0);
+            this.Crest.setPos(0.0F, -1.6F, 0.7F);
+            this.Crest.addBox(0.0F, 0.0F, -1.5F, 0.0F, 3.0F, 4.0F, 0.0F, 0.0F, 0.0F);
+            this.setRotateAngle(Crest, 1.2487831330651644F, 0.0F, 0.0F);
             this.LeftWingFeather5.addChild(this.LeftWingFeather6);
             this.Neck1.addChild(this.Neck2);
             this.RightWingFeather4.addChild(this.RightWingFeather5);
@@ -413,6 +418,7 @@ public abstract class KingfisherModel extends ZawaBaseModel<KingfisherEntity> {
             this.RightWing2.addChild(this.RightWingFeather1);
             this.RightFoot.addChild(this.RightFootRightToe);
             this.LeftWingFeather6.addChild(this.LeftWingFeather7);
+            this.Head.addChild(this.Crest);
             this.Neck2.addChild(this.Neck2Front);
             this.Head.addChild(this.Forehead);
             this.LeftLeg.addChild(this.LeftFoot);
