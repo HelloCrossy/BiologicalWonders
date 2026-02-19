@@ -10,7 +10,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.zawamod.zawa.world.entity.ambient.ZawaAmbientFishEntity;
@@ -50,6 +52,7 @@ public class ButterflyfishEntity extends ZawaAmbientFishEntity {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(1, new PanicGoal(this, 1.33D));
+        this.goalSelector.addGoal(1, new PanicGoal(this, 1.33));
+        this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, Player.class, 16.0F, 0.8D, 1.33D, AVOID_PLAYERS::test));
     }
 }
