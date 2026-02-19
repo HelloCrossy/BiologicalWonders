@@ -177,6 +177,7 @@ public abstract class KingfisherModel extends ZawaBaseModel<KingfisherEntity> {
         public ModelPart RightWingFeather7;
         public ModelPart RightWingFeather8;
         public ModelPart Neck2;
+        public ModelPart Crest;
         public ModelPart Head;
         public ModelPart Neck2Front;
         public ModelPart Forehead;
@@ -222,6 +223,7 @@ public abstract class KingfisherModel extends ZawaBaseModel<KingfisherEntity> {
             this.Neck2 = this.Neck1.getChild("Neck2");
             this.Neck2Front = this.Neck2.getChild("Neck2Front");
             this.Head = this.Neck2.getChild("Head");
+            this.Crest = this.Head.getChild("Crest");
             this.Forehead = this.Head.getChild("Forehead");
             this.Beak = this.Head.getChild("Beak");
             this.Mouth = this.Beak.getChild("Mouth");
@@ -279,6 +281,7 @@ public abstract class KingfisherModel extends ZawaBaseModel<KingfisherEntity> {
             PartDefinition Neck2 = Neck1.addOrReplaceChild("Neck2", CubeListBuilder.create().texOffs(0, 6).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 1.0F, -0.27035149713918F, 0.0F, 0.0F));
             PartDefinition Neck2Front = Neck2.addOrReplaceChild("Neck2Front", CubeListBuilder.create().texOffs(12, 6).addBox(-1.02F, -2.0F, -2.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, 1.8F, 3.2F, 0.6679375127277132F, 0.0F, 0.0F));
             PartDefinition Head = Neck2.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 0).addBox(-1.5F, -1.5F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, 1.6F, 2.3F, -0.4300491170387584F, 0.0F, 0.0F));
+            PartDefinition Crest = Head.addOrReplaceChild("Crest", CubeListBuilder.create().texOffs(20, 0).addBox(0.0F, 0.0F, -1.5F, 0.0F, 3.0F, 4.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, 0.2F, 0.3F, 1.2487831330651644F, 0.0F, 0.0F));
             PartDefinition Beak = Head.addOrReplaceChild("Beak", CubeListBuilder.create().texOffs(8, 6).addBox(-0.5F, -4.0F, -1.0F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, -0.7F, 0.4F, 0.19547687289441354F, 0.0F, 0.0F));
             PartDefinition Mouth = Beak.addOrReplaceChild("Mouth", CubeListBuilder.create().texOffs(8, 6).addBox(-0.5F, 0.0F, 0.0F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, -4.0F, -1.0F, -0.10890854132970453F, 0.0F, 0.0F));
             PartDefinition Forehead = Head.addOrReplaceChild("Forehead", CubeListBuilder.create().texOffs(12, 0).addBox(-1.0F, -0.7F, -2.0F, 2.0F, 3.0F, 2.0F, new CubeDeformation(0.0F, 0.0F, 0.0F)), PartPose.offsetAndRotation(0.0F, -1.5F, 1.5F, 0.05235987755982988F, 0.0F, 0.0F));
