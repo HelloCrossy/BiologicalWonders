@@ -51,19 +51,19 @@ public class BioEntities {
     public static final RegistryObject<EntityType<GreySealEntity>> GREY_SEAL =
             REGISTRY.builder(GreySealEntity::new, MobCategory.CREATURE)
                     .attributes(GreySealEntity::registerAttributes)
-                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
+                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_TUNDRA)
                     .data(entityBuilder -> entityBuilder.sized(1.75F, 0.5F).clientTrackingRange(10))
                     .build("grey_seal");
     public static final RegistryObject<EntityType<RibbonSealEntity>> RIBBON_SEAL =
             REGISTRY.builder(RibbonSealEntity::new, MobCategory.CREATURE)
                     .attributes(RibbonSealEntity::registerAttributes)
-                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
+                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_TUNDRA)
                     .data(entityBuilder -> entityBuilder.sized(1.2F, 0.4F).clientTrackingRange(10))
                     .build("ribbon_seal");
     public static final RegistryObject<EntityType<HarborSealEntity>> HARBOR_SEAL =
             REGISTRY.builder(HarborSealEntity::new, MobCategory.CREATURE)
                     .attributes(HarborSealEntity::registerAttributes)
-                    .spawns(10, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
+                    .spawns(10, 1, 4, ZawaSpawnCategory.COASTAL_TUNDRA)
                     .data(entityBuilder -> entityBuilder.sized(1.0F, 0.4F).clientTrackingRange(10))
                     .build("harbor_seal");
     public static final RegistryObject<EntityType<LionfishEntity>> LIONFISH =
@@ -113,7 +113,7 @@ public class BioEntities {
     public static final RegistryObject<EntityType<HorseshoeCrabEntity>> HORSESHOE_CRAB =
             REGISTRY.builder(HorseshoeCrabEntity::new, MobCategory.WATER_AMBIENT)
                     .attributes(HorseshoeCrabEntity::registerAttributes)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(8, 5, 6, ZawaSpawnCategory.COASTAL_DESERT)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("horseshoe_crab");
     public static final RegistryObject<EntityType<MoorishIdolEntity>> MOORISH_IDOL =

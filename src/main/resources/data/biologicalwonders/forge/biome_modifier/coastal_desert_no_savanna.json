@@ -1,0 +1,26 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:and",
+    "values": [
+      "#is_overworld",
+      "#minecraft:is_beach",
+      {"type": "forge:not", "value": "#forge:is_cold"},
+      {"type": "forge:not", "value": "#forge:is_snowy"}
+    ]
+  },
+  "spawners": [
+    {
+      "type": "biologicalwonders:elephant_seal",
+      "weight": 10,
+      "minCount": 2,
+      "maxCount": 5
+    },
+    {
+      "type": "biologicalwonders:horseshoe_crab",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    }
+  ]
+}
