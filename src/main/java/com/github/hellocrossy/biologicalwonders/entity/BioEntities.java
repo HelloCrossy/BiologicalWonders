@@ -57,21 +57,21 @@ public class BioEntities {
             REGISTRY.builder(GreySealEntity::new, EntityClassification.CREATURE)
                     .attributes(GreySealEntity::registerAttributes)
                     .renderer(() -> GreySealRenderer::new)
-                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
+                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_TUNDRA)
                     .data(entityBuilder -> entityBuilder.sized(1.75F, 0.5F).clientTrackingRange(10))
                     .build("grey_seal");
     public static final RegistryObject<EntityType<RibbonSealEntity>> RIBBON_SEAL =
             REGISTRY.builder(RibbonSealEntity::new, EntityClassification.CREATURE)
                     .attributes(RibbonSealEntity::registerAttributes)
                     .renderer(() -> RibbonSealRenderer::new)
-                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
+                    .spawns(8, 1, 4, ZawaSpawnCategory.COASTAL_TUNDRA)
                     .data(entityBuilder -> entityBuilder.sized(1.2F, 0.4F).clientTrackingRange(10))
                     .build("ribbon_seal");
     public static final RegistryObject<EntityType<HarborSealEntity>> HARBOR_SEAL =
             REGISTRY.builder(HarborSealEntity::new, EntityClassification.CREATURE)
                     .attributes(HarborSealEntity::registerAttributes)
                     .renderer(() -> HarborSealRenderer::new)
-                    .spawns(10, 1, 4, ZawaSpawnCategory.COASTAL_DESERT)
+                    .spawns(10, 1, 4, ZawaSpawnCategory.COASTAL_TUNDRA)
                     .data(entityBuilder -> entityBuilder.sized(1.0F, 0.4F).clientTrackingRange(10))
                     .build("harbor_seal");
     public static final RegistryObject<EntityType<LionfishEntity>> LIONFISH =
@@ -116,63 +116,63 @@ public class BioEntities {
             REGISTRY.builder(ButterflyfishEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(ButterflyfishEntity::registerAttributes)
                     .renderer(() -> ButterflyfishRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(10, 2, 4, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("butterflyfish");
     public static final RegistryObject<EntityType<CowfishEntity>> COWFISH =
             REGISTRY.builder(CowfishEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(CowfishEntity::registerAttributes)
                     .renderer(() -> CowfishRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(10, 1, 1, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("cowfish");
     public static final RegistryObject<EntityType<HorseshoeCrabEntity>> HORSESHOE_CRAB =
             REGISTRY.builder(HorseshoeCrabEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(HorseshoeCrabEntity::registerAttributes)
                     .renderer(() -> HorseshoeCrabRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(8, 1, 1, ZawaSpawnCategory.COASTAL_DESERT)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("horseshoe_crab");
     public static final RegistryObject<EntityType<MoorishIdolEntity>> MOORISH_IDOL =
             REGISTRY.builder(MoorishIdolEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(MoorishIdolEntity::registerAttributes)
                     .renderer(() -> MoorishIdolRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(10, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("moorish_idol");
     public static final RegistryObject<EntityType<SeaBunnyEntity>> SEA_BUNNY =
             REGISTRY.builder(SeaBunnyEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(SeaBunnyEntity::registerSeaBunnyAttributes)
                     .renderer(() -> SeaBunnyRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(8, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("sea_bunny");
     public static final RegistryObject<EntityType<SpottedDrumEntity>> SPOTTED_DRUM =
             REGISTRY.builder(SpottedDrumEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(SpottedDrumEntity::registerAttributes)
                     .renderer(() -> SpottedDrumRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(8, 5, 6, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("spotted_drum");
     public static final RegistryObject<EntityType<SquirrelfishEntity>> SQUIRRELFISH =
             REGISTRY.builder(SquirrelfishEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(SquirrelfishEntity::registerAttributes)
                     .renderer(() -> SquirrelfishRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(15, 1, 1, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("squirrelfish");
     public static final RegistryObject<EntityType<TriggerfishEntity>> TRIGGERFISH =
             REGISTRY.builder(TriggerfishEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(TriggerfishEntity::registerAttributes)
                     .renderer(() -> TriggerfishRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(15, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("triggerfish");
     public static final RegistryObject<EntityType<TulipSnailEntity>> TULIP_SNAIL =
             REGISTRY.builder(TulipSnailEntity::new, EntityClassification.WATER_AMBIENT)
                     .attributes(TulipSnailEntity::registerTulipSnailAttributes)
                     .renderer(() -> TulipSnailRenderer::new)
-                    .spawns(8, 5, 6, ZawaSpawnCategory.FAST_FRESH_WATER)
+                    .spawns(10, 1, 2, ZawaSpawnCategory.TROPICAL_OCEAN)
                     .data(entityBuilder -> entityBuilder.sized(0.35F, 0.35F).clientTrackingRange(10))
                     .build("tulip_snail");
 
