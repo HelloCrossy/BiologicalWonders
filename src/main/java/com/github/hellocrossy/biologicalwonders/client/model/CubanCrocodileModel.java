@@ -852,7 +852,6 @@ public abstract class CubanCrocodileModel extends ZawaBaseModel<CubanCrocodileEn
         @Override
         public void setupAnim(CubanCrocodileEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
             super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-            super.setupAnim(entity, entity.tickCount, 0.3F, ageInTicks, netHeadYaw, headPitch);
             this.Neck.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
             this.Head.yRot = (float) Math.toRadians(netHeadYaw) * 0.5F;
 
