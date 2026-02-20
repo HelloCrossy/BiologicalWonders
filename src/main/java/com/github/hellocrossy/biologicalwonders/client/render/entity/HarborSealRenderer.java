@@ -14,7 +14,7 @@ public class HarborSealRenderer extends ZawaMobRenderer<HarborSealEntity, Harbor
 
     @Override
     protected void scale(HarborSealEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.8F : 0.85F;
+        float scale = entity.isBaby() ? 0.75F : 0.85F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

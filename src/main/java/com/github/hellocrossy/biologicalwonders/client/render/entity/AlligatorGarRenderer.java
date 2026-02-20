@@ -30,7 +30,7 @@ public class AlligatorGarRenderer extends ZawaMobRenderer<AlligatorGarEntity, Al
     }
         @Override
         protected void scale (AlligatorGarEntity entity, MatrixStack matrixStack,float partialTickTime){
-            float scale = entity.isBaby() ? 0.75F : 1.0F;
+            float scale = entity.isBaby() ? 0.75F : 0.95F;
             matrixStack.scale(scale, scale, scale);
             super.scale(entity, matrixStack, partialTickTime);
         }

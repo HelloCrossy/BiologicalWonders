@@ -14,7 +14,7 @@ public class RibbonSealRenderer extends ZawaMobRenderer<RibbonSealEntity, Ribbon
 
     @Override
     protected void scale(RibbonSealEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.8F : 0.8F;
+        float scale = entity.isBaby() ? 0.75F : 0.85F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

@@ -13,7 +13,7 @@ public class PacificWhiteSidedDolphinRenderer extends ZawaMobRenderer<PacificWhi
 
     @Override
     protected void scale(PacificWhiteSidedDolphinEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.95F : 1.5F;
+        float scale = entity.isBaby() ? 0.95F : 1.3F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

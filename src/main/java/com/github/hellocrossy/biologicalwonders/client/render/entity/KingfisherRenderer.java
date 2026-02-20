@@ -13,7 +13,7 @@ public class KingfisherRenderer extends ZawaMobRenderer<KingfisherEntity, Kingfi
 
     @Override
     protected void scale(KingfisherEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.35F : 0.65F;
+        float scale = entity.isBaby() ? 0.35F : 0.6F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

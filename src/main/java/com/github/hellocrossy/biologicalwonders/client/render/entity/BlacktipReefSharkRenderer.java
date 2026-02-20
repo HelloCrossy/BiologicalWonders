@@ -24,7 +24,7 @@ public class BlacktipReefSharkRenderer extends ZawaMobRenderer<BlacktipReefShark
     }
     @Override
     protected void scale(BlacktipReefSharkEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.75F : 1.0F;
+        float scale = entity.isBaby() ? 0.6F : 1.0F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

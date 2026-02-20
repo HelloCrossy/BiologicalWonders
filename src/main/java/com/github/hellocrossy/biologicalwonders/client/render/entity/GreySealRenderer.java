@@ -14,7 +14,7 @@ public class GreySealRenderer extends ZawaMobRenderer<GreySealEntity, GreySealMo
 
     @Override
     protected void scale(GreySealEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 1.1F : 1.1F;
+        float scale = entity.isBaby() ? 0.95F : 1.0F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

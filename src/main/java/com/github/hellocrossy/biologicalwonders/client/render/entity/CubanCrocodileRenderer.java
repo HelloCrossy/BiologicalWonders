@@ -14,7 +14,7 @@ public class CubanCrocodileRenderer extends ZawaMobRenderer<CubanCrocodileEntity
 
     @Override
     protected void scale(CubanCrocodileEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 1.0F : 1.0F;
+        float scale = entity.isBaby() ? 0.8F : 0.9F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

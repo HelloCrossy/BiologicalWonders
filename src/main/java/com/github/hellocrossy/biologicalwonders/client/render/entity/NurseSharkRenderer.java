@@ -16,7 +16,7 @@ public class NurseSharkRenderer extends ZawaMobRenderer<NurseSharkEntity, NurseS
     }
     @Override
     protected void scale(NurseSharkEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        float scale = entity.isBaby() ? 0.75F : 1.0F;
+        float scale = entity.isBaby() ? 0.85F : 0.9F;
         matrixStack.scale(scale, scale, scale);
         super.scale(entity, matrixStack, partialTickTime);
     }

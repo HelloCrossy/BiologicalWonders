@@ -16,7 +16,7 @@ public class MoorishIdolRenderer extends ZawaMobRenderer<MoorishIdolEntity, Moor
 
     @Override
     protected void scale(MoorishIdolEntity entity, MatrixStack matrixStack, float partialTickTime) {
-        matrixStack.scale(0.5F, 0.5F, 0.5F);
+        matrixStack.scale(0.45F, 0.45F, 0.45F);
         super.scale(entity, matrixStack, partialTickTime);
     }
 
