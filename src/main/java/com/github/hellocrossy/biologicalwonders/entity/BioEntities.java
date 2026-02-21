@@ -93,7 +93,7 @@ public class BioEntities {
     public static final RegistryObject<EntityType<KingfisherEntity>> KINGFISHER =
             REGISTRY.builder(KingfisherEntity::new, MobCategory.WATER_CREATURE)
                     .attributes(KingfisherEntity::registerAttributes)
-                    .spawns(8, 1, 2, ZawaSpawnCategory.PELAGIC_OCEAN)
+                    .spawns(8, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(0.4F, 0.4F).clientTrackingRange(10))
                     .build("kingfisher");
 

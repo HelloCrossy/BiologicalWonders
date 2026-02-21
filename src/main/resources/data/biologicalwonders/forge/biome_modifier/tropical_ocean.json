@@ -38,6 +38,54 @@
       "weight": 10,
       "minCount": 1,
       "maxCount": 2
+    },
+    {
+      "type": "biologicalwonders:butterflyfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "biologicalwonders:cowfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "biologicalwonders:moorish_idol",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "biologicalwonders:sea_bunny",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "biologicalwonders:spotted_drum",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "biologicalwonders:squirrelfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "biologicalwonders:triggerfish",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
+    },
+    {
+      "type": "biologicalwonders:tulip_snail",
+      "weight": 8,
+      "minCount": 5,
+      "maxCount": 6
     }
   ]
 }
