@@ -35,7 +35,7 @@ import org.zawamod.zawa.world.item.ZawaItems;
 
 import javax.annotation.Nullable;
 
-public class SeaBunnyEntity extends ZawaAmbientFishEntity implements ClimbingEntity{
+public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEntity{
     public static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(SeaBunnyEntity.class, DataSerializers.BOOLEAN);
 
     public SeaBunnyEntity(EntityType<? extends ZawaAmbientFishEntity> type, World world) {
@@ -45,7 +45,7 @@ public class SeaBunnyEntity extends ZawaAmbientFishEntity implements ClimbingEnt
     }
 
     public static AttributeModifierMap.MutableAttribute registerSeaBunnyAttributes() {
-        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.10F).add(Attributes.MAX_HEALTH, 2.0);
+        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.15F).add(Attributes.MAX_HEALTH, 4.0);
     }
 
     @Override
@@ -69,11 +69,7 @@ public class SeaBunnyEntity extends ZawaAmbientFishEntity implements ClimbingEnt
         return BioEntities.SEA_BUNNY.get().create(world);
     }
     protected ItemStack getBucketItemStack() {
-        return new ItemStack((IItemProvider) ZawaItems.PLECOSTOMUS_BUCKET.get());
-    }
-
-    protected SoundEvent getFlopSound() {
-        return SoundEvents.COD_FLOP;
+        return new ItemStack((IItemProvider) BioItems.SEA_BUNNY_BUCKET.get());
     }
 
     public boolean isClimbing() {

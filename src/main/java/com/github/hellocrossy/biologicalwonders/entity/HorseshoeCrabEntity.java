@@ -40,7 +40,7 @@ public class HorseshoeCrabEntity extends ZawaBaseAmbientEntity implements Climbi
     }
 
     public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.30F).add(Attributes.MAX_HEALTH, 4.0);
+        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.15F).add(Attributes.MAX_HEALTH, 6.0);
     }
     @Override
     protected void defineSynchedData() {
