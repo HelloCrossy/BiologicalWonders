@@ -3,5 +3,8 @@
   "size": "ambient",
   "breeding_item": "zawa:clam",
   "speed": "slow",
-  "variant_count": 4
+  "variant_count": 4,
+  "captive_variants": [
+    "white_chocolate"
+  ]
 }

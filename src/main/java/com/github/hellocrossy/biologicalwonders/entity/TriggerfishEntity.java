@@ -25,7 +25,7 @@ public class TriggerfishEntity extends ZawaAmbientFishEntity {
     }
 
     public static AttributeSupplier.Builder registerAttributes() {
-        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.30F).add(Attributes.MAX_HEALTH, 4.0);
+        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.225F).add(Attributes.MAX_HEALTH, 6.0);
     }
 
     @Override

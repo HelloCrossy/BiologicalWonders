@@ -38,7 +38,7 @@ public class TulipSnailEntity extends ZawaBaseAmbientEntity implements ClimbingE
     }
 
     public static AttributeSupplier.Builder registerTulipSnailAttributes() {
-        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.10F).add(Attributes.MAX_HEALTH, 2.0);
+        return createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.15F).add(Attributes.MAX_HEALTH, 4.0);
     }
 
     @Override

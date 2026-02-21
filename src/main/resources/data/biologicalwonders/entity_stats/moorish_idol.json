@@ -3,5 +3,10 @@
   "size": "ambient",
   "breeding_item": "zawa:shrimp",
   "speed": "medium",
-  "variant_count": 6
+  "variant_count": 6,
+  "captive_variants": [
+    "xanthic",
+    "splattered",
+    "faded"
+  ]
 }

@@ -56,10 +56,6 @@ public class BioItems {
             new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item>
-            SEA_BUNNY_BUCKET = ITEMS_REGISTRAR.register("bucket_of_sea_bunny", () -> new ZawaBucketItem(BioEntities.SEA_BUNNY, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH,
-            new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item>
             SQUIRRELFISH = ITEMS_REGISTRAR.register("squirrelfish", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item>

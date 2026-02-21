@@ -13,17 +13,6 @@ public class NapoleonWrasseRenderer extends ZawaMobRenderer<NapoleonWrasseEntity
     public NapoleonWrasseRenderer(EntityRendererProvider.Context context) {
         super(context, new NapoleonWrasseModel.Adult(context.bakeLayer(BioModelLayers.NAPOLEON_WRASSE_ADULT)), new NapoleonWrasseModel.Child(context.bakeLayer(BioModelLayers.NAPOLEON_WRASSE_CHILD)), 0.6F);
     }
-
-    protected void setupRotations(NapoleonWrasseEntity entity, PoseStack stack, float p_225621_3_, float p_225621_4_, float p_225621_5_) {
-        super.setupRotations(entity, stack, p_225621_3_, p_225621_4_, p_225621_5_);
-        float f = 4.3F * Mth.sin(0.6F * p_225621_3_);
-        stack.mulPose(Axis.YP.rotationDegrees(f));
-        if (!entity.isInWater()) {
-            stack.translate(0.1, 0.1, -0.1);
-            stack.mulPose(Axis.ZP.rotationDegrees(90.0F));
-        }
-    }
-
     @Override
     protected void scale(NapoleonWrasseEntity entity, PoseStack PoseStack, float partialTickTime) {
         float scale = entity.isBaby() ? 0.6F : 1.4F;
