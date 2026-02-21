@@ -1,5 +1,6 @@
 package com.github.hellocrossy.biologicalwonders.entity;
 
+import com.github.hellocrossy.biologicalwonders.item.BioItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
@@ -60,6 +62,9 @@ public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEnt
     @Override
     public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
         return BioEntities.SEA_BUNNY.get().create(world);
+    }
+    public ItemStack getBucketItemStack() {
+        return new ItemStack(BioItems.SEA_BUNNY_BUCKET.get());
     }
 
     @Override
