@@ -1,7 +1,7 @@
 {
   "temperament": "timid",
   "size": "ambient",
-  "breeding_item": "minecraft:sea_grass",
+  "breeding_item": "minecraft:seagrass",
   "speed": "slow",
   "variant_count": 3
 }
