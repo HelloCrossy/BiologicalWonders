@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
 public class SeaBunnyEntity extends ZawaBaseAmbientEntity implements ClimbingEntity{
     public static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(SeaBunnyEntity.class, DataSerializers.BOOLEAN);
 
-    public SeaBunnyEntity(EntityType<? extends ZawaAmbientFishEntity> type, World world) {
+    public SeaBunnyEntity(EntityType<? extends ZawaBaseAmbientEntity> type, World world) {
         super(type, world);
         this.maxUpStep = 1.0F;
         this.moveControl = new MovementController(this);

@@ -106,7 +106,7 @@ public class BioEntities {
             REGISTRY.builder(KingfisherEntity::new, EntityClassification.CREATURE)
                     .attributes(KingfisherEntity::registerAttributes)
                     .renderer(() -> KingfisherRenderer::new)
-                    .spawns(15, 1, 2, ZawaSpawnCategory.COASTAL_DESERT)
+                    .spawns(15, 1, 2, ZawaSpawnCategory.SLOW_FRESH_WATER)
                     .data(entityBuilder -> entityBuilder.sized(0.4F, 0.4F).clientTrackingRange(8))
                     .build("kingfisher");
 
