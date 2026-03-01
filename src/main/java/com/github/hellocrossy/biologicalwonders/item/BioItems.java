@@ -52,6 +52,8 @@ public class BioItems {
 
     public static final RegistryObject<Item>
             SEA_BUNNY = ITEMS_REGISTRAR.register("sea_bunny", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item>
+            TULIP_SNAIL = ITEMS_REGISTRAR.register("tulip_snail", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item>
             SPOTTED_DRUM = ITEMS_REGISTRAR.register("spotted_drum", () -> new Item(new Item.Properties()));
