@@ -15,9 +15,8 @@
       "zawa:beef_ice_treat"
     ]
   },
-  "variant_count": 5,
+  "variant_count": 4,
   "captive_variants": [
-    "albino",
-    "dalmatian"
+    "albino"
   ]
 }
