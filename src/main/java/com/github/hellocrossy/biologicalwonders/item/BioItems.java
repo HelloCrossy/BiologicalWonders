@@ -8,6 +8,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.zawamod.zawa.world.item.ZawaAquaticEggItem;
 import org.zawamod.zawa.world.item.ZawaBucketItem;
 import org.zawamod.zawa.world.item.ZawaEggItem;
 
@@ -74,9 +75,9 @@ public class BioItems {
             TRIGGERFISH_BUCKET = ITEMS_REGISTRAR.register("bucket_of_triggerfish", () -> new ZawaBucketItem(BioEntities.TRIGGERFISH, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH,
             new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> ALLIGATOR_GAR_EGG = ITEMS_REGISTRAR.register("alligator_gar_egg", () -> new ZawaEggItem(BioEntities.ALLIGATOR_GAR, new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> NAPOLEON_WRASSE_EGG = ITEMS_REGISTRAR.register("napoleon_wrasse_egg", () -> new ZawaEggItem(BioEntities.NAPOLEON_WRASSE, new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> LIONFISH_EGG = ITEMS_REGISTRAR.register("lionfish_egg", () -> new ZawaEggItem(BioEntities.LIONFISH, new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> ALLIGATOR_GAR_EGG = ITEMS_REGISTRAR.register("alligator_gar_egg", () -> new ZawaAquaticEggItem(BioEntities.ALLIGATOR_GAR, new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> NAPOLEON_WRASSE_EGG = ITEMS_REGISTRAR.register("napoleon_wrasse_egg", () -> new ZawaAquaticEggItem(BioEntities.NAPOLEON_WRASSE, new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> LIONFISH_EGG = ITEMS_REGISTRAR.register("lionfish_egg", () -> new ZawaAquaticEggItem(BioEntities.LIONFISH, new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> KINGFISHER_EGG = ITEMS_REGISTRAR.register("kingfisher_egg", () -> new ZawaEggItem(BioEntities.KINGFISHER, new Item.Properties().stacksTo(16)));
 }
 
