@@ -71,9 +71,9 @@
   "item.biologicalwonders.tulip_snail_spawn_egg": "Tulip Snail Spawn Egg",
 
   "item.biologicalwonders.cuban_crocodile_egg": "Cuban Crocodile Egg",
-  "item.biologicalwonders.alligator_gar_egg": "Alligator Gar Egg",
-  "item.biologicalwonders.lionfish_egg": "Lionfish Egg",
-  "item.biologicalwonders.napoleon_wrasse_egg": "Napoleon Wrasse Egg",
+  "item.biologicalwonders.alligator_gar_egg": "Alligator Gar Roe",
+  "item.biologicalwonders.lionfish_egg": "Lionfish Roe",
+  "item.biologicalwonders.napoleon_wrasse_egg": "Napoleon Wrasse Roe",
   "item.biologicalwonders.kingfisher_egg": "Kingfisher Egg",
 
   "__comment": "Entity Variant and Scientific Names, and Informational Blurbs",
