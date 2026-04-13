@@ -8,6 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.zawamod.zawa.Zawa;
+import org.zawamod.zawa.world.item.ZawaAquaticEggItem;
 import org.zawamod.zawa.world.item.ZawaEggItem;
 import org.zawamod.zawa.world.item.ZawaFishBucketItem;
 
@@ -69,9 +70,9 @@ public class BioItems {
     public static final RegistryObject<Item>
             TULIP_SNAIL = REGISTRAR.register("tulip_snail", () -> new Item(new Item.Properties().tab(Zawa.ITEMS_GROUP)));
 
-    public static final RegistryObject<Item> ALLIGATOR_GAR_EGG = REGISTRAR.register("alligator_gar_egg", () -> new ZawaEggItem(BioEntities.ALLIGATOR_GAR, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
-    public static final RegistryObject<Item> NAPOLEON_WRASSE_EGG = REGISTRAR.register("napoleon_wrasse_egg", () -> new ZawaEggItem(BioEntities.NAPOLEON_WRASSE, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
-    public static final RegistryObject<Item> LIONFISH_EGG = REGISTRAR.register("lionfish_egg", () -> new ZawaEggItem(BioEntities.LIONFISH, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
+    public static final RegistryObject<Item> ALLIGATOR_GAR_EGG = REGISTRAR.register("alligator_gar_egg", () -> new ZawaAquaticEggItem(BioEntities.ALLIGATOR_GAR, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
+    public static final RegistryObject<Item> NAPOLEON_WRASSE_EGG = REGISTRAR.register("napoleon_wrasse_egg", () -> new ZawaAquaticEggItem(BioEntities.NAPOLEON_WRASSE, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
+    public static final RegistryObject<Item> LIONFISH_EGG = REGISTRAR.register("lionfish_egg", () -> new ZawaAquaticEggItem(BioEntities.LIONFISH, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
     public static final RegistryObject<Item> KINGFISHER_EGG = REGISTRAR.register("kingfisher_egg", () -> new ZawaEggItem(BioEntities.KINGFISHER, new Item.Properties().stacksTo(16).tab(Zawa.ITEMS_GROUP)));
 
 }

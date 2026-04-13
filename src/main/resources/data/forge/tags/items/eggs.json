@@ -2,9 +2,6 @@
   "replace": false,
   "values": [
     "biologicalwonders:cuban_crocodile_egg",
-    "biologicalwonders:alligator_gar_egg",
-    "biologicalwonders:napoleon_wrasse_egg",
-    "biologicalwonders:lionfish_egg",
     "biologicalwonders:kingfisher_egg"
   ]
 }
